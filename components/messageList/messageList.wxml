@@ -1,0 +1,12 @@
+<template name="messageList">
+    <view class="contentView" bindtap="messageListEvent" data-messageIndex="{{messageIndex}}">
+        <!-- <image src="{{messageImage}}"></image>  -->
+        <view class="messageContentView">
+             <view>
+                <text>{{mainTitle}}</text>
+                <text>{{date}}</text>
+            </view>
+            <text>{{subTitle}}</text> 
+        </view>
+    </view>
+</template>

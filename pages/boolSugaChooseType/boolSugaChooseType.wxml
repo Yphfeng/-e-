@@ -1,0 +1,7 @@
+<view class='buttonView' style='height: {{mainViewHeight}}px'>
+  <text style='font-size: 32rpx;'>根据你使用的产品选择以下选项进行记录</text>
+   <view class='mainView'>
+    <button class='itemView' bindtap='bindtapEvent' data-type='口服'>口服</button>
+    <button class='itemView' bindtap='bindtapEvent' data-type='外涂'>外涂</button>
+  </view>
+</view>

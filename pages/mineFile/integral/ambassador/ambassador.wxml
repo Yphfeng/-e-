@@ -1,0 +1,41 @@
+<!--pages/mineFile/integral/ambassador/ambassador.wxml-->
+<view style='width: 100%; height: 60px; display: flex;background:#f35b4a;color:#fff;font-weight:bolder;flex-direction: row; justify-content: center; align-items: center;' bindtap='bindTap' data-type='user'>
+  <text>健康大使申请</text>
+</view>
+
+<scroll-view style='height: {{scrollHeight}}px; font-size: 28rpx;background:#0eb3d1' scroll-y>
+  <view style='width:80%;margin:0 auto;padding:20rpx 0rpx 0 20rpx'>
+      <view class="item">
+        <view class="title title-1">申请加入</view>
+        <view class="text">
+          <text>授权</text>
+          <text>授权健康大使管理</text>
+        </view>
+      </view>
+      <view class="item">
+        <view class="title title-2">推荐用户</view>
+        <view class="text">
+          <text>二维码推荐</text>
+          <text>分享二维码用户扫码注册</text>
+        </view>
+      </view>
+      <view class="item">
+        <view class="title title-3">用户消费</view>
+        <view class="text">
+          <text>商城消费</text>
+          <text>推荐用户商城消费</text>
+        </view>
+      </view>
+      <view class="item">
+        <view class="title title-4">奖励现金</view>
+        <view class="text">
+          <text>可提现</text>
+          <text>消费用户奖励现金</text>
+        </view>
+      </view>
+  </view>
+</scroll-view>
+<view class="eq">消费积分：3000</view>
+<view style='position: absolute; left: 0; right: 0; bottom: 0; height: 70px; display: flex; flex-direction: row; justify-content: space-around; align-items: center; font-size: 28rpx; text-align: center; line-height: 35px;'>
+  <view style='width: {{width / 4}}px;  background: rgb(67, 154, 208); color: white; border-radius: 10rpx;' bindtap='applicationEvent' data-type='sure'>申请加入</view>
+</view>

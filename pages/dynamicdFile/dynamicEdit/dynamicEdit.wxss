@@ -1,0 +1,93 @@
+/* pages/dynamicEdit/dynamicEdit.wxss */
+.container{
+  padding: 30rpx;
+  font-size: 16px;
+  padding-bottom: 150px;
+}
+.title-content{
+  font-size: 18px;
+  margin-top: 30rpx;
+  padding-bottom: 30rpx;
+  border-bottom: 1px solid #ddd;
+}
+.content{
+  padding: 30rpx 0;
+  /* border-bottom: 1px solid #ddd; */
+}
+.icon-pic {
+  line-height: 70rpx;
+  color: #888;
+  padding: 30rpx 0;
+   border-bottom: 1px solid #ddd;
+    font-size: 18px;
+}
+.icon-pic image{
+  width: 80rpx;
+  height: 70rpx;
+  margin-right: 15rpx;
+  margin-left: -10rpx;
+}
+.icon-detail-image{
+  width: 100%;
+  height: auto;
+}
+.image-box{
+  position: relative;
+  margin-top: 20rpx;
+}
+.image-box .mask{
+  position: absolute;
+  left: 0;
+  top:0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0,0,0,0.3);
+  text-align: right;
+}
+.image-box .mask image,.icon-delete{
+  width: 68rpx;
+  height: 68rpx;
+  margin: 15rpx;
+}
+.icon-delete{
+   width:48rpx;
+  height:48rpx;
+  position: absolute;
+  top:10rpx;
+  right:-20rpx;
+}
+.image-box  .mask  .icon-replace{
+ width: 63rpx;
+ height: 63rpx;
+ position: relative;
+ right: 5rpx;
+ top:-5rpx;
+ 
+}
+textarea{
+  padding: 30rpx 0;
+  width: 100%;
+  height: 100rpx;
+  border-bottom: 1px solid #ddd;
+   font-size: 18px;
+}
+.btn-bottom{
+  padding: 40rpx;
+  /* background:rgba(255,255,255,0.5); */
+  position: fixed;
+  bottom:0;
+  left: 0;
+  z-index: 99999999;
+}
+.btn{
+   width:670rpx;
+   background-color: #f35b4a;
+   color: #fff;
+   line-height: 86rpx;
+   text-align: center;
+   border-radius: 5px;
+}
+/* .btn::after{
+  background-color:#ddd;
+} */
+

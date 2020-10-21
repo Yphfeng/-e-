@@ -1,0 +1,34 @@
+<!--pages/merchants/check/check.wxml-->
+<image src="/images/3.jpg" style='position: absolute;left:0;top:0;width:100%;height:100%;z-index:-1'></image>
+<view class='box'>
+<view class='head'>
+  <view class='select' bindtap='showchange'>
+    <text>{{listSelect[selectIndex]}}</text>
+    <view class='downlist'>
+      <image src='/images/fanhui_black@3x.png'></image>
+    </view>
+  </view>
+  <view class='selectlist' wx:if="{{showSelect}}">
+    <view class='slist' wx:key='index'  wx:for="{{listSelect}}" wx:for-index="index" wx:for-item="item" bindtap='changeIndex' data-index="{{index}}">
+      {{item}}
+    </view>
+  </view>
+</view>
+
+<view class='list' wx:if="{{pageNum!=0}}">
+  <view class='listpro' wx:key='index' wx:for="{{listData}}" wx:for-index="index" wx:for-item="item" bindtap='goproduct' data-index="{{item.id}}">
+    <view class='shopname'>
+      <view class='dod'></view>
+      {{item.name}}
+    </view>
+    <view class='shoppro'>
+        <text>设备数量:{{item.device_num}}</text>
+        <text>租赁数量:{{item.lease_num}}</text>
+        <text>退货数量:{{item.return_num}}</text>
+    </view>
+    <image class='goproduct' src='/images/fanhui_black@3x.png'></image>
+  </view>
+</view>
+<!-- 分页 -->
+<pagebtn pageinfo="{{ {pagesum:pageNum,pageindex:pageIndex} }}" bind:changepage="changepage"></pagebtn>
+</view>

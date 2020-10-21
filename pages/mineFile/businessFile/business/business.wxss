@@ -1,0 +1,36 @@
+page{
+	background: #ddd;
+}
+.mineUserFirstView{
+	display: flex;
+	flex-direction: row;
+	justify-content: flex-start;
+	align-items: center;
+	line-height: 1;
+	border-top: 2rpx solid gray
+}
+.mine-item{
+	display: flex;
+	flex-direction: column;
+	align-items:center;
+	justify-content:center;
+	padding: 30rpx 0;
+}
+.mine{
+	font-size: 28rpx;
+	text-align: center;
+	margin-bottom: 20rpx;
+	background-color: #fff;
+}
+.mine-title{
+	height: 40px;
+	display: flex;
+	flex-direction: row;
+	justify-content: space-between;
+	align-items: center;
+	padding: 0 30rpx;
+}
+.num{
+	font-weight: bolder;
+	padding-top: 15px;
+}

@@ -1,0 +1,9 @@
+{
+  "backgroundTextStyle": "white",
+  "navigationBarBackgroundColor": "#d1d1d1",
+  "navigationBarTitleText": "推荐用户",
+  "navigationBarTextStyle": "black",
+  "usingComponents": {
+    "pagebtn": "/components/pagebtwo/pagebtwo"
+  }
+}

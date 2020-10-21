@@ -1,0 +1,30 @@
+.pagelist{
+  margin-top: 40rpx;
+  margin-bottom: 40rpx;
+  text-align: center;
+  padding: 0 130rpx;
+  line-height: 60rpx;
+  display: flex;
+  justify-content: space-between;
+}
+.pagebtn{
+  width: 120rpx;
+  height: 60rpx;
+  border-radius: 10rpx;
+  font-size: 30rpx;
+}
+.pageinfo{
+  width: 100%;
+  left: 0;
+  top: 0;
+  font-size: 26rpx;
+  flex: 1;
+}
+.able{
+  color: white;
+  background: #2cc5ff;
+}
+.unable{
+  color: #ccc;
+  border: 1rpx solid #ccc;
+}

@@ -1,0 +1,110 @@
+
+
+/* wallet.wxss */
+.containerView {
+  display: flex;
+  flex-direction: column;
+  align-content: flex-start;
+  width: 100%;
+}
+
+.view1 {
+  width: 100%;
+  height: 603rpx;
+  display: flex;
+  flex-direction: column;
+  align-content: flex-start;
+}
+
+.view2 {
+  width: 100%;
+  flex: 1 1 auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+}
+
+.myBalanceView {
+  width: 100%;
+  height: 332rpx;
+  background-color: #f35b4a;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.reflectedView {
+  height: 88rpx;
+  border-radius: 4rpx;
+  background-color: #ff8f11;
+  margin: 73rpx 24rpx 11rpx 24rpx;
+  color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.rechargeView {
+  height: 88rpx;
+  border-radius: 4rpx;
+  background-color: #f35b4a;
+  margin: 50rpx 24rpx 0rpx 24rpx;
+  color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+
+.text {
+  font-family: STHeitiSC-Light;
+  font-size: 32rpx;
+  color: #fff;
+  line-height: 52rpx;
+}
+
+
+.text1 {
+  font-family: STHeitiSC-Light;
+  font-size: 28rpx;
+  color: #fff;
+}
+
+.text2 {
+  font-family: STHeitiSC-Light;
+  font-size: 88rpx;
+  color: #fff;
+  margin-top: 29rpx;
+  margin-bottom: 29rpx;
+}
+
+.textBord {
+  box-sizing: border-box;
+  border: 1rpx solid white;
+  border-radius: 24rpx;
+  height: 55rpx;
+  width: 200rpx;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+}
+
+
+.usersView {
+  margin-top: 20rpx;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  padding-left: 20rpx;
+  padding-right: 20rpx;
+  box-sizing: border-box;
+  border-bottom: 1rpx solid lightblue;
+}
+.usersView text {
+  line-height: 50rpx;
+  font-size: 30rpx;
+  font-family: STHeitiSC-Light;
+}
+
+

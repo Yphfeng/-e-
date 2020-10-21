@@ -1,0 +1,63 @@
+/* pages/deviceSearch/deviceSearch.wxss */
+
+.topView {
+  height: 48px;
+  font-size: 28rpx;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: center;
+  border: 1rpx solid lightgray;
+  margin: 10px 20px 0px 20px;
+  border-radius: 5px;
+}
+
+.lineView {
+  width: 2rpx;
+  background-color: lightgray;
+  height: 28px;
+}
+
+.deviceItem {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 28rpx;
+  line-height: 60rpx;
+}
+
+.leftView {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: flex-start;
+}
+
+.rightView {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.itemView {
+  margin: 30rpx;
+  padding: 20rpx;
+  border-radius: 15rpx;
+  border: 1rpx solid #f35b4a;
+}
+
+.submitView {
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: #09bb0c;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  height: 49px;
+  color: white;
+}

@@ -1,0 +1,54 @@
+<!--pages/merchants/add/add.wxml-->
+
+<image src="/images/3.jpg" style='position: absolute;left:0;top:0;width:100%;height:100%;z-index:-1'></image>
+<form bindsubmit="formSubmit">
+  <view class='container'>
+    <view class="weui-cell__bd" style='width: 100%;padding-top:50rpx'>
+      <view class='phone-content'>
+        <input placeholder="请输入用户名" name="name" class='keyWord weui-input' />
+      </view>
+      <view class='phone-content'>
+        <input placeholder="请输入手机号" type='number' name="mobile_no" class='keyWord weui-input' />
+        <input name="armariumScienceSession" value='{{token}}' style='display:none' />
+      </view>
+      <view class='phone-content'>
+        <input placeholder="请输入设备分成金额" type='number' name="divide_into" class='keyWord weui-input' />
+        <input name="armariumScienceSession" value='{{token}}' style='display:none' />
+      </view>
+      <view class="phone-content">
+        <view class="input">
+          <view focus="{{focus}}" bindtap="open" class='con'>{{province.name}}-{{city.name}}-{{county.name}}</view>
+          <view style='display:none'>
+           <input type='hidden' name="province_id" value='{{province.id}}'></input>
+          <input type='hidden' name="province_name" value='{{province.name}}'></input>
+          <input type='hidden' name="city_id" value='{{city.id}}'></input>
+          <input type='hidden' name="city_name" value='{{city.name}}'></input>
+          <input type='hidden' name="area_id" value='{{county.id}}'></input>
+          <input type='hidden' name="area_name" value='{{county.name}}'></input></view>
+        </view>
+      </view>
+      <view class='phone-content'>
+        <input placeholder="请输入详细地址"  name="address" class='keyWord weui-input' />
+        <input name="armariumScienceSession" value='{{token}}' style='display:none' />
+      </view>
+    </view>
+    <button class="weui-btn sub-button" type="default" formType="submit" style='width:100%'>添加</button>
+  </view>
+  <view wx:if="{{condition}}" class="citypicker">
+    <picker-view indicator-style="height: 50px;" style="width: 100%; height: 300px;" value="{{value}}" bindchange="bindChange" class="citybody">
+      <view class="cityheader">
+        <view bindtap="open" class="city-cancel">取消</view>
+        <view bindtap="open" class="city-true">确定</view>
+      </view>
+      <picker-view-column>
+        <view wx:for="{{provinces}}" wx:key="item" style="line-height: 50px;padding-left:10px;">{{item.name}}</view>
+      </picker-view-column>
+      <picker-view-column>
+        <view wx:for="{{citys}}" wx:key="item" style="line-height: 50px;padding-left:10px;">{{item.name}}</view>
+      </picker-view-column>
+      <picker-view-column>
+        <view wx:for="{{countys}}" wx:key="item" style="line-height: 50px;padding-left:10px;">{{item.name}}</view>
+      </picker-view-column>
+    </picker-view>
+  </view>
+</form>

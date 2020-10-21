@@ -1,0 +1,6 @@
+<!--components/toolBar/toolBar.wxml-->
+<view class='toolBar' style='width: 100%; height: 49px; display:flex; flex-direction: row; justify-content: space-around; align-items: center;  font-size: 28rpx; border-top: 2rpx solid lightgray; background-color: #e8e8e8;'>
+  <view class='toolItem' style='display: flex; flex-direction: column; align-items:center; justify-content: flex-start; flex-grow: 1; line-height: 49px; ' wx:for="{{tools}}" wx:key="item.key" bindtap='bindtapEvent' data-key="{{item.key}}">
+    <text style="color: {{item.isSelected ? '#f35b4a' : black}}">{{item.text}}</text>
+  </view>
+</view>

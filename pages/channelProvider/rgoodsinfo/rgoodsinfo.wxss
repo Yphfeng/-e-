@@ -1,0 +1,73 @@
+/* pages/channelProvider/rgoodsinfo/rgoodsinfo.wxss */
+.info{
+
+}
+.head{
+  padding: 20rpx;
+  font-size: 30rpx;
+  height: 80rpx;
+  border-bottom: 1rpx solid #ccc;
+  display: flex;
+  justify-content: space-between;
+
+}
+.num{
+  font-size: 30rpx;
+  font-weight: bold;
+  line-height: 80rpx;
+}
+.num text:nth-child(1){
+  margin-right: 20rpx;
+}
+.button{
+  color: white;
+  font-size: 30rpx;
+  background: #169BD5;
+  border-radius: 6rpx;
+  width: 300rpx;
+  height: 80rpx;
+  text-align: center;
+  line-height: 80rpx;
+}
+.list{
+  padding: 20rpx;
+}
+.person {
+  display: inline-block;
+  width: 30rpx;
+  height: 30rpx;
+}
+.listinfo{
+  color: black;
+  padding-bottom: 10rpx;
+  font-size:29rpx;
+  height: 80rpx;
+  line-height: 45rpx;
+  border-bottom: 1rpx solid #ccc;
+  display: flex;
+  justify-content: space-between;
+}
+.listinfo view{
+  flex:1;
+}
+.shopname{
+  margin-left: 20rpx;
+}
+.name{
+  position: relative;
+}
+.name::before{
+  content: '';
+  display: inline-block;
+  position: absolute;
+  right: 20rpx;
+  top: 10rpx;
+  width: 1rpx;
+  height: 60rpx;
+  background: #ccc;
+}
+.goodsnum{
+  display: flex;
+  flex-direction: column;
+}
+

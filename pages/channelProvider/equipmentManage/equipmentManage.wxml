@@ -1,0 +1,16 @@
+<!--pages/channelProvider/equipmentManage/equipmentManage.wxml-->
+<image src="/images/3.jpg" style='position: absolute;left:0;top:0;width:100%;height:100%;z-index:-1'></image>
+<view class="weui-cells weui-cells_after-title">
+  <view class="weui-cell">
+    <view class="weui-cell__bd">设备总数量</view>
+    <view class="weui-cell__ft">{{ list.device_num }}</view>
+  </view>
+  <view class="weui-cell">
+    <view class="weui-cell__bd">销售数量</view>
+    <view class="weui-cell__ft">{{ list.delive_num }}</view>
+  </view>
+  <view class="weui-cell">
+    <view class="weui-cell__bd">库存</view>
+    <view class="weui-cell__ft">{{ list.stock }}</view>
+  </view>
+</view>

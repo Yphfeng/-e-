@@ -1,0 +1,55 @@
+<!--pages/deviceList/deviceList.wxml-->
+
+<radio-group class="radio-group" bindchange="radioChange">
+  <view class='deviceItem itemView'wx:if="{{devices.length > 0}}"  wx:for="{{devices}}" wx:key='id'>
+  <view class='leftView'>
+    <text>{{item.device_name}}</text>
+    <text>{{item.device_code}}</text>
+    <text>{{item.device_sn}}</text>
+  </view>
+  <view class='rightView'>
+    <radio value="{{item.device_sn}}" checked="{{item.checked}}" bindtap="backHome"/>
+     <button class='qbButton' style='line-height: 50rpx;' catchtap='disbindingEvent' data-device-id='{{item.device_sn}}'>解绑</button> 
+  </view>
+</view>
+</radio-group>
+
+<!--目前服务器一个用户只能绑定一台设备，如果绑定多设备的情况下去除判断符号  -->
+<view class='addView itemView' bindtap='addDeviceEvent' wx:if="{{devices.length == 0}}">
+<text>点击绑定设备：</text> 
+  <image src='../../images/deviceList_add.png' style='width: 150rpx; height: 150rpx' />
+</view>
+
+<!--弹窗-->
+<view class="modal-mask" catchtouchmove="preventTouchMove" wx:if="{{showModal}}"></view>
+<view class="modal-dialog" wx:if="{{showModal}}">
+  <view class="modal-title">
+    <view class='modal-title_text'>
+      绑定手机号
+    </view>
+  </view>
+
+  <view class='point'>
+    <view class='dolt_text' wx:if="{{isdoltshow}}">
+
+    </view>
+    <view class='point_text'>
+      {{notic}}
+    </view>
+  </view>
+  <view class="modal-content">
+    <view class="modal-input">
+      <image class='iphone_icon' src='/images/iphone.png'></image>
+      <input id='iphone' placeholder-class="input-holder" type="number" bindinput="inputChange" class="input" placeholder="请输入手机号码" value="{{phone}}"></input>
+    </view>
+    <view class="modal-input">
+      <image class='msg_icon' src='/images/msg.png'></image>
+      <input id='code' placeholder-class="input-holder" type="number" maxlength="10" bindinput="inputCodeChange" class="code" placeholder="请输入验证码" value="{{code}}"></input>
+      <button class="send"  bindtap="send" disabled="{{isgetcode}}">{{sendText}}</button>
+    </view>
+  </view>
+  <view id="modal-footer">
+    <view class="btn-cancel" bindtap="onCancel" data-status="cancel">取消</view>
+    <view class="btn-confirm" bindtap="onConfirm" data-status="confirm" disabled="{{isSend}}">确定</view>
+  </view>
+</view>

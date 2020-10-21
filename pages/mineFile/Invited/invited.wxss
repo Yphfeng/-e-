@@ -1,0 +1,12 @@
+page {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+}
+
+.codeImage {
+  margin-top: 200rpx;
+  width: 506rpx;
+  height: 506rpx;
+}

@@ -1,0 +1,15 @@
+<template name="orderGoods">
+  <view class="orderGoodsContainerView">
+  
+    <image src="{{productImageSrc}}" class="productImage"></image>
+    <view class="productContentView">
+      <text style='font-size: 32rpx;'>{{productTitle}}</text>
+      <text style='color: gray' >{{productSubtitle}}</text>
+      <view>
+        <text class="productPrice">¥{{productPrice}}</text>
+        <text class="productIsIntegral">{{productIntegral}}</text>
+        <text class="productCount">X{{productCount}}</text>
+      </view>
+    </view>
+  </view>
+</template>

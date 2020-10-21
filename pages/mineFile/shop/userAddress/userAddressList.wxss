@@ -1,0 +1,36 @@
+/* pages/mineFile/shop/userAddress/userAddressList.wxss */
+.deviceItem {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  font-size: 28rpx;
+  line-height: 60rpx;
+}
+
+.leftView {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: flex-start;
+}
+
+.rightView {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.itemView {
+  margin: 30rpx;
+  padding: 20rpx;
+  border-radius: 15rpx;
+  border: 1rpx solid #f35b4a;
+}
+
+.addView {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+}

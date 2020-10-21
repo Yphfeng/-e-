@@ -1,0 +1,2 @@
+<!--pages/homeFile/products/products.wxml-->
+<image src='{{imageSrc}}' style='height: {{imageHeight}}px; width: {{imageWidth}}px'/>

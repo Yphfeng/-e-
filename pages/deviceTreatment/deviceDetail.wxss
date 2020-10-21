@@ -1,0 +1,51 @@
+/* pages/deviceTreatment/deviceDetail.wxss */
+.sectionView {
+  background-color: white;
+  display: flex;
+  flex-direction: column;
+  border-top: 2rpx solid lightgray;
+  
+
+}
+.scrollViewContent{
+  margin: 20rpx;
+  border:1px solid #ccc;
+  border-radius: 20rpx;
+  overflow: hidden;
+}
+
+.itemContentView {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  box-sizing: border-box;
+}
+
+.itemContentView .lineView {
+  width: 100%;
+  padding: 20rpx;
+  font-family: PingFangSC-Light;
+  font-size: 28rpx;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+}
+.itemContentView:last-child .lineView{
+  border: none;
+}
+.panel{
+  margin: 20rpx;
+  font-size: 28rpx;
+}
+.title{
+  font-size: 42rpx;
+  display: block;
+}
+.list-inner .itemContentView{
+  border-bottom:1px solid #ccc;
+
+}
+.list-inner .itemContentView:last-child{
+  border-bottom:none;
+}

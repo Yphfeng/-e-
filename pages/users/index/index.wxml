@@ -1,0 +1,63 @@
+<!--index.wxml-->
+<view class="container">
+  <!-- <view class="userinfo">
+        <open-data class="multi-hp-avatar" type="userAvatarUrl"></open-data>
+        <open-data class="multi-hp-nickname" type="userNickName"></open-data>
+    </view> -->
+  <view class='banner' style="height:{{bannerHeight}}px">
+    <view style='padding:30rpx 0;font-size:36rpx;'>{{store_name}}</view>
+    <swiper indicator-dots="{{indicatorDots}}" autoplay="{{autoplay}}" interval="{{interval}}" duration="{{duration}}" style="height:{{swiperHeight}}px">
+      <block wx:for="{{imgUrls}}" wx:key="{{index}}">
+        <swiper-item>
+          <image src="{{baseUrl}}{{item}}" class="slide-image" />
+        </swiper-item>
+      </block>
+    </swiper>
+  </view>
+  <view class='num-total' style='width:{{swiperHeight}}px'>
+       <view>选择数量</view>
+      <view class="num-input">
+        <text class="{{minusStatus}} de" bindtap='de'>-</text>
+        <text class='num-number'>{{number}}</text>
+        <text class="ad" bindtap='ad'>+</text>
+      </view>
+  </view>
+      <!--弹窗-->
+    <view class="modal-mask" bindtap="hideModal" catchtouchmove="preventTouchMove" wx:if="{{showModal}}"></view>
+    <view class="modal-dialog" wx:if="{{showModal}}" style='width:{{dialogWidth}}px'>
+      <view class="modal-title">租赁协议</view>
+      <view class="modal-content" style='height:{{_height}}px;overflow-y:scroll'>
+        <view class="modal-input">
+          {{protocol}}
+        </view>
+      </view>
+      <view class="modal-footer">
+        <view class="btn-confirm" bindtap="onConfirm" >确定</view>
+      </view>
+    </view>
+  <view class='checkboxChange'>
+  <view catchtap="showDialogBtn">我已阅读并接受<text style="color:red;padding-right:20rpx">{{manage}}</text></view>
+  <checkbox-group bindchange="checkboxChange">
+  <label class="checkbox" wx:for="{{items}}" wx:key="{{index}}">
+    <checkbox value="{{item.name}}" checked="{{item.checked}}"/>
+  </label>
+</checkbox-group>
+</view>
+  <button size="small" open-type='getUserInfo' bindgetuserinfo="bindGetUserInfo" data-statu="open" class="btn-pay" style='width:{{swiperHeight}}px' disabled='{{!items[0].checked}}'>去支付</button>
+  <!--mask-->
+<view class="drawer_screen" bindtap="closeModel" wx:if="{{showModalStatus}}"></view> 
+<!--content-->
+<!--使用animation属性指定需要执行的动画-->
+<view animation="{{animationData}}" class="drawer_box" wx:if="{{showModalStatus}}"> 
+  
+ <!--drawer content-->
+<!--  <view class="drawer_title">弹窗标题</view>  -->
+ <view class="drawer_content">  
+ <view class="top grid"> 
+ <label class="title col-0">手机号：</label> 
+ <input class="input_base input_h30 col-1" bindinput="bindMobileInput" name="mobile" value="{{mobile}}"></input> 
+ </view> 
+ </view> 
+ <view class="btn_ok" bindtap="powerDrawer" data-statu="close">确定</view> 
+</view> 
+</view>

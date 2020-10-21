@@ -1,0 +1,31 @@
+
+
+/*支付方试视图  */
+.payStyleView {
+    display: flex;
+    flex-direction: column;
+    box-sizing: border-box;
+    flex-wrap: wrap;
+}
+
+.payStyleView .checkbox{
+    background-color: white;
+    margin-top: 20rpx;
+    padding-left: 20rpx;
+    padding-right: 20rpx;
+    height: 100rpx;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.payStyleView .checkbox text {
+    font-family: STHeitiSC-Light;
+    font-size: 28rpx;
+    color: #000;
+    line-height: 44rpx;
+    text-align: left;
+    margin-left: 15rpx;
+    margin-right: 15rpx;
+}

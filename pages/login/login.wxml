@@ -1,0 +1,13 @@
+<!--login.wxml-->
+<form bindsubmit="formSubmit" report-submit>
+  <view class="containerView1">
+    <input placeholder="请输入手机号码" type="number" bindinput="inputUsernameblur" auto-focus/>
+    <text style="color: red; font-size: 15px; text-align: left; width: 100%; ">{{title}}</text>
+    <input placeholder="请输入密码" type="number" password bindinput="inputPasswordblur" />
+    <button class="qbButton" bindtap="loginAction" disabled="{{isDisabledLoginBTN}}" formType="submit">登录</button>
+    <view>
+      <text bindtap="registerAction" data-loginOtherAction="register">没有账号, 我要注册!</text>
+      <text bindtap="registerAction" data-loginOtherAction="forgotPassword">忘记密码</text>
+    </view>
+  </view>
+</form>

@@ -1,0 +1,40 @@
+<!--pages/dynamicEdit/dynamicEdit.wxml-->
+<view class='container'>
+  <form bindsubmit="submit">
+    <view class='title'>
+      <view class='title-laber'>标题</view>
+      <input class='title-content' name="title" placeholder='输入内容标题' bindinput='changeTitle' value='{{mapShare.title}}'></input>
+    </view>
+
+    <view class='content'>
+      <view class='content-laber'>内容</view>
+      <textarea placeholder='文章内容编辑' maxlength='10000000' bindblur='changeContent' data-id='0' auto-height='{{true}}' name="context" value='{{mapShare.context}}'></textarea>
+      <view class='content-laber' style='padding-top:30rpx'>图片</view>
+      <view class='flex icon-pic'>
+        <image src='../../../images/icon-pic@2x.png' bindtap='chooseImage'></image>
+        <text>插入图片</text>
+      </view>
+      <view id='detail'>
+        <view wx:for='{{picList}}' wx:key>
+          <view class='image-box'>
+            <image class='icon-detail-image' src='{{item}}' mode="widthFix"></image>
+            <view class='mask'>
+              <image class='icon-del' src='../../../images/icon-del.png' data-src='{{item}}' catchtap='detailImage'></image>
+              <view>
+                <image class='icon-replace' src='../../../images/icon-replace.png' data-src='{{item}}' catchtap='changeImage'></image>
+              </view>
+            </view>
+          </view>
+        </view>
+      </view>
+    </view>
+    <view class='btn-bottom'>
+      <button class="btn" formType="submit" bindtap=""  wx:if='{{!mapShare.id}}'>发布</button>
+      <button class="btn" formType="submit" bindtap=""  wx:if="{{mapShare.id && mapShare.statusCode == '1'}}">保存</button>
+      <button class="btn" formType="submit" bindtap=""  wx:if="{{mapShare.id && mapShare.statusCode == '3'}}">重新发布</button>
+    </view>
+  </form>
+</view>
+<!-- <cover-view class='btn-bottom'>
+  <cover-view class='btn' catchtap='submit'>发布</cover-view>
+</cover-view> -->

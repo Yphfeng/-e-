@@ -1,0 +1,17 @@
+<!--pages/dynamic/dynamic.wxml-->
+
+<view class='contentView2'>
+  <view class='userDynamicView'></view>
+</view>
+<view class='commentsView'>
+    <textarea placeholder='说点什么...' 
+                  auto-height 
+                  fixed
+                  maxlength='-1'
+                  cursor-spacing="{{cursorSpacing}}"
+                  bindconfirm="bindconfirm"
+                  bindlinechange="bindlinechange"
+                  
+    />
+    <image src="{{likeSrc ? '../../../../images/like_selected.png' : '../../../../images/like_normal.png'}}" bindtap='likeEvent'/>
+</view>

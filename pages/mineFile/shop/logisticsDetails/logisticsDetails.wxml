@@ -1,0 +1,23 @@
+<!--pages/mineFile/shop/logisticsDetails/logisticsDetails.wxml-->
+<view class="container main-title">
+    <text>{{name}}</text>
+    <text>{{shopNum}}</text>
+</view>
+<view class="container adept">
+    <view class="address">
+        <view class="item" wx:for="{{data}}" wx:key="index">
+            <view class="dateTime">
+                <text>{{item.date}}</text>
+                <text>{{item.time}}</text>
+            </view>
+            <view class="dot">
+            	<text class="dotInit"></text>
+            </view>
+            
+            <view class="con">
+                <text class="item_title">{{item.AcceptStation}}</text>
+                
+            </view>
+        </view>
+    </view>
+</view>

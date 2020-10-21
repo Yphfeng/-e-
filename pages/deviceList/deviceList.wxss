@@ -1,0 +1,191 @@
+/* pages/deviceList/deviceList.wxss */
+.deviceItem {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  font-size: 28rpx;
+  line-height: 60rpx;
+}
+
+.leftView {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: flex-start;
+}
+
+.rightView {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.itemView {
+  margin: 30rpx;
+  padding: 20rpx;
+  border-radius: 15rpx;
+  border: 1rpx solid #f35b4a;
+}
+
+.addView {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+}
+
+.modal-mask {
+  width: 100%;
+  height: 100%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  background: #000;
+  opacity: 0.5;
+  overflow: hidden;
+  z-index: 9000;
+  color: #fff;
+}
+
+.modal-dialog {
+  width: 540rpx;
+  overflow: hidden;
+  position: fixed;
+  top: 30%;
+  left: 0;
+  z-index: 9999;
+  background: #f9f9f9;
+  margin: -220rpx 105rpx;
+  border-radius: 36rpx;
+}
+
+.modal-title {
+  font-size: 28rpx;
+  color: white;
+  text-align: center;
+  border-radius: 0rpx 0rpx 50% 50%;
+  background: #f35b4a;
+  height:100rpx; 
+}
+.modal-title_text{
+  position: relative;
+  top: 20rpx;
+}
+.point{
+  
+  color: #dcb629;
+  text-align: center;
+  vertical-align: middle;
+}
+.dolt_text{
+  display: inline-block;
+  width: 15rpx;
+  height: 15rpx; 
+  background:#dcb629;
+  border-radius: 50%; 
+  
+}
+.point_text{
+  font-size: 24rpx;
+  display: inline-block;
+  margin-left: 10rpx;
+}
+.iphone_icon{
+  width: 80rpx;
+  height: 70rpx;
+}
+.msg_icon{
+  width: 65rpx;
+  height: 65rpx;
+  position: relative;
+}
+
+.modal-content {
+  padding: 27rpx 32rpx;
+}
+
+.modal-input {
+  position: relative;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  font-size: 28rpx;
+  margin-bottom: 20rpx;
+}
+
+
+.input {
+  width: 100%;
+  height: 82rpx;
+  font-size: 28rpx;
+  line-height: 28rpx;
+  padding: 0 20rpx;
+  box-sizing: border-box;
+  color: #333;
+  /* background: #fff;
+  border: 2rpx solid #ddd; */
+}
+.code{
+  position: relative;
+    height: 82rpx;
+  font-size: 28rpx;
+  line-height: 28rpx;
+  padding: 0 20rpx;
+  box-sizing: border-box;
+  color: #333;
+  /* background: #fff; */
+  /* border: 2rpx solid #ddd; */
+  flex: 1;
+}
+#code{
+  border-bottom: 2rpx solid #ddd;
+  font-size: 23rpx;
+}
+#iphone{
+  border-bottom: 2rpx solid #ddd;
+  font-size: 23rpx;
+}
+.send{
+  width: 140rpx;
+  text-align: center;
+  position: absolute;
+  background: #f2756e;
+  font-size: 20rpx;
+  color: white;
+  border-radius: 16rpx;
+  padding: 3rpx 10rpx;
+  top: 10rpx;
+  right: 10rpx;
+  border: none;
+  z-index: 10;
+}
+input-holder {
+  color: #666;
+  font-size: 28rpx;
+}
+
+#modal-footer {
+  display: flex;
+  justify-content: space-around;
+  height: 60rpx;
+  font-size: 28rpx;
+  line-height: 60rpx;
+  text-align: center;
+  margin-bottom: 20rpx;
+}
+
+.btn-cancel,.btn-confirm {
+  width: 150rpx;
+  color: white;
+  border-radius: 7rpx;
+}
+.btn-cancel{
+  background-color: #f5babb;
+}
+
+.btn-confirm {
+  width: 150rpx;
+  background-color: #f2756e;
+}

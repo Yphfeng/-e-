@@ -1,0 +1,11 @@
+/* pages/merchants/payment/payment.wxss */
+.sub-button{
+  line-height: 100rpx;
+  font-size: 30rpx;
+}
+.container{
+  margin-top: 50rpx;
+}
+.sub-container{
+  margin-top: 50rpx;
+}

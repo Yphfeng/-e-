@@ -1,0 +1,11 @@
+<!--pages/wallet/refund.wxml-->
+<view class='refundView'>
+  <text class='refundTitle'>提现金额</text>
+  <view class='inputView'>
+    <text class='signRMB'>¥</text>
+    <input type='digit' auto-focus='digit' class='input'  bindinput='bindInputEvent'></input>
+  </view>
+  <text class='excessText' wx:if="{{isExcess}}">输入金额超出账户余额</text>
+  <text  class='userMoney' wx:else>可用余额 {{userMoney}}元</text>
+  <button class='qbButton refund' bindtap='refundEvent' disabled='{{refundBTNDisable}}'>提现</button>
+</view>

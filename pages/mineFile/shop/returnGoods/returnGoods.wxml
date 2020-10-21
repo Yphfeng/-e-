@@ -1,0 +1,29 @@
+<!--pages/mineFile/shop/returnGoods/returnGoods.wxml-->
+<view class="container" style="height:">
+	 <view class='orderItems' style=' display: flex; flex-direction: column; justify-content: flex-start; box-sizing: border-box;' >
+                <view class='orderItem' style='display: flex; direction: row; justify-content: flex-start; align-items: space-around; box-sizing: border-box;' wx:for="{{goods_list}}" wx:key="id">
+                    <image src='{{urlPrefix + item.goods_img_url}}' style='width: 60px; height: 70px; margin-right: 10px; ' />
+                    <view class='cp-content'>
+                        <text style='word-break: break-all;flex:3'>{{item.goods_name}}</text>
+                        <view class="num">
+                            <text style='color: lightgray;'>¥ {{item.goods_price}}</text>
+                            <text style='color: lightgray;'>x {{item.return_goods_num}}</text>
+                        </view>
+                    </view>
+                </view>
+            </view>
+</view>
+<view class="container" style="height:{{_height}}px">
+	<view class="eq">
+		<view class="q">
+			<text>退货数量</text>
+		</view>
+		<view class="numq">
+			<text class="del" bindtap="del">-</text>
+			<input type="number" class="textNum" value="{{num}}" bindinput="bindinput" />
+			<text class="add" bindtap="add">+</text>
+		</view>
+	</view>
+	<view style="text-align:right">退款金额：<text style="color:#f35b4a">{{totalPrice*num}}</text></view>
+	<view style="height:{{__height}}px" class="submit"><button class="submit_btn" bindtap="applicationForReturn" disabled="{{isDisabled}}">申请{{title}}</button></view>
+</view>

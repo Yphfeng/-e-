@@ -1,0 +1,11 @@
+{
+  "navigationBarTitleText": "数据",
+  "disableScroll": false,
+  "usingComponents": {
+    "arcProgress": "../../components/arcProgress/arcProgress",
+    "columnCharts": "../../components/columnCharts/columnCharts",
+    "calendar": "../../components/calendarCompont/calendar",
+    "timePointComponent": "timePointComponent/timePointComponent",
+    "treatmentComponent": "treatmentComponent/treatmentComponent"
+  }
+}

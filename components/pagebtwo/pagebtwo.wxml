@@ -1,0 +1,5 @@
+<view class='pagelist'>
+  <view class='pagebtn pagepre {{pageinfo.pageIndex==1?"unable":"able"}}' bindtap='pagepre' >上一页</view>
+  <view class='pageinfo'>{{pageinfo.pageIndex}}/{{pageinfo.pagesum}}</view>
+  <view class='pagebtn pagenext {{pageinfo.pageIndex==pageinfo.pagesum?"unable":"able"}}' bindtap="pagenext">下一页</view>
+</view>

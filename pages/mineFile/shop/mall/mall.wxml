@@ -1,0 +1,7 @@
+<!--mall.wxml-->
+<!-- <shopHome wx:if="{{showPage == 0}}" />
+<shopCart wx:elif="{{showPage == 1}}" />
+<shopOrder topToolBarItems='{{topToolBarItems}}' wx:elif="{{showPage == 2}}" />
+
+ <toolBar tools="{{tools}}" bindtapEvent="toolBarTapEvent" style="position: fixed; bottom: 0; left: 0; right: 0;"></toolBar> -->
+

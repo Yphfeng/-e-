@@ -1,0 +1,2 @@
+<!--pages/mineFile/ebi/ebiRule/ebiRule.wxml-->
+<image src='{{imageSrc}}'  style='width: {{imageWidth}}px; height: {{imageHeight}}px'/>

@@ -1,0 +1,28 @@
+<!--pages/dynamicdFile/dynamicDetail2/dynamicDetail2.wxml-->
+<video wx:if="{{videoSrc}}" class='video' src='{{videoSrc}}'></video>
+<view class='container'>
+  <view class='flex-between' style='position:relative'>
+    <view class='title text-overflow'>{{title}}</view>
+    <image wx:if="{{isShare}}" class='icon-share' src='../../../images/icon-back.png' bindtap='back'></image>
+    <block wx:else>
+      <image class='icon-share' src='../../../images/icon-share@2x.png'></image>
+      <button class='btn-share' open-type="share"></button>
+    </block>
+  </view>
+  <view class='author'>
+    <text wx:if='{{author!=null}}'>{{author}}</text>
+    <text class='margin-left15'>{{time}}</text>
+  </view>
+  <view class='detail'>
+    <!-- <block wx:if='{{videoSrc==""}}'>
+      <view wx:for='{{detailContent}}' wx:key>
+        <view wx:if='{{item.detailType=="text"}}' class='detailContent'>{{item.content}}</view>
+        <image wx:else class='detailImage' src='{{item.content}}'></image>
+      </view>
+    </block> -->
+    <view class='contentbox'>{{content}}</view>
+    <view class='imgbox {{item.isload?"":"backgrounddd"}}' wx:for='{{images}}'  wx:key >
+       <image class='detailImage {{item.isload?"opacity1":""}}' src='{{item.src}}' mode="widthFix" bindload="imageLoad"  data-imageindex='{{index}}'></image>
+    </view>
+  </view>
+</view>

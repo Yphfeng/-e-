@@ -1,0 +1,129 @@
+/* pages/merchants/check/check.wxss */
+
+.list-item{
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  padding: 0 20rpx;
+  box-sizing: border-box;
+  justify-content: space-between
+}
+.ship{
+  font-size: 24rpx;
+}
+.check{
+  margin-right: 20rpx
+}
+.box{
+  
+}
+.head{
+  padding: 20rpx;
+  border-bottom: 1rpx solid #ccc;
+  position: relative;
+  font-size: 24rpx;
+  line-height: 50rpx;
+  box-shadow: 5rpx 3rpx 10rpx  black;
+  position: relative;
+  z-index: 10;
+}
+/* 下拉框 */
+.select{
+  padding-left: 10rpx;
+  width: 300rpx;
+  height: 50rpx;
+  border-radius: 5rpx;
+  border: 1rpx solid #ccc;
+  background: white;
+  display: flex;
+  justify-content: space-between
+}
+.downlist{
+  display: flex;
+  width:50rpx;
+  border-left: 1rpx solid #ccc;
+  align-items: center;
+  justify-content: center;
+}
+.downlist image{
+  width: 80%;
+  height: 80%;
+  transform: rotate(90deg);
+}
+.selectlist{
+  position: absolute;
+  border-left: 1px solid #ccc;
+  border-right: 1px solid #ccc;
+  background: white;
+}
+.slist{
+  padding-left: 10rpx;
+  width: 300rpx;
+  border-bottom: 1rpx solid #ccc;
+}
+
+/* 列表 */
+.list{
+  position: fixed;
+  top: 97rpx;
+  width: 100%;
+  height: 1000rpx;
+  padding:5rpx 35rpx;
+  font-size: 24rpx;
+  line-height: 50rpx;
+}
+.listpro{
+  height: 100rpx;
+  /* line-height: 100rpx; */
+  padding-left: 20rpx;
+  position: relative;
+}
+.dod{
+  display: inline-block;
+  width: 24rpx;
+  height: 24rpx;
+  border-radius: 50%;
+  background: #9AC5FF;
+  transform: translateY(4rpx) translateX(-5rpx);
+}
+.shoppro{
+  padding-left: 28rpx;
+  border-bottom: 1px dashed #666;
+}
+.shoppro text{
+  margin-right: 60rpx;
+}
+.goproduct{
+  width: 40rpx;
+  height: 40rpx;
+  position: absolute;
+  right: 48rpx;
+  top: 32rpx;
+}
+/* 分页按钮 */
+.pagebtn{
+  position: fixed;
+  bottom: 20rpx;
+  right: 20rpx;
+  margin-top: 20rpx;
+  display: flex;
+  justify-content: flex-end;
+}
+.pagebtn view{
+  background: white;
+  display: inline-block;
+  padding: 5rpx 7rpx;
+  font-size: 24rpx;
+  border: 1px solid #ccc;
+  margin-left: 5rpx;
+}
+.pagebtn .pagebtnactive{
+  background: #9AC5FF;
+}
+.pagebtnlist{
+  width: 28rpx;
+  text-align: center;
+}
+.pagenext{
+  margin-right: 20rpx;
+}

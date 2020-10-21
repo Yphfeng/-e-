@@ -1,0 +1,29 @@
+<view class='integralView' style='width: 100%; height: 150px; display: flex; flex-direction: column; justify-content: flex-start; align-items: center; font-size: 28rpx; border-bottom: 2px solid lightgray;'>
+  <text style='font-size: 50px;'>{{userPoints}}</text>
+  <navigator url='integralRule/integralRule' style='line-height: 30px; padding: 0px 10px; margin: 10px 0px;'>(点击查看积分规则)</navigator>
+</view>
+
+<view style='width: 100%; display: flex; flex-direction: row; justify-content: flex-start; text-align: center; font-size: 28rpx; border-bottom: 1rpx solid lightgray; line-height: 40px; height: 40px;'>
+  <text style='flex-grow: 1; border-right: 1rpx solid lightgray;'>时间</text>
+  <text style='flex-grow: 1; border-right: 1rpx solid lightgray;'>事件</text>
+  <text style='flex-grow: 1; border-right: 1rpx solid lightgray;'>积分</text>
+  <text style='flex-grow: 1; border-right: 1rpx solid lightgray;'>详情</text>
+</view>
+
+<scroll-view style='width: 100%; height: {{scrollViewHeight}}px;'>
+  <view style='width: 100%; display: flex; flex-direction: row; justify-content: flex-start; text-align: center; font-size: 28rpx; border-bottom: 1rpx solid lightgray; line-height: 40px; height: 40px;' wx:for='{{recordList}}' wx:key="index">
+    <text style='width: {{width / 4}}px; border-right: 1rpx solid lightgray;'>{{item.time}}</text>
+    <text style='width: {{width / 4}}px; border-right: 1rpx solid lightgray;'>{{item.event}}</text>
+    <text style='width: {{width / 4}}px; border-right: 1rpx solid lightgray;'>{{item.point}}</text>
+    <text style='width: {{width / 4}}px; border-right: 1rpx solid lightgray; overflow: hidden;'>{{item.detail}}</text>
+  </view>
+
+</scroll-view>
+
+
+<view style='position: absolute; left: 0px; right: 0px; bottom: 0px; display: flex; flex-direction: row; justify-content: space-around; text-align: center; font-size: 28rpx; border-bottom: 1rpx solid lightgray; line-height: 49px; border-top: 1rpx solid lightgray;'>
+  <text style='flex-grow: 1;' bindtap='pageEvent' data-type='0'>第一页</text>
+  <text style='flex-grow: 1;' bindtap='pageEvent' data-type='1'>上一页</text>
+  <text style='flex-grow: 1;' bindtap='pageEvent' data-type='2'>下一页</text>
+  <text style='flex-grow: 1;' bindtap='pageEvent' data-type='3'>最后一页</text>
+</view>

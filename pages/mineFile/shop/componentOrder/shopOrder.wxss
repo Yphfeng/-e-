@@ -1,0 +1,78 @@
+/* pages/mineFile/shop/componentOrder/shopOrder.wxss */
+
+.orders{
+  background: #fff;
+  display: flex;
+  flex-direction: column; 
+  justify-content: flex-start; 
+  width: 100%;  
+  margin-bottom: 20rpx; 
+  box-sizing: border-box;
+}
+.orders:first-child{
+  margin-top: 20rpx;
+}
+.status{
+  display: flex; 
+  flex-direction: row; 
+  justify-content: center; 
+  align-items: center; 
+  font-size: 28rpx; 
+  line-height: 47rpx;
+}
+.status text{
+  margin-left: 20rpx;
+}
+.orderItem{
+  background: #f3f0f0;
+  margin-bottom: 10rpx;
+  padding: 10rpx 20rpx;
+}
+.orders:last-child{
+  margin-bottom: 0;
+}
+.cp-content{
+  flex:1;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-start;
+}
+.it{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: flex-start;
+  font-size: 24rpx;
+  width: 100%;
+}
+.it .title{
+  font-size: 28rpx;
+  word-break: break-all;
+}
+.num{
+  flex:1;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-end;
+}
+.statusButton{
+  padding: 20rpx;
+}
+.order_no{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+.orderText{
+  border: 0.5px solid lightgray; 
+  border-radius: 7px; width: 80px; 
+  line-height: 28px; 
+  text-align:center; 
+  font-size: 14px; 
+  background-color: #f35b4a; 
+  color: white;
+  margin-left: 20rpx;
+}

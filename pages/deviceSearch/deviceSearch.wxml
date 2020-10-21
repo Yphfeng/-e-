@@ -1,0 +1,23 @@
+<!--pages/deviceSearch/deviceSearch.wxml-->
+<view class='topView'>
+    <view style='color: {{searchViewColor}}' bindtap='bindingTypeEvent' data-type='stopSearch' wx:if="{{isBeginSearch}}">搜索中...</view>
+    <view style='color: {{searchViewColor}};' bindtap='bindingTypeEvent' data-type='beginSearch'  wx:else>重新搜索</view>
+    <view class='lineView'></view>
+    <view style='color: {{QRViewColor}}'  bindtap='bindingTypeEvent' data-type='QR'>扫码绑定</view>
+</view>
+
+ <scroll-view style='height: {{scrollViewHeight}}px;' scroll-y>
+    <radio-group class="radio-group" bindchange="radioChange">
+      <view class='deviceItem itemView' wx:for="{{devices}}">
+        <view class='leftView'>
+          <text>{{item.deviceCode}}</text>
+          <text>{{item.deviceIdentificationCode}}</text>
+        </view>
+        <view class='rightView'>
+          <radio value="{{item.deviceIdentificationCode}}" checked="{{item.checked}}" />
+        </view>
+      </view>
+    </radio-group>
+  </scroll-view>
+
+   <view class='submitView' bindtap='submitEvient'>提交</view>  

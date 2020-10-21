@@ -1,0 +1,2 @@
+<canvas canvas-id='daysArc' style='width: {{width}}px; height: {{width}}px; ' wx:if="{{isShow}}"></canvas>
+  

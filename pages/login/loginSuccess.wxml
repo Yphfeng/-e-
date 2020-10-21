@@ -1,0 +1,12 @@
+<!--pages/login/loginSuccess.wxml-->
+<view>
+  <view class='title'>请选择用户身份：</view>
+  <view class='container' wx:if="{{user_type == 1}}" style='height: {{_height}}px'>
+    <button class='btn btn-primary' bindtap='goChannel'>渠道商</button>
+    <button class='btn btn-primary' bindtap='goUser'>用户</button>
+  </view>
+  <view class='container' wx:if="{{user_type == 3}}" style='height: {{_height}}px'>
+    <button class='btn btn-primary' bindtap='goMerchants'>商户</button>
+    <button class='btn btn-primary' bindtap='goUser'>用户</button>
+  </view>
+</view>

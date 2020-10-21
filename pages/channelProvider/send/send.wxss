@@ -1,0 +1,49 @@
+/* pages/merchants/send/send.wxss */
+.keyWord.error{
+  border-color: red;
+}
+.container{
+  padding: 0 50rpx;
+}
+.phone-content{
+  padding-bottom: 50rpx;
+}
+.phone-content input{
+  font-size: 32rpx;
+}
+.keyWord{
+  border:2rpx solid #fff;
+  padding: 12rpx 20rpx;
+}
+.input-placeholder{
+  color:#fff;
+}
+.sub-button{
+  line-height: 80rpx;
+  font-size: 30rpx;
+  margin-top: 40rpx;
+}
+.content{
+  padding: 20rpx;
+  background: #F8F8F8;
+  color: #000;
+  text-align: center;
+}
+.elseContent{
+   padding: 20rpx;
+  background: #F8F8F8;
+  color: #000;
+}
+.elseContent .item{
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items:flex-start;
+  font-size: 28rpx;
+  padding: 20rpx 0;
+}
+.elseContent .item .text{
+  width: 80px;
+  text-align: right;
+  display: inline-block;
+}

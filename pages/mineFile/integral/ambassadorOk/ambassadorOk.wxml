@@ -1,0 +1,39 @@
+<!--pages/mineFile/integral/ambassadorOk/ambassadorOk.wxml-->
+<view class='main'>
+  <view class='list' bindtap='gorecomuser'>
+    <view class='icon'>
+    <image src='/images/tjyh@2x.png'></image>
+    </view>
+    <view class='rtest'>
+      <view class='title'>推荐用户</view>
+      <view class='info'>分享二维码,扫描注册的用户</view>
+    </view>
+  </view>
+  <view class='list' bindtap='gainRecording'>
+    <view class='icon'>
+    <image src='/images/syjl@2x.png'></image>
+    </view>
+    <view class='rtest'>
+      <view class='title' >收益记录</view>
+      <view class='info'>推荐用户消费,获得的奖金</view>
+    </view>
+  </view>
+  <view class='list' bindtap='goearning'>
+    <view class='icon'>
+    <image src='/images/syye@2x.png'></image>
+    </view>
+    <view class='rtest'>
+      <view class='title'>收益余额</view>
+      <view class='info'>查看目前账户中的收益余额</view>
+    </view>
+  </view>
+  <view class='list' bindtap='gorecordDraw'>
+    <view class='icon'>
+      <image src='/images/txjl@2x.png'></image>
+    </view>
+    <view class='rtest'>
+      <view class='title'>提现记录</view>
+      <view class='info'>收益余额可提现微信钱包</view>
+    </view>
+  </view>
+</view>

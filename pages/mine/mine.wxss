@@ -1,0 +1,184 @@
+/* mine.wxss */
+
+.textCSS {
+  font-family: STHeitiSC-Light;
+  font-size: 32rpx;
+  color: #fff;
+  line-height: 45rpx;
+  background: transparent;
+  border: none;
+  border-radius: 0;
+  padding: 0 10rpx;
+}
+.textCSS::after{
+   border: none;
+  border-radius: 0;
+}
+
+.textCSS2 {
+  font-family: STHeitiSC-Light;
+  font-size: 24rpx;
+  color: #000;
+}
+
+.textCSS3 {
+  font-family: STHeitiSC-Light;
+  font-size: 26rpx;
+  text-align: center;
+  margin-left: 20rpx;
+}
+
+.meContainer {
+  width: 100%;
+  height: 332rpx;
+  background-color: #f35b4a;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+}
+.userAvtar{
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: center;
+}
+.avtar{
+  width: 132rpx;
+  height: 132rpx;
+  border-radius: 66rpx;
+  margin-left: 28rpx;
+  margin-right: 28rpx;
+}
+
+ .signBTN::after {
+  border: none;
+}
+
+#meContariner_userImage {
+  width: 132rpx;
+  height: 132rpx;
+  border-radius: 66rpx;
+}
+
+.userMessage {
+  height: 90rpx;
+  flex: 1 1 auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+.userName{
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: flex-start;
+}
+
+.editView {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+}
+
+.meContainer_userMessage {
+  width: 287rpx;
+  height: 90rpx;
+  display: flex;
+  flex-direction: column;
+  align-content: center;
+}
+
+.moneyContainer {
+  width: 100%;
+  height: 170rpx;
+  background-color: #fff;
+  display: flex;
+}
+
+.item {
+  flex: 0 0 25%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.itemText {
+  margin-bottom: 32rpx;
+}
+
+.applicationContainer {
+  width: 100%;
+  height: 435rpx;
+  display: flex;
+  flex-flow: row wrap;
+  align-content: flex-start;
+}
+
+.application_title {
+  display: flex;
+  align-items: center;
+  height: 67rpx;
+  box-sizing: border-box;
+  background-color: white;
+  flex: 0 0 100%;
+  border: 1px solid #efefef;
+}
+
+.applicationItem {
+  flex: 0 0 33.333%;
+  height: 183rpx;
+  background-color: #fff;
+  box-sizing: border-box;
+  border: 1px solid #efefef;
+  display: flex;
+  flex-direction: column;
+}
+
+.applicationItem .connectButton {
+  width: 100%;
+  height: 100%;
+  background-color: white;
+  border: 0rpx;
+  display: flex;
+  flex-direction: column;
+}
+.applicationItem .connectButton::after{
+  border: none;
+}
+
+.itemImage {
+  width: 100%;
+  height: 136rpx;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.tabBar{
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  font-size: 28rpx;
+  background: #fff;
+  padding: 20rpx 0;
+  border-top:1rpx solid #ddd;
+}
+.tabBar .item{
+  display: flex;
+  flex-direction: row;
+  align-items:center;
+  justify-content: space-around;
+}
+.navItem{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding:0 43rpx;
+}

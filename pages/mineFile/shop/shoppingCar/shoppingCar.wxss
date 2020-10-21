@@ -1,0 +1,48 @@
+/* shoppingCar.wxss */
+page {
+    background-color: #efefef;
+}
+
+.containerScrollview .noGoods {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    height: 200rpx;
+}
+
+.containerScrollview .noGoods text {
+
+    font-size: 28rpx;
+    font-style: STHeitiSC-Light;
+}
+
+.toolBarView {
+
+    background-color: white;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;    
+}
+
+.toolBarView .selectAllStatusView {
+     margin-left: 20rpx;
+    display:  flex;
+    flex-direction: row;
+    align-items: center; 
+}
+
+.toolBarView view text {
+    margin-left: 10rpx;
+}
+
+.toolBarView .submittedView {
+    line-height: 49px;
+    flex: 0 0 40%;
+    font-family: STHeitiSC-Light;
+    font-size: 34rpx;
+    color: white;
+    background-color: red;
+    text-align: center;    
+}

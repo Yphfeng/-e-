@@ -1,0 +1,57 @@
+/* pages/merchants/add/add.wxss */
+.keyWord.error{
+  border-color: red;
+}
+.container{
+  padding: 50rpx;
+}
+.sub-button{
+  line-height: 60rpx;
+  font-size: 30rpx;
+  margin-top: 40rpx;
+}
+.weui-cell_input {
+  padding-top: 0;
+  padding-bottom: 0;
+}
+.weui-cells {
+  position: relative;
+  margin-top: 1.17647059em;
+  background-color: #fff;
+  line-height: 1.41176471;
+  font-size: 17px;
+}
+.weui-cell {
+  padding: 10px 15px;
+   position: relative; 
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: flex;
+  -webkit-box-align: center;
+  -webkit-align-items: center;
+  align-items: center;
+}
+
+.weui-label {
+  width: 95px;
+  word-wrap: break-word;
+  word-break: break-all;
+}
+.weui-cell__bd {
+  -webkit-box-flex: 1;
+  -webkit-flex: 1;
+  flex: 1;
+}
+
+.weui-input {
+  height: 1.58823529em;
+  min-height: 1.58823529em;
+  line-height: 1.58823529em;
+}
+.weui-cells_after-title {
+  margin-top: 0;
+}
+.set-input{
+  border:1px solid #ccc;
+  padding: 0 20rpx;
+}

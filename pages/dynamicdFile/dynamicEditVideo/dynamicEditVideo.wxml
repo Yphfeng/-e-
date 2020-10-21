@@ -1,0 +1,36 @@
+<!--pages/dynamicdFile/dynamicEditVideo/dynamicEditVideo.wxml-->
+<view class='container'>
+<form bindsubmit="submit">
+  <view class='title'>
+    <view class='title-laber'>标题</view>
+    <input class='title-content' name="title" value='{{mapShare.title}}' placeholder='输入内容标题' bindinput='changeTitle'></input>
+  </view>
+  <view class='content'>
+    <view class='content-laber'>内容</view>
+    <view class='flex'>
+      <view class='flex-1 addvideo'>
+        <video wx:if='{{videoSrc}}' src='{{videoSrc}}' controls='{{false}}'>
+          <cover-image class="icon-delete" src="../../../images/icon-delete@2x.png" data-type='videoSrc' catchtap='delete'/>
+        </video>
+        <block wx:else>
+          <image class='icon-add' src='../../../images/icon-add@2x.png' bindtap='chooseVideo'></image>
+          <view>添加视频</view>
+        </block>
+      </view>
+      <view class='flex-1 addvideoPic'>
+        <image wx:if='{{videoiamgeSrc}}' class='videoImage' src='{{videoiamgeSrc}}' mode="aspectFill" >
+           <cover-image class="icon-delete" src="../../../images/icon-delete@2x.png" data-type='videoiamgeSrc'  catchtap='delete'/></image>
+        <block wx:else>
+          <image class='icon-add' src='../../../images/icon-add@2x.png' bindtap='chooseImage'></image>
+          <view>添加视频封面</view>
+        </block>
+      </view>
+    </view>
+  </view>
+  <textarea placeholder='文章内容编辑' maxlength='10000000' bindinput='changeContent' name="context" value='{{mapShare.context}}'></textarea>
+  <button class="btn" formType="submit" bindtap=""  wx:if='{{!mapShare.id}}'>发布</button>
+  <button class="btn" formType="submit" bindtap=""  wx:if="{{mapShare.id && mapShare.statusCode == '1'}}">保存</button>
+      <button class="btn" formType="submit" bindtap=""  wx:if="{{mapShare.id && mapShare.statusCode == '3'}}">重新发布</button>
+  <!-- <cover-view class='btn' catchtap='submit'>发布</cover-view> -->
+  </form>
+</view>

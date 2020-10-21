@@ -1,0 +1,31 @@
+<!--pages/merchants/send/send.wxml-->
+
+<image src="/images/3.jpg" style='position: absolute;left:0;top:0;width:100%;height:100%;z-index:-1'></image>
+<form>
+  <view class='container'>
+    <view class="weui-cell__bd" style='width: 100%;padding-top:50rpx'>
+      <view class='phone-content'>
+        <text>设备总数：{{ store_num }}</text>
+      </view>
+      <view class='elseContent'>
+       <view class='item'>
+          <view>
+            <text class='text'>设备型号：</text>{{device_code}}</view>
+        </view>
+        <view class='item'>
+          <view>
+            <text class='text'>设备编码：</text>{{device_sn}}</view>
+        </view>
+        <view class='item'>
+          <view>
+            <text class='text'>发货状态：</text>{{status}}</view>
+        </view>
+      </view>
+      <view class='phone-content' style='display:none'>
+        <input placeholder="用户id" name="store_id" value='{{id}}' class='keyWord weui-input' disabled="true" />
+        <input name="armariumScienceSession" value="{{token}}" style="display:none" />
+      </view>
+    </view>
+    <button class="weui-btn sub-button" type="default" bindtap='formSubmit' style='width:100%'>扫码发货</button>
+  </view>
+</form>

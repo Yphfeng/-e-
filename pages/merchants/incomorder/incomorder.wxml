@@ -1,0 +1,30 @@
+<!--pages/merchants/incomorder/incomorder.wxml-->
+<image src="/images/3.jpg" style='position: absolute;left:0;top:0;width:100%;height:100%;z-index:-1'></image>
+<view class='info'>
+  <view class='head'>
+    <view class='num'>
+      <text>订单数量:</text>
+      <text>{{datasum}}</text>
+    </view>
+  </view>
+  <view class='list'>
+    <view class='listinfo' wx:for="{{datalist}}" wx:key="{{index}}">
+      <view class='name'>
+        <view>订单号:<text>{{item.order_id}}</text></view>
+      </view>
+      <view class='goodsnum'>
+        <text>设备数量:<text>  {{item.device_num}}台</text></text>
+        <text>补贴金额:  {{item.store_subsidy_money}}元</text>
+        <text>下单时间:  {{item.order_time}}</text>
+      </view>
+    </view>
+  </view>
+  <!-- <view class='pagebtn' >
+    <view bindtap='getpre'>上一页</view>
+    <view wx:for="{{pagesum}}" class="{{pageindex==index+1?'pagebtnactive':''}}" wx:item="{{item}}" wx:key="{{index}}" bindtap='changeindex' data-pageindex="{{index+1}}">{{index+1}}</view>
+    <view class='pagenext' bindtap='getnext'>下一页</view>
+  </view> -->
+  <!-- 分页 -->
+<pagebtn pageinfo="{{ {pagesum:pagesum,pageindex:pageindex} }}" bind:changepage="changepage"></pagebtn>
+</view>
+

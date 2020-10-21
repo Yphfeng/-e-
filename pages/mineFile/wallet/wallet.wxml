@@ -1,0 +1,24 @@
+<!--wallet.wxml-->
+<view class="containerView" style="height: {{containerViewHeight}}px">
+  <view class="view1">
+    <view class="myBalanceView">
+      <text class="text1">我的余额（元）</text>
+      <text class="text2">{{userMoney}}</text>
+      <view class="textBord">
+        <text class="text1">提现说明</text>
+      </view>
+    </view>
+<!--     <view class="reflectedView" bindtap="reflectedAction">
+      <text class="text">提现</text>
+    </view>
+    <navigator url='recharge'>
+      <view class="rechargeView" bindtap="rechargeAction">
+        <text class="text">充值</text>
+      </view>
+    </navigator> -->
+
+    <!-- <view class="rechargeView" bindtap="gotoMallAction">
+            <text class="text">前往商城</text>
+        </view> -->
+  </view>
+</view>

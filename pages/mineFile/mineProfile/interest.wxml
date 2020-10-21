@@ -1,0 +1,12 @@
+<!--userMessageLike.wxml-->
+<view class="containerView" style='padding-bottom: 100rpx'>
+
+  <view class="firstView" wx:for="{{likes}}" wx:key="id">
+    <text>{{item.type_name}}:</text>
+     <view class="textView">
+      <text wx:for="{{item.list}}" wx:key="item.id" style="border-color: {{item.textColor}}; color: {{item.textColor}}; font-size: 32rpx; width: 320rpx" bindtap="textAction" data-id="{{item.id}}">{{item.interest_name}}</text>
+    </view>
+  </view>
+</view>
+
+<button class="qbButton" style='position: fixed; bottom: 0; left: 0; right: 0;' bindtap="nextAction">保存</button>

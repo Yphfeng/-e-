@@ -1,0 +1,215 @@
+<!--pages/mineFile/shop/componentOrder/shopOrder.wxml-->
+<import src="../../../../components/tabBar/tabBar.wxml" />
+<template is="tabBar" data="{{tabBar:bindData.tabBar}}" />
+<view class='topToolBar' style='width: 100%; height: 44px; display: flex; flex-direction: row; justify-content: space-around; align-items: center; background-color: white; border-bottom: 1rpx solid lightgray;'>
+    <view wx:for="{{topToolBarItems}}" wx:key="key" style='flex-grow: 1; text-align: center;  line-height: 44px;' bindtap='topToolBarEvent' data-key="{{item.key}}">
+        <text style="color: {{item.isSelected ? '#f35b4a' : 'black'}}; font-size: 28rpx;">{{item.text}}</text>
+    </view>
+</view>
+<view wx:if="{{isNoData}}">
+    <!-- 待支付 -->
+    <view wx:if="{{index == 0}}">
+        <scroll-view style='width: 100%; height: {{scrollViewHeight}}px; display: flex; flex-direction: column; justify-content: flex-start;background: #f3f0f0 ' scroll-y>
+            <!-- //订单页面 -->
+            <view class='orders' wx:for='{{order_data}}' wx:key="order_sn" data-orderid="{{item.order_id}}">
+                <view class='orderIdView' style='line-height: 40px; display: flex; flex-direction: row; justify-content: space-between; align-items: center; font-size: 28rpx;padding:0 20rpx;'>
+                    <text>订单号: {{item.order_sn}}</text>
+                </view>
+                <view class='orderItems' style=' display: flex; flex-direction: column; justify-content: flex-start; box-sizing: border-box;' catchtap='statusButtonEvent' data-event='payDetails_{{item.order_id}}' data-index='0'>
+                    <view class='orderItem' style='display: flex; direction: row; justify-content: flex-start; align-items: space-around; box-sizing: border-box;' wx:for="{{item.goods_list}}" wx:key="id" wx:for-item="itemName">
+                        <image src='{{itemName.goods_img_url}}' style='width: 60px; height: 70px; margin-right: 10px; ' />
+                        <view class='cp-content'>
+                            <view class="it">
+                                 <text class="title">{{itemName.goods_name}}</text>
+                                <view class="num">
+                                <text style='color: lightgray;'>¥ {{itemName.goods_price}}</text>
+                                <text style='color: lightgray;'>x {{itemName.goods_num}}</text>
+                            </view>
+                            </view>
+                            <view class="it" wx:if="{{itemName.goods_spec_name}}">
+                                    <text style='word-break: break-all'>规格</text>
+                                    <text style="color: lightgray;">{{itemName.goods_spec_name}}</text>
+                                </view>
+                            
+                        </view>
+                    </view>
+                </view>
+                <view class='orderStatusView' style='display: flex; flex-direction: row; justify-content: flex-end; align-items: center; border-bottom: 2rpx solid lightgray; padding: 0 20rpx 10rpx'>
+                    <view class='status'>
+                        <!--   <text>状态: {{item.orderStatusString}}</text> -->
+                        <text>总价: ¥ {{item.total_amount}}</text>
+                    </view>
+                </view>
+                <!-- 待支付 -->
+                <view class='statusButton' style='display: flex; flex-direction: row; justify-content: flex-end; align-items: flex-end; font-size: 28rpx;'>
+                    <view style='border: 1rpx solid lightgray; border-radius: 7px; width: 80px; line-height: 28px; text-align:center; margin-right: 10px; font-size: 28rpx' catchtap='statusButtonEvent' data-event='canceOrder_{{item.order_id}}'>取消</view>
+                    <view style='border: 1rpx solid lightgray; border-radius: 7px; width: 80px; line-height: 28px; text-align:center; font-size: 28rpx; background-color: #f35b4a; color: white;' catchtap='statusButtonEvent' data-event='payDetails_{{item.order_id}}' data-index='0'>去付款</view>
+                </view>
+            </view>
+        </scroll-view>
+    </view>
+    <!-- 待发货 -->
+    <view wx:if="{{index == 1}}">
+        <scroll-view style='width: 100%; height: {{scrollViewHeight}}px; display: flex; flex-direction: column; justify-content: flex-start;background: #f3f0f0 ' scroll-y>
+            <!-- //订单页面 -->
+            <view class='orders' wx:for='{{order_data}}' wx:key="order_sn" data-orderid="{{item.order_id}}">
+                <view class='orderIdView' style='line-height: 40px; display: flex; flex-direction: row; justify-content: space-between; align-items: center; font-size: 28rpx;padding:0 20rpx;'>
+                    <text>订单号: {{item.order_sn}}</text>
+                </view>
+                <view class='orderItems' style=' display: flex; flex-direction: column; justify-content: flex-start; box-sizing: border-box;' catchtap='statusButtonEvent' data-event='sendDetails_{{item.order_id}}' data-index='1'>
+                    <view class='orderItem' style='display: flex; direction: row; justify-content: flex-start; align-items: space-around; box-sizing: border-box;' wx:for="{{item.goods_list}}" wx:key="id" wx:for-item="itemName">
+                        <image src='{{itemName.goods_img_url}}' style='width: 60px; height: 70px; margin-right: 10px; ' />
+                        <view class='cp-content'>
+                            <view class="it">
+                                 <text class="title">{{itemName.goods_name}}</text>
+                                <view class="num">
+                                <text style='color: lightgray;'>¥ {{itemName.goods_price}}</text>
+                                <text style='color: lightgray;'>x {{itemName.goods_num}}</text>
+                            </view>
+                            </view>
+                            <view class="it" wx:if="{{itemName.goods_spec_name}}">
+                                    <text style='word-break: break-all'>规格</text>
+                                    <text style="color: lightgray;">{{itemName.goods_spec_name}}</text>
+                                </view>
+                            
+                        </view>
+                    </view>
+                </view>
+                <view class='orderStatusView' style='display: flex; flex-direction: row; justify-content: flex-end; align-items: center; border-bottom: 2rpx solid lightgray; padding: 0 20rpx 10rpx'>
+                    <view class='status'>
+                        <!--   <text>状态: {{item.orderStatusString}}</text> -->
+                        <text>总价: ¥ {{item.total_amount}}</text>
+                    </view>
+                </view>
+                <!-- 待发货 -->
+                <view class='statusButton' style='display: flex; flex-direction: row; justify-content: flex-end; align-items: flex-end; font-size: 28rpx;'>
+                    <view style='border: 1rpx solid lightgray; border-radius: 7px; width: 80px; line-height: 28px; text-align:center; font-size: 28rpx; background-color: #f35b4a; color: white;' catchtap='statusButtonEvent' data-event='sendDetails_{{item.order_id}}' data-index='1'>退货</view>
+                </view>
+            </view>
+        </scroll-view>
+    </view>
+    <!-- 待收货 -->
+    <view wx:if="{{index == 2}}">
+        <scroll-view style='width: 100%; height: {{scrollViewHeight}}px; display: flex; flex-direction: column; justify-content: flex-start;background: #f3f0f0 ' scroll-y>
+            <!-- //订单页面 -->
+            <view class='orders' wx:for='{{order_data}}' wx:key="order_sn" data-orderid="{{item.order_id}}">
+                <view class='orderIdView' style='line-height: 40px; display: flex; flex-direction: row; justify-content: space-between; align-items: center; font-size: 28rpx;padding:0 20rpx;'>
+                    <text>订单号: {{item.order_sn}}</text>
+                </view>
+                <view class='orderItems' style=' display: flex; flex-direction: column; justify-content: flex-start; box-sizing: border-box;' catchtap='statusButtonEvent' data-event='receiveDetails_{{item.order_id}}' data-index='2'>
+                    <view class='orderItem' style='display: flex; direction: row; justify-content: flex-start; align-items: space-around; box-sizing: border-box;' wx:for="{{item.goods_list}}" wx:key="id" wx:for-item="itemName">
+                        <image src='{{itemName.goods_img_url}}' style='width: 60px; height: 70px; margin-right: 10px; ' />
+                        <view class='cp-content'>
+                            <view class="it">
+                                 <text class="title">{{itemName.goods_name}}</text>
+                                <view class="num">
+                                <text style='color: lightgray;'>¥ {{itemName.goods_price}}</text>
+                                <text style='color: lightgray;'>x {{itemName.goods_num}}</text>
+                            </view>
+                            </view>
+                            <view class="it" wx:if="{{itemName.goods_spec_name}}">
+                                    <text style='word-break: break-all'>规格</text>
+                                    <text style="color: lightgray;">{{itemName.goods_spec_name}}</text>
+                                </view>
+                           
+                        </view>
+                    </view>
+                </view>
+                <view class='orderStatusView' style='display: flex; flex-direction: row; justify-content: flex-end; align-items: center; border-bottom: 2rpx solid lightgray; padding: 0 20rpx 10rpx'>
+                    <view class='status'>
+                        <!--   <text>状态: {{item.orderStatusString}}</text> -->
+                        <text>总价: ¥ {{item.total_amount}}</text>
+                    </view>
+                </view>
+    
+                <!-- 待收货 -->
+                <view class='statusButton' style='display: flex; flex-direction: row; justify-content: flex-end; align-items: flex-end; font-size: 28rpx;'>
+                    <view style='border: 1rpx solid lightgray; border-radius: 7px; width: 80px; line-height: 28px; text-align:center; margin-right: 10px; font-size: 28rpx' catchtap='statusButtonEvent' data-event='receiveDetails_{{item.order_id}}' data-index='2'>确认收货</view>
+                    <view style='border: 1rpx solid lightgray; border-radius: 7px; width: 80px; line-height: 28px; text-align:center; margin-right: 10px; font-size: 28rpx' catchtap='statusButtonEvent' data-event='receiveDetails_{{item.order_id}}' data-index='2'>退货</view>
+                    <view style='border: 1rpx solid lightgray; border-radius: 7px; width: 80px; line-height: 28px; text-align:center; font-size: 28rpx; background-color: #f35b4a; color: white;' catchtap='statusButtonEvent' data-event='detail_{{item.order_id}}' data-courier_sn="{{item.courier_sn}}" data-courier_name="{{item.courier_name}}">物流详情</view>
+                </view>
+            </view>
+        </scroll-view>
+    </view>
+    <!-- 已完成 -->
+    <view wx:if="{{index == 3}}">
+        <scroll-view style='width: 100%; height: {{scrollViewHeight}}px; display: flex; flex-direction: column; justify-content: flex-start;background: #f3f0f0 ' scroll-y>
+            <!-- //订单页面 -->
+            <view class='orders' wx:for='{{order_data}}' wx:key="order_sn" data-orderid="{{item.order_id}}">
+                <view class='orderIdView' style='line-height: 40px; display: flex; flex-direction: row; justify-content: space-between; align-items: center; font-size: 28rpx;padding:0 20rpx;'>
+                    <text>订单号: {{item.order_sn}}</text>
+                </view>
+                <view class='orderItems' style=' display: flex; flex-direction: column; justify-content: flex-start; box-sizing: border-box;' catchtap='statusButtonEvent' data-event='completeDetails_{{item.order_id}}' data-index='3'>
+                    <view class='orderItem' style='display: flex; direction: row; justify-content: flex-start; align-items: space-around; box-sizing: border-box;' wx:for="{{item.goods_list}}" wx:key="id" wx:for-item="itemName">
+                        <image src='{{itemName.goods_img_url}}' style='width: 60px; height: 70px; margin-right: 10px; ' />
+                        <view class='cp-content'>
+                            <view class="it">
+                                 <text class="title">{{itemName.goods_name}}</text>
+                                <view class="num">
+                                <text style='color: lightgray;'>¥ {{itemName.goods_price}}</text>
+                                <text style='color: lightgray;'>x {{itemName.goods_num}}</text>
+                            </view>
+                            </view>
+                            <view class="it" wx:if="{{itemName.goods_spec_name}}">
+                                    <text style='word-break: break-all'>规格</text>
+                                    <text style="color: lightgray;">{{itemName.goods_spec_name}}</text>
+                                </view>
+                        </view>
+                    </view>
+                </view>
+                <view class='orderStatusView' style='display: flex; flex-direction: row; justify-content: flex-end; align-items: center; border-bottom: 2rpx solid lightgray; padding: 0 20rpx 10rpx'>
+                    <view class='status'>
+                        <!--   <text>状态: {{item.orderStatusString}}</text> -->
+                        <text>总价: ¥ {{item.total_amount}}</text>
+                    </view>
+                </view>
+            </view>
+        </scroll-view>
+    </view>
+    <!-- 退货 -->
+    <view wx:if="{{index == 4}}">
+        <scroll-view style='width: 100%; height: {{scrollViewHeight}}px; display: flex; flex-direction: column; justify-content: flex-start;background: #f3f0f0 ' scroll-y>
+            <!-- //订单页面 -->
+            <view class='orders' wx:for='{{order_data}}' wx:key="order_sn" data-orderid="{{item.order_id}}">
+                <view class='orderIdView' style='line-height: 40px; display: flex; flex-direction: row; justify-content: space-between; align-items: center; font-size: 28rpx;padding:0 20rpx;'>
+                    <text>订单号: {{item.order_sn}}</text>
+                </view>
+                <view class='orderItems' style=' display: flex; flex-direction: column; justify-content: flex-start; box-sizing: border-box;' catchtap='statusButtonEvent' data-event='orderDetails_{{item.order_id}}' data-index='4'>
+                    <view class='orderItem' style='display: flex; direction: row; justify-content: flex-start; align-items: space-around; box-sizing: border-box;' wx:for="{{item.goods_list}}" wx:key="id" wx:for-item="itemName">
+                        <image src='{{itemName.goods_img_url}}' style='width: 60px; height: 70px; margin-right: 10px; ' />
+                        <view class='cp-content'>
+                            <view class="it">
+                                  <text class="title">{{itemName.goods_name}}</text>
+                                <view class="num">
+                                <text style='color: lightgray;'>¥ {{itemName.goods_price}}</text>
+                                <text style='color: lightgray;' wx:if="{{itemName.return_status == 1 || itemName.return_status == 2}}">x {{itemName.return_goods_num}}</text>
+                                <text wx:else>x {{itemName.processing_num}}</text>
+                            </view>
+                            </view>
+                            <view class="it" wx:if="{{itemName.goods_spec_name}}">
+                                    <text style='word-break: break-all'>规格</text>
+                                    <text style="color: lightgray;">{{itemName.goods_spec_name}}</text>
+                                </view>
+                           
+                        </view>
+                    </view>
+                </view>
+                <view class='orderStatusView' style='display: flex; flex-direction: row; justify-content: flex-end; align-items: center; border-bottom: 2rpx solid lightgray; padding: 0 20rpx 10rpx'>
+                    <view class='status'>
+                        <text wx:if="{{item.return_status == 0}}">状态: 未退货</text>
+                        <text wx:elif="{{item.return_status == 1}}">状态: 已退货</text>
+                        <text wx:elif="{{item.return_status == 2}}">状态: 部分退货</text>
+                        <text wx:elif="{{item.return_status == 3}}">状态: 已换货</text>
+                        <text wx:elif="{{item.return_status == 4}}">状态: 部分换货</text>
+                        <text wx:else>状态: 退货中</text>
+                        <text>总价: ¥ {{item.returnAllPrice}}</text>
+                    </view>
+                </view>
+            </view>
+        </scroll-view>
+    </view>
+</view>
+<view wx:else class="order_no" style="width:100%;height:{{scrollViewHeight}}px">
+    <image src="/images/noOrder.png" style="width:64px;height:64px;margin-bottom:20px"></image>
+    <text>您还没有相关订单</text>
+</view>

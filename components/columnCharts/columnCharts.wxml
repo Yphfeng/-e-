@@ -1,0 +1,2 @@
+<!--components/columnCharts/columnCharts.wxml-->
+<canvas canvas-id="columnCanvas" class="canvas" disable-scroll="true" bindtouchstart="touchHandler" bindtouchmove="moveHandler" bindtouchend="touchEndHandler" style='background-color: yellow; width: {{width}}px; height: {{height}}px'></canvas>

@@ -1,0 +1,13 @@
+<view class='spage'>
+  <view catchtap='pagepre'>上一页</view>
+  <view class='pagesel' catchtap='changeshow' >
+    <text>
+    第{{pageinfo.pageindex}}页 
+    </text>
+    <image src='/images/fanhui_black@3x.png'></image>
+    <view wx:if="{{isShow}}">
+      <view bindtap='changindex' data-index='{{index+1}}' wx:for="{{pageinfo.pagesum}}" wx:key="{{index}}">第{{index+1}}页</view>
+    </view>
+  </view>
+  <view catchtap='pagenext'>下一页</view>
+</view>

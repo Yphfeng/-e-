@@ -1,0 +1,8 @@
+/* pages/home/commonFunctional.wxss */
+@import "home";
+
+.commonButton {
+  font-size: 28rpx; 
+  margin-right: 0rpx; 
+  line-height: 50rpx;
+}

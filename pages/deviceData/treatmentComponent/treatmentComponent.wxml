@@ -1,0 +1,5 @@
+<!--pages/deviceData/treatmentComponent/treatmentComponent.wxml-->
+<view style='display: flex; flex-direction: row; justify-content: center; align-items: center; flex-wrap: wrap; width: {{width}}px; height: {{height}}px; font-size: 28rpx; text-align: center;'>
+  <text style="width: 90px; line-height: 30px; border: 1rpx solid {{item.selected ? '#f35b4a' : 'black'}}; color: {{item.selected ? '#f35b4a' : 'black'}}; margin: 20rpx; border-radius: 6px;" wx:for="{{treatments}}" wx:key="sn" data-sn='{{item.course_data.course_type_sn}}'
+    bindtap='tapEvent'>{{item.course_data.course_name}}</text>
+</view>

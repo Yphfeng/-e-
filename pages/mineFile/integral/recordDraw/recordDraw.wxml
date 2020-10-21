@@ -1,0 +1,6 @@
+<!--pages/mineFile/integral/recordDraw/recordDraw.wxml-->
+<view class='main'>
+  <view class='datalist' wx:for="{{datalist}}" wx:key="{{index}}">
+    <text>{{item.apply_time}}</text><text>￥{{item.withdrawal_money}}</text>
+  </view>
+</view>

@@ -1,0 +1,15 @@
+<!--ebi.wxml-->
+<view class="containerView">
+    <view class="view1">
+        <view class="myBalanceView">
+            <text class="text1">E币</text>
+            <text class="text2">{{userEbi}}</text>
+            <view class="textBord">
+            <navigator class='text1' url='ebiRule/ebiRule'>E币规则</navigator>
+            </view>
+        </view>
+        <!-- <view class="rechargeView"   bindtap="gotoMallAction">
+            <text class="text">前往商城</text>
+        </view> -->
+    </view>
+</view>

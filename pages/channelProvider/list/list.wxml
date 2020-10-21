@@ -1,0 +1,13 @@
+<!--pages/merchants/list/list.wxml-->
+<image src="/images/3.jpg" style='position: absolute;left:0;top:0;width:100%;height:100%;z-index:-1'></image>
+<view class='box'>
+<scroll-view scroll-top="{{scrollTop}}" bindscroll="scroll" bindscrolltoupper="refresh" scroll-y='true' style="height:{{height}}px" bindscrolltolower='lower'>
+  <view wx:for="{{listData}}" data-id="{{index}}" wx:key="{{index}}" style="height:{{(height/10)-1}}px;width:100%;text-align:center;line-height:{{(height/6)-1}}px; border-bottom:1px solid #ccc" class='list-item'>
+    <view>{{item.name}}</view>
+    <view class='opt'>
+      <button class='we-ui check ship'  type="primary" data-uid="{{item.id}}" bindtap='check'>审核</button>
+      <button class='we-ui ship remove'  type="primary" data-uid="{{item.id}}" data-index="{{index}}" bindtap='remove'>删除</button>
+    </view>
+  </view>
+</scroll-view>
+</view>

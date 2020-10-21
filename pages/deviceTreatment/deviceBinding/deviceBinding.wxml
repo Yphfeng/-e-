@@ -1,0 +1,48 @@
+<!--pages/deviceTreatment/deviceBinding/deviceBinding.wxml-->
+<view class='topView' style='width: 100%; height: 44px; display: flex; flex-direction: row; justify-content: space-around; align-items: center; '>
+  <view style="color: {{item.isSelected ? '#f35b4a' : black}}; line-height: 44px; flex-grow: 1; font-size: 28rpx; text-align: center; border-bottom: 1rpx solid lightgray" wx:for="{{topToolBarItems}}" wx:key="key" bindtap='topViewTapEvnet' data-key='{{item.key}}'>
+    <text>{{item.title}}</text>
+  </view>
+</view>
+
+
+<scroll-view style="height: {{windowHeight - 44 - 49}}px; width: 100%; display: flex; flex-direction: column; align-content: flex-start; box-sizing: border-box;" scroll-y wx:if="{{pageStatus == 0}}">
+  <radio-group class="radio-group" bindchange="radioChange">
+    <view style='margin: 30rpx; padding: 20rpx; border-radius: 15rpx; border: 1rpx solid lightgray; display: flex; flex-direction: row;  justify-content: space-between; align-items: center; font-size: 28rpx; line-height: 60rpx;' wx:for="{{devices}}" wx:key='device_sn'>
+      <view class='leftView'>
+        <text>{{item.device_sn}}</text>
+        <text wx:if="{{item.bind_status == '1'}}">绑定中</text>
+        <text wx:else>未绑定</text>
+      </view>
+      <view class='rightView'>
+        <radio value="{{item.device_sn}}" checked="{{item.checked}}" />
+      </view>
+    </view>
+  </radio-group>
+</scroll-view>
+
+<view wx:if="{{pageStatus == 1}}" style='width: 100%; height: {{windowHeight - 44 - 49}}px;  display: flex; flex-direction: column; align-items: center; justify-content: flex-start; font-size: 28rpx;'>
+  <view style='margin-top: 40px;'>
+    <text style='font-size: 36rpx'>{{deviceId}}</text>
+  </view>
+  <view style='display: flex; flex-direction: row; justify-content: space-around; align-items: space-around; width: 100%; margin-top: 40px'>
+    <view style="line-height: 80px; width: 80px; text-align: center; background-color: #09bb0c; border-radius: 10px;  color: {{item.isSelected ? 'white' : 'black'}}" wx:for="{{types}}" wx:key="key" bindtap='typeEvent' data-key='{{item.key}}'>{{item.title}}</view>
+  </view>
+</view>
+
+<view style=' background-color: rgba(0, 0, 0, 0.4); position: fixed; left: 0; right: 0; top: 0; bottom: 0; font-size: 28rpx;' wx:if="{{isShowInputView}}">
+
+  <view style='margin-top: 60px; margin-left: 20px; margin-right: 20px; background-color: white; border-radius: 10px; height: 200px; display: flex; flex-direction: column; justify-content: flex-end; '>
+    <view style='align-self: stretch; flex: auto; display: flex; flex-direction: column; justify-content: center; border-bottom: 1rpx solid lightgray; padding: 0px 15px;'>
+      <input style='background-color: white; border: 1rpx solid lightgray; border-radius: 5px; line-height: 40px; padding: 0px 15px;' placeholder='请输入16为治疗仪编号' bindinput='inputEvent'/>
+      <text style='color: red;'>{{inputTipsText}}</text>
+    </view>
+    <view style='display: flex; flex-direction: row; justify-content: space-around; align-items: center; margin: 5px; text-align: center; line-height: 40px;'>
+      <view style='flex-grow: 1; color: gray;' bindtap='inputViewEvent' data-event='close'>取消</view>
+      <view style='flex-grow: 1; color: #f35b4a; border-left: 1rpx solid lightgray' bindtap='inputViewEvent' data-event='sure'>确定</view>
+    </view>
+  </view>
+</view>
+
+
+<view style='background-color: #09bb0c;  line-height: 49px; text-align: center; color: white;  border-radius: 5px; width: 100%;' bindtap='submitEvient'>提交</view>

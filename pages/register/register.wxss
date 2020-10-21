@@ -1,0 +1,53 @@
+/* register.wxss */
+page {
+  background-color: #efefef;
+}
+.containerView1 {
+  width: 100%;
+  background-color: #efefef;
+  display: flex;
+  flex-direction: column;
+  box-sizing: border-box;
+  padding: 100rpx 20rpx;
+}
+
+.inputStyle {
+  height: 80rpx;
+  background-color: #fff;
+  border-bottom: 1rpx solid #f35b4a;
+  padding: 0 20rpx;
+  /*border-radius: 10rpx;*/
+}
+
+.userNameInput {
+   margin: 150rpx  20rpx 0rpx;
+}
+.userPasswordInput {
+   margin: 20rpx  40rpx 0rpx;
+}
+
+.registerButton {
+   margin-top: 100rpx;
+   width: 80%;
+   background-color: #f35b4a;
+   color: white;
+}
+
+.checkNumberView {
+   width: 100%;
+   margin-top: 30rpx;
+   height: 80rpx;
+   display: flex;
+   justify-content: flex-start;
+   align-items:  center;
+}
+
+.inputCheckNumber {
+   width: 60%;
+}
+
+.getCheckNumber {
+   line-height: 80rpx;
+   height: 100%;
+   text-align: center;
+}

@@ -1,0 +1,44 @@
+<view style='width: 100%; height: 60px; display: flex; flex-direction: row; justify-content: center; align-items: center; font-size: 28rpx; text-align: center; border-bottom: 2px solid gray;'>
+  <text>我的用户</text>
+</view>
+
+<view class='mineUserFirstView' style='display: flex; flex-direction: row; justify-content: flex-start; align-items: center; line-height: 40px; font-size: 28rpx; text-align: center; border-bottom: 1rpx solid lightgray;'>
+  <text style='width: {{width / 4}}px; border-right: 1rpx solid lightgray;'>手机号</text>
+  <text style='width: {{width / 4}}px; border-right: 1rpx solid lightgray;'>绑定设备</text>
+
+  <view style='width: {{width / 4}}px; border-right: 1rpx solid lightgray; display: flex; flex-direction: row; justify-content: center; align-items: center;' bindtap='sortEvent' data-type='point'>
+    <text>个人积分</text>
+    <view style='display: flex; flex-direction: column; justify-content: center; align-items: center; height: 40px;'>
+      <image src="{{isSortPoint == true ? '../../../../images/business_up_selected@3x.png' : '../../../../images/business_up_normal@3x.png'}}" style='width: 10px; height: 10px' />
+      <image src="{{isSortPoint == true ? '../../../../images/business_down_normal@3x.png' : '../../../../images/business_down_selected@3x.png'}}" style='width: 10px; height: 10px' />
+    </view>
+  </view>
+
+  <view style='width: {{width / 4}}px; border-right: 1rpx solid lightgray; display: flex; flex-direction: row; justify-content: center; align-items: center;' bindtap='sortEvent' data-type='shop'>
+    <text>商城消费</text>
+    <view style='display: flex; flex-direction: column; justify-content: center; align-items: center; height: 40px;'>
+      <image src="{{isSortShop == true ? '../../../../images/business_up_selected@3x.png' : '../../../../images/business_up_normal@3x.png'}}" style='width: 10px; height: 10px' />
+      <image src="{{isSortShop == true ? '../../../../images/business_down_normal@3x.png' : '../../../../images/business_down_selected@3x.png'}}" style='width: 10px; height: 10px' />
+    </view>
+  </view>
+
+</view>
+
+<scroll-view style='width: 100%; height: {{scrollHeight}}px;' scroll-y>
+  <view class='mineUserFirstView' style='display: flex; flex-direction: row; justify-content: flex-start; align-items: center; line-height: 40px; font-size: 28rpx; text-align: center; border-bottom: 1rpx solid lightgray;' wx:for="{{userList}}" wx:key='armarium_science_user_id'>
+    <view style='width: {{width / 4}}px; border-right: 1rpx solid lightgray;' bindtap='callPhoneEvent' data-phone-num='{{item.armarium_science_user_mobile}}'>
+      <text>{{item.armarium_science_user_mobile}}</text>
+    </view>
+    <text style='width: {{width / 4}}px; border-right: 1rpx solid lightgray;' wx:if="{{item.device_bind_status == 1}}">已绑定</text>
+    <text style='width: {{width / 4}}px; border-right: 1rpx solid lightgray;' wx:else>未绑定</text>
+    <text style='width: {{width / 4}}px; border-right: 1rpx solid lightgray;'>{{item.armarium_science_user_jifen}}</text>
+    <text style='width: {{width / 4}}px; border-right: 1rpx solid lightgray;'>{{item.use_money}}</text>
+  </view>
+</scroll-view>
+
+ <view style='position: absolute; left: 0px; right: 0px; bottom: 0px; display: flex; flex-direction: row; justify-content: space-around; text-align: center; font-size: 28rpx; line-height: 49px; border-top: 1rpx solid lightgray;'>
+  <text style='flex-grow: 1;' bindtap='pageEvent' data-type='0'>第一页</text>
+  <text style='flex-grow: 1;' bindtap='pageEvent' data-type='1'>上一页</text>
+  <text style='flex-grow: 1;' bindtap='pageEvent' data-type='2'>下一页</text>
+  <text style='flex-grow: 1;' bindtap='pageEvent' data-type='3'>最后一页</text>
+</view> 

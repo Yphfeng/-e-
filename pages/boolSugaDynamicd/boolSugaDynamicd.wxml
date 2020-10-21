@@ -1,0 +1,29 @@
+<!--pages/boolSugaDynamicd/boolSugaDynamicd.wxml-->
+<view class='chooseView' catchtap='chooseViewEvent' data-choose-view='1'>
+  <view class='chooseDateView'>
+    <text class='firstView'>记录时间</text>
+    <text class='secondView'>{{year}}-{{month}}-{{day}}</text>
+  </view>
+
+  <view class='chooseDateView' catchtap='chooseViewEvent' data-choose-view='2'>
+    <text class='firstView'>记录类型</text>
+    <text class='secondView'>{{timePeriodName}}</text>
+  </view>
+</view>
+
+
+<!--刻度尺  -->
+<view class='ruleView'>
+  <view class="ruleTitleView">
+    <text style='font-size: 70px; line-height: 70px;'>{{value}}</text>
+    <text>mmol/L</text>
+  </view>
+  <scroll-view scroll-x="true" bindscroll="bindscroll">
+    <canvas canvas-id="canvas-ruler" id="canvas" style='width: {{canvasWidth}}px; height: {{canvasHeight}}px' />
+  </scroll-view>
+  <canvas canvas-id="canvas-cursor" id="canvas" style='height: 25px' />
+</view>
+
+<button class='submitBTN' bindtap='submintBTNEvent'>
+  提交保存
+</button>

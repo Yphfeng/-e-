@@ -1,0 +1,29 @@
+.tabBar_second{
+  width:100%;
+  position: fixed;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: center;
+  bottom:0;
+  padding:0 10rpx;
+  margin-left:-4rpx;
+  background:#F7F7FA;
+  font-size:20rpx;
+  color:#8A8A8A;
+  box-shadow: 6rpx 6rpx 6rpx 6rpx #aaa;
+  box-sizing: border-box;
+  height: 50px;
+}
+ .tabBar-item{
+  text-align: center;
+  overflow: hidden;
+  padding: 18rpx 10rpx;
+  font-size: 32rpx;
+}
+/*当前字体颜色*/
+.tabBartext{
+  color:red;
+}
+
+

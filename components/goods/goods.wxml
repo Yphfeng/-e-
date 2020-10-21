@@ -1,0 +1,11 @@
+<!--goods 商品-->
+<view class="goodsContents"catchtap="goodsAction" data-goods-selected-index="{{actionIndex}}">
+
+    <image src="{{goodsImageSrc}}" />
+
+    <text class="mainTitle">{{mainTitle}}</text>
+    <view class="goodsDetailView">
+        <text class="moneyText">¥{{money}}</text>
+        <text class="subText">{{subTitle}}</text>        
+    </view>
+  </view>

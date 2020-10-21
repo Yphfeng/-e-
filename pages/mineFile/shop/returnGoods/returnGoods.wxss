@@ -1,0 +1,104 @@
+/* pages/mineFile/shop/returnGoods/returnGoods.wxss */
+page{
+	background:#dfdfdf;
+}
+.container{
+	font-size:28rpx;
+	padding: 20rpx;
+	background:#fff;
+	margin-bottom: 30rpx;
+}
+.container:last-child{
+	margin-bottom: 0;
+}
+.title{
+	display: flex;
+	flex-direction: row;
+	justify-content: space-between;
+	align-items: center;
+	margin-top: 20px;
+}
+.title .item{
+	font-size: 28rpx;
+	padding: 0 40rpx;
+}
+.shop_title{
+	display: flex;
+	flex-direction: row;
+	justify-content: space-between;
+	align-items: center
+}
+.order_btn{
+	border: 0.5px solid lightgray;
+	border-radius: 7px; 
+	width: 100px; 
+	line-height: 28px; 
+	text-align:center; 
+	margin-right: 10px; 
+	font-size: 14px;
+}
+.cp-content{
+  flex:1;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: flex-start;
+  font-size: 28rpx;
+}
+.num{
+  flex:1;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-end;
+}
+.showAction{
+	display: flex;
+	flex-direction: row;
+	align-items: center;
+	justify-content: space-between;
+}
+.q{
+	display: flex;
+	flex-direction: column;
+}
+.eq{
+	display: flex;
+	flex-direction: row;
+	justify-content: space-between;
+	align-items: center;
+	padding-bottom: 30rpx;
+}
+.numq{
+	display: flex;
+	flex-direction: row;
+	justify-content: flex-end;
+	align-items: center;
+}
+.numq .add,.numq .del{
+	width: 80rpx;
+	height: 80rpx;
+	text-align: center;
+	line-height: 80rpx;
+	background: #faf4f4;
+}
+.numq .textNum{
+	width: 100rpx;
+	line-height: 80rpx;
+	height: 80rpx;
+	text-align: center;
+}
+.submit{
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+}
+.submit_btn{
+	background: #f35b4a;
+	color: #fff;
+	height: 100rpx;
+	width: 80%;
+	border-radius: 0;
+	line-height:50px;
+}

@@ -1,0 +1,6 @@
+<!--pages/deviceData/timePointComponent/timePointComponent.wxml-->
+<scroll-view style='width: {{width}}px; height: {{height}}px;' scroll-y>
+  <view style='width: {{width}}px; display: flex; flex-direction: row; flex-wrap: wrap; justify-content: flex-start;'>
+     <text style="width: 40px; line-height: 25px; color: {{item.selected ? '#f35b4a' : 'lightgray'}}; border: 1rpx solid {{item.selected ? '#f35b4a' : 'lightgray'}}; text-align: center; border-radius: 5px; margin: 5px; font-size: 28rpx;" wx:for="{{points}}" wx:key="index" bindtap='tapEvent' data-index='{{item.index}}'>{{item.value}}</text> 
+  </view>
+</scroll-view>

@@ -1,0 +1,29 @@
+<!--pages/mineFile/integral/withDraw/withDraw.wxml-->
+<view class='main'>
+  <view class='main1' hidden='{{!isshow}}' >
+    <view class='s_title'>收益余额</view> 
+    <view class='s_money'>￥{{remoney}}</view>
+    <view class='sr_title'>设置提现金额</view>
+    <input class='scan_money' type='digit' placeholder='￥0.00' bindinput='changegetnum' value='{{getmoney}}'></input>
+    <view class='woring' hidden='{{showworing}}'>输出金额超出收益余额</view>
+    <view class='notice'>金额将在审核后提现至你的微信钱包</view>
+    <view class='btn {{!showworing?"unbtn":""}}' bindtap="getmoney">申请提现</view>
+  </view>
+  <view class='main2' hidden='{{isshow}}'>
+    <view class='head'>
+      <view class='mt_title'>申请提现</view>
+      <view class='mt_money'>￥{{getmoney}}</view>
+      <view class='time'>{{nowdata}}提交申请</view>
+    </view>
+    <view class='foot'>
+      <view class='icon'>
+        <text class='icon_text'>审核中</text>   
+      </view>
+      <view class='f_notic'>
+        <text>请耐心等待</text>
+        <view></view>
+        <text>金额将审核后提现至您的微信钱包</text>
+      </view>
+    </view>
+  </view>
+</view>

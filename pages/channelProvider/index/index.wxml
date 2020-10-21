@@ -1,0 +1,46 @@
+<!--pages/merchants/index/index.wxml-->
+<image src="/images/3.jpg" style='position: absolute;left:0;top:0;width:100%;height:100%;z-index:-1'></image>
+<view class='container'>
+  <view class='head'>
+    <view class="userinfo">
+      <view >
+        <open-data class="multi-hp-nickname" type="userNickName"></open-data>,您好
+      </view>
+    </view>
+    <view class='title'>
+      <view style='margin-right:20rpx'>商户数量：
+        <text class='red'>{{store_num}}</text>
+      </view>
+      <view>发货总数：
+        <text class='red'>{{store_device_num}}</text>
+      </view>
+    </view>
+  </view>
+  <view class='list'>
+    <view class="item">
+      <view bindtap="addList" class='item-1' style='height: {{listHeight}}rpx'>添加商户</view>
+    </view>
+    <view class="item">
+      <view bindtap="showList" class='item-1' style='height: {{listHeight}}rpx'>未审核商户</view>
+    </view>
+    <view class="item">
+      <view bindtap="checkList" class='item-1' style='height: {{listHeight}}rpx'>商户列表</view>
+    </view>
+    <view class="item">
+      <view bindtap="returnGoods" class='item-1' style='height: {{listHeight}}rpx'>设备回收</view>
+    </view>
+    <view class="item">
+      <view bindtap="management" class='item-1' style='height: {{listHeight}}rpx'>分成管理</view>
+    </view>
+    <view class="item">
+      <view bindtap="equipmentManage" class='item-1' style='height: {{listHeight}}rpx'>设备管理</view>
+    </view>
+    <!-- <view class="item">
+      <view bindtap="userReturnGoods" class='item-1' style='height: {{listHeight}}rpx'>用户退货</view>
+    </view> -->
+  </view>
+  <view class='footer'>
+    <button class='we-ui unLogin' type='primary' bindtap='unLogin'>切换身份</button>
+  </view>
+
+</view>

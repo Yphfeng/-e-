@@ -1,0 +1,30 @@
+<template name="paymentType">
+    <checkbox-group class="payStyleView" bindchange="checkboxChange">
+        <label class="checkbox">
+            <!--用户账户上的余额  -->
+            <view>
+                <text>账户金额</text>
+                <text>{{userBalance}}</text>
+            </view>
+            <!--扣完之后显示用户的余额  -->
+            <!-- <view>
+                <text>账户余额</text>
+                <text>{{subBalance}}</text>
+            </view>  -->
+            <checkbox value="balance" checked="{{balanceChecked}}"/>
+        </label>
+        <label class="checkbox" wx:if="{{isIntegral}}">
+            <!--用户账户上的余额  -->
+            <view>
+                <text>账户积分</text>
+                <text>{{userIntegral}}</text>
+            </view>
+            <!--扣完之后显示用户的余额  -->
+            <!-- <view>
+                <text>剩余积分</text>
+                <text>{{subIntegral}}</text>
+            </view>  -->
+            <checkbox value="integral" checked="{{integralChecked}}"/>
+        </label>
+    </checkbox-group>       
+</template>

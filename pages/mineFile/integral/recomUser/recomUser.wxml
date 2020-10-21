@@ -1,0 +1,31 @@
+<!--pages/mineFile/integral/recomUser/recomUser.wxml-->
+<view class='mian'>
+
+  <view class='head'>
+    <view class='tabchange'>
+      <view class="nowdatabtn {{types==0?'active1':'active2'}}" bindtap='changetypes' data-typeindex='0'>今日</view>
+      <view class="sumdatabtn {{types==1?'active1':'active2'}}" bindtap='changetypes' data-typeindex='1'>总量</view>
+    </view>
+    <view class='recomnum'>
+      <view class='title'>{{types==0?"今日推荐用户数":"总推荐用户数"}}</view>
+      <view class='number'>{{!datasum?"0":datasum}}</view>
+    </view>
+    <view class='datanow' wx:if="{{types==0}}">
+      {{nowdata}}
+    </view>
+  </view>
+  <view class='list'>
+    <view class='listinfo' wx:for="{{datalist}}" wx:key="{{index}}" >
+      <view class='ll'>
+        <image src='{{item.wx_head_portrait}}'></image>
+      </view>
+      <view class='lr'>
+        <view class='name'>{{item.wx_user_name}}</view>
+        <view class='time'>{{item.reg_time}} </view>
+      </view>
+    </view>
+  </view>
+  <view hidden="{{datasum<11}}" >
+  <pagebtn pageinfo="{{ {pagesum:pagesum,pageIndex:pageIndex} }}" bind:changepage="changepage"></pagebtn>
+  </view>
+</view>

@@ -1,0 +1,14 @@
+/* pages/deviceTreatment/deviceBinding/deviceBinding.wxss */
+.leftView {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: flex-start;
+}
+
+.rightView {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+}

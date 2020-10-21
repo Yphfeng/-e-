@@ -1,0 +1,16 @@
+/* pages/merchants/check/check.wxss */
+
+.list-item{
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  padding: 0 20rpx;
+  box-sizing: border-box;
+  justify-content: space-between
+}
+.ship{
+  font-size: 24rpx;
+}
+.check{
+  margin-right: 20rpx
+}

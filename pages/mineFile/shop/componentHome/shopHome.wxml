@@ -1,0 +1,45 @@
+<!--pages/mineFile/shop/shopHome/shopHome.wxml-->
+<import src="../../../../components/tabBar/tabBar.wxml"/>
+<template is="tabBar" data="{{tabBar:bindData.tabBar}}"/>
+<scroll-view  style="height: {{height}}px; width: 100%; display: flex; flex-direction: row; " scroll-y enable-back-to-top>
+  <!--头部pageView  -->
+  <swiper style='width: 100%;' autoplay indicator-dots circular wx:if="{{imageUrls.count != 0}}" bindchange='bindchange' style="height:{{imgheights[current]}}rpx;">
+    <block wx:for="{{imageUrls}}" wx:key="{{swiperSrc}}">
+      <swiper-item>
+        <image src="{{item.data}}" mode="aspectFit" bindload="imageLoad" style="height:{{imgheights[current]}}rpx;width:{{imgwidth}}rpx;" ></image>
+      </swiper-item>
+    </block>
+  </swiper>
+  <!--导航-->
+  <view class='navWhole'>
+    <view class='nav-content' style="margin-bottom:{{navContents2.length>0 ? '20rpx' : 0}}">
+        <view class='nav-item' wx:for="{{navContents1}}" wx:key="index" id='{{item.shop_type_id}}' bindtap='toList'><image class='nav-img' mode="aspectFit" src='{{item.shop_type_img}}'></image><text>{{item.shop_type_name}}</text></view>
+    </view>
+    <view class='nav-content'  wx:if="{{navContents2.length>0}}">
+     <view class='nav-item'  wx:for="{{navContents2}}" wx:key="index" id='{{item.shop_type_id}}' bindtap='toList'><image mode="aspectFit" class='nav-img' src='{{item.shop_type_img}}'></image><text>{{item.shop_type_name}}</text></view>
+    </view>
+  </view>
+  <!--搜索-->
+  <view class='search'>
+  <view class='search-content'>
+  <view class='search-input'>
+  <image src='/images/search.png' mode="aspectFit" class='search-icon'></image>
+    <input placeholder='搜索你想要的...' value=''></input></view>
+   <button type='primary' class='search-btn' size='mini'>搜索</button>
+  </view>
+  </view>
+  <!--内容View  -->
+  <view style='width: 100%; display: flex; flex-direction: row; flex-wrap: wrap;' wx:if="{{goodsItem.count != 0}}">
+
+    <view class="goodsContents" bindtap="goodsItemEvent" wx:for="{{goodsItem}}" wx:key="id" data-id='{{item.id}}'>
+      <image src="{{item.goodsImageSrc}}" />
+      <text class="mainTitle">{{item.mainTitle}}</text>
+      <view class="goodsDetailView">
+        <text class="moneyText">¥{{item.money}}</text>
+        <text class="subText" wx:if="{{item.subTitle}}">{{item.subTitle}}：{{item.points}}</text>
+      </view>
+    </view>
+
+  </view>
+
+</scroll-view>

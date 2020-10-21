@@ -1,0 +1,52 @@
+/* pages/mineFile/integral/ambassadorOk/ambassadorOk.wxss */
+view{
+  box-sizing: border-box;
+}
+.main{
+  box-sizing: border-box;
+  padding: 31rpx 34rpx;
+  background: #f0f0f0;
+  position: fixed;
+  width: 100%;
+  height: 100%;
+}
+.list{
+  background: white;
+  border-radius: 18rpx;
+  height: 179rpx;
+  width: 688rpx;
+  padding-top: 38rpx;
+  margin-bottom: 40rpx;
+  position: relative;
+}
+.list>view{
+  display: inline-block;
+  position: absolute;
+  margin-left: 48rpx;
+}
+.icon{
+  top: 45rpx;
+  left: 47rpx;
+  width: 80rpx;
+  height: 80rpx;
+}
+.rtest{
+  position: absolute;
+  top: 39rpx;
+  left: 173rpx;
+}
+.title{
+  font-size: 36rpx;
+}
+.info{
+  font-size: 30rpx;
+  color: #7d7e83;
+  line-height: 77rpx;
+}
+
+/* 图标 */
+.icon image{
+  width: 100%;
+  height: 100%;
+
+}

@@ -1,0 +1,128 @@
+/* pages/mineFile/shop/shopHome/shopHome.wxss */
+.goodsContents {
+    width: 50%;
+    box-sizing: border-box;
+    border: 2px solid #efefef;
+    display: flex;
+    flex-direction: column;
+    align-content: flex-start;
+    background: white;
+}
+
+.goodsContents>text {
+
+    font-family: STHeitiSC-Light;
+    font-size: 28rpx;
+    color: #000;
+    line-height: 60rpx;
+    padding-left: 10rpx;
+}
+.goodsContents image {
+    width: 100%;
+    height: 370rpx;
+}
+
+.goodsContents .goodsDetailView {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    padding-left: 10rpx;
+    padding-right: 10rpx;
+}
+
+.goodsContents .goodsDetailView .moneyText {
+    flex: 0 0 40%;
+    color: #f35b4a;
+}
+
+.goodsContents .goodsDetailView text {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    font-family: STHeitiSC-Light;
+    font-size: 26rpx;
+    color: #000;
+    line-height: 60rpx;
+}
+.navWhole{
+  padding: 20rpx;
+}
+
+.nav-content:lase-child{
+  margin-top: 20rpx;
+}
+.nav-content{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+}
+.nav-content .nav-item{
+  font-size: 24rpx;
+  text-align: center;
+}
+.nav-content .nav-img{
+  width: 100%;
+  height: 50px;
+}
+
+.search{
+  padding: 20rpx;
+  background: #efeff4;
+}
+.search-content{
+    display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+}
+.search-btn{
+  margin: 0;
+}
+.search-input{
+  width: calc(100% - 80px);
+  position: relative;
+}
+.search-icon{
+  position: absolute;
+  left: 8rpx;
+  top: 6rpx;
+  width: 40rpx;
+  height: 40rpx;
+}
+.search-input input{
+  background: #fff;
+  font-size: 24rpx;
+  padding-left: 60rpx;
+  height: 54rpx;
+}
+.nav {
+    height: 80rpx;
+    width: 100%;
+    box-sizing: border-box;
+    overflow: hidden;
+    line-height: 80rpx;
+    background: #fff;
+    font-size: 16px;
+    white-space: nowrap;
+    z-index: 99;
+}
+.nav-item {
+    width: 20%;
+    display: inline-block;
+    text-align: center;
+}
+.nav-item.active{
+    color: red;
+}
+.tab-box{
+    background: greenyellow;
+    padding-top: 80rpx;
+    height: 100%;
+    box-sizing: border-box;
+}
+.tab-content{
+    overflow-y: scroll;
+}

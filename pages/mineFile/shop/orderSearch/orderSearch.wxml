@@ -1,0 +1,43 @@
+<!--pages/mineFile/shop/componentOrder/shopOrder.wxml-->
+<view class='topToolBar' style='width: 100%; height: 44px; display: flex; flex-direction: row; justify-content: space-around; align-items: center; background-color: white; border-bottom: 1rpx solid lightgray;'>
+  <view wx:for="{{topToolBarItems}}" wx:key="key" style='flex-grow: 1; text-align: center;  line-height: 44px;' bindtap='topToolBarEvent' data-key="{{item.key}}">
+    <text style="color: {{item.isSelected ? '#f35b4a' : 'black'}}; font-size: 28rpx;">{{item.text}}</text>
+  </view>
+</view>
+
+<scroll-view style='width: 100%; height: {{scrollViewHeight}}px; display: flex; flex-direction: column; justify-content: flex-start;background: #f3f0f0 ' scroll-y>
+
+  <view class='orders' wx:for='{{order_data}}' wx:key="order_sn" wx:if='{{item.isShow}}'>
+
+    <view class='orderIdView' style='line-height: 40px; display: flex; flex-direction: row; justify-content: space-between; align-items: center; font-size: 28rpx;padding:0 20rpx;'>
+      <text>订单号:  {{item.order_sn}}</text>
+      <!-- <text style='width: 30px; text-align: center;' catchtap='statusButtonEvent' data-event='delegateOrder_{{item.order_id}}'>X</text> -->
+    </view>
+    <view class='orderItems' style=' display: flex; flex-direction: column; justify-content: flex-start; box-sizing: border-box;' catchtap='statusButtonEvent' data-event='orderDetails_{{item.order_id}}'>
+
+      <view class='orderItem' style='display: flex; direction: row; justify-content: flex-start; align-items: space-around; box-sizing: border-box;' wx:for="{{item.goods_list}}" wx:key="id">
+        <image src='{{urlPrefix + item.goods_img_url}}' style='width: 60px; height: 70px; margin-right: 10px; ' />
+        <view class='cp-content'>
+          <text style='word-break: break-all'>{{item.goods_name}}</text>
+          <text style='color: lightgray;'>x {{item.goods_num}}</text>
+        </view>
+      </view>
+
+    </view>
+    <view class='orderStatusView' style='display: flex; flex-direction: row; justify-content: flex-end; align-items: center; border-bottom: 2rpx solid lightgray; padding: 0 20rpx 10rpx'>
+      <view class='status'>
+        <text>状态: {{item.orderStatusString}}</text>
+        <text>总价: ¥ {{item.total_amount}}</text>
+      </view>
+      <!-- <view class='stateButton' style='display: flex; flex-direction: row; justify-content: flex-end; align-items: flex-end; font-size: 28rpx;' wx:if="{{item.orderStatus == '2'}}">
+        <view style='border: 1rpx solid lightgray; border-radius: 7px; width: 80px; line-height: 32px; text-align:center; margin-right: 10px; font-size: 28rpx' catchtap='statusButtonEvent' data-event='evaluation_{{item.order_id}}'>去评价</view>
+        <view style='border: 1rpx solid lightgray; border-radius: 7px; width: 80px; line-height: 32px; text-align:center; font-size: 28rpx; background-color: #f35b4a; color: white' catchtap='statusButtonEvent' data-event='buyAgain_{{item.order_id}}'>再次购买</view>
+      </view> -->
+
+    </view>
+      <view class='statusButton' style='display: flex; flex-direction: row; justify-content: flex-end; align-items: flex-end; font-size: 28rpx;' wx:if="{{item.orderStatus == '0'}}">
+        <view style='border: 1rpx solid lightgray; border-radius: 7px; width: 80px; line-height: 28px; text-align:center; margin-right: 10px; font-size: 28rpx' catchtap='statusButtonEvent' data-event='canceOrder_{{item.order_id}}'>取消</view>
+        <view style='border: 1rpx solid lightgray; border-radius: 7px; width: 80px; line-height: 28px; text-align:center; font-size: 28rpx; background-color: #f35b4a; color: white;' catchtap='statusButtonEvent' data-event='payment_{{item.order_id}}'>去付款</view>
+      </view>
+  </view>
+</scroll-view>

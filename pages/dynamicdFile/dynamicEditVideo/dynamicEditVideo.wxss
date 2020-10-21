@@ -1,0 +1,61 @@
+/* pages/dynamicdFile/dynamicEditVideo/dynamicEditVideo.wxss */
+.container{
+  padding: 30rpx;
+  font-size: 16px;
+}
+.title-content{
+  font-size: 18px;
+  margin-top: 30rpx;
+  padding-bottom: 30rpx;
+  border-bottom: 1px solid #ddd;
+}
+.content{
+  padding: 30rpx 0;
+  border-bottom: 1px solid #ddd;
+  height: 290rpx;
+}
+.addvideo,.addvideoPic{
+  text-align: center;
+  margin-top: 30rpx;
+  line-height: 50rpx;
+  height: 200rpx;
+  position: relative;
+}
+.icon-add{
+  width: 120rpx;
+  height: 120rpx;
+}
+video,.videoImage{
+  width:90%;
+  height: 100%;
+}
+.icon-delete{
+  width: 100rpx;
+  height: 100rpx;
+  position: absolute;
+  left: 50%;
+  top:50%;
+  margin-top: -50rpx;
+  margin-left: -50rpx;
+}
+textarea{
+  width: 100%;
+  padding: 30rpx 0;
+  font-size: 18px;
+  height: 440rpx;
+}
+.btn{
+   width:670rpx;
+   background-color: #f35b4a;
+   color: #fff;
+   position: fixed;
+   bottom:40rpx;
+   left: 30rpx;
+   line-height: 86rpx;
+   text-align: center;
+   border-radius: 5px;
+   z-index: 99999999;
+}
+/* .btn::after{
+  background-color:#ddd;
+} */

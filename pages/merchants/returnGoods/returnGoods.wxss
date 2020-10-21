@@ -1,0 +1,75 @@
+/* pages/merchants/returnGoods/returnGoods.wxss */
+/* .keyWord.error{
+  border-color: red;
+}
+.container{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 0 50rpx;
+}
+.phone-content{
+  padding-bottom: 50rpx;
+}
+.keyWord{
+  border:2rpx solid #fff;
+  padding: 0 20rpx;
+}
+.input-placeholder{
+  color:#fff;
+}
+.sub-button{
+  line-height: 100rpx;
+  font-size: 30rpx;
+} */
+/* pages/channelProvider/rgoods/rgoods.wxss */
+.rgoods{
+  padding: 20rpx;
+  font-size: 30rpx;
+  font-weight: bold;
+}
+.head{
+  border-bottom: 1rpx solid #ccc;
+  padding-bottom: 20rpx;
+  display: flex;
+  
+}
+.head>view{
+  flex: 1;
+}
+.sum{
+  line-height: 80rpx;
+}
+.sum text{
+  margin-right: 40rpx;
+}
+.scanning,.enterrtn{
+  width: 200rpx;
+  height: 70rpx;
+  line-height: 70rpx;
+  background:#169BD5;
+  margin-right: 40rpx; 
+  color: white;
+  text-align: center;
+  border-radius: 6rpx;
+}
+/* 设备信息 */
+.msgtitle{
+  line-height: 70rpx;
+}
+.info{
+  line-height: 50rpx;
+  height: 400rpx;
+  
+}
+.info>view{
+  display: flex;
+  padding-left: 30rpx;
+  justify-content: space-between;
+}
+.foot_btn{
+  display: flex;
+  justify-content: center;
+}
+

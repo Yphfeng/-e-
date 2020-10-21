@@ -1,0 +1,81 @@
+/* pages/mineFile/shop/shopCart/shopCart.wxss */
+
+.goods {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: center;
+  padding: 20rpx;
+  box-sizing: border-box;
+}
+
+.goods image {
+  width: 150rpx;
+  height: 180rpx;
+  margin-left: 10px;
+  margin-right: 10rpx;
+  flex: none;
+}
+
+.goods .shoppingCarContentView {
+  height: 180rpx;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  flex: auto;
+}
+
+.goods .shoppingCarContentView .topView {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.goods .shoppingCarContentView .topView .titleText {
+  flex: auto;
+}
+
+.goods .shoppingCarContentView .topView text {
+  font-size: 28rpx;
+  font-style: STHeitiSC-Light;
+}
+
+
+.goods .shoppingCarContentView .bottomView {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  height: 60rpx;
+}
+
+.goods .shoppingCarContentView .bottomView .numView {
+  margin-left: 10rpx;
+}
+
+.goods .shoppingCarContentView .bottomView .numView .numText {
+  margin-left: 20rpx;
+  margin-right: 20rpx;
+  font-size: 50rpx;
+}
+
+.toolBarView {
+  background-color: white;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  font-family: STHeitiSC-Light;
+  font-size: 28rpx;
+}
+
+.toolBarView .selectAllStatusView {
+  margin-left: 20rpx;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+.toolBarView view text {
+  margin-left: 10rpx;
+}

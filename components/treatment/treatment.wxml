@@ -1,0 +1,20 @@
+<template name="myTreatment">
+  <view style="border-bottom-width: {{myTreatmentBottomBorderWidth}}rpx; display: flex; flex-direction: column; margin: 40rpx 20rpx 0rpx 20rpx; border: 2rpx solid lightgray;  border-radius: 10px; padding: 10rpx 30rpx; line-height: 90rpx;">
+    <view style='display: flex; flex-direction: row; justify-content: space-between; align-items: center;'>
+      <text style='font-size: 32rpx; color: black;'>{{courseName}}</text>
+      <image src='../../images/help.png' style='width: 50rpx; height: 50rpx;' bindtap='helpImageEvent' data-help-image='{{eventIndex}}'></image>
+    </view>
+
+    <view style='display: flex; flex-direction: row; justify-content: space-between; align-items: center; '>
+      <text style='color: gray; font-size: 28rpx;'>可使用 {{remainingDays}} 天</text>
+      <view style='text-align: right; font-size: 36rpx;'>
+        <text wx:if="{{useState == '1'}}" style='color: #f35b4a;'>正在使用</text>
+        <text wx:elif="{{useState == '0'}}" style='color: #f35b4a;' catchtap="courseEvent" data-event="active_{{eventIndex}}">激活</text>
+        <text wx:elif="{{useState == '2'}}" style='color: #f35b4a;' catchtap="courseEvent" data-event="switch_{{eventIndex}}">切换</text>
+        <text wx:elif="{{useState == '3'}}" style='color: lightgray;'>使用结束</text>
+        <text wx:elif="{{useState == '4'}}" style='color: #f35b4a;' catchtap="courseEvent" data-event="update_{{eventIndex}}">更新</text>
+        <text wx:elif="{{useState == '5'}}" style='color: #f35b4a;' catchtap="courseEvent" data-event="binding_{{eventIndex}}">绑定</text>
+      </view>
+    </view>
+  </view>
+</template>

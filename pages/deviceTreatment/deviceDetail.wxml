@@ -1,0 +1,44 @@
+<!--pages/deviceTreatment/deviceDetail.wxml-->
+<view style="font-size:40rpx;text-align:center;padding-top:10px;font-weight:bold;">{{course_data[0].course_name}}</view>
+<view class="scrollViewContent">
+<view class='container'>
+  <view class='panel'>
+    <text class='title'>疗程介绍</text>
+    <view style='padding-left:40rpx;text-indent:60rpx;font-size:28rpx'>{{course_data[0].notes ? course_data[0].notes : ''}}</view>
+  </view>
+  <view class='sectionView'>
+      <view class="itemContentView" catchtap="itemContentViewEvent" data-id="1">
+        <view class='lineView'>
+          <text class="title">开启周期</text>
+          <text ></text>
+        </view>
+      </view>
+      <view class="itemContentView" catchtap="itemContentViewEvent" >
+        <view class='lineView'>
+          <text>开启：{{course_data[0].course_cycle_work_days}}天</text>
+         <text >关闭：{{course_data[0].course_cycle_rest_days}}天</text>
+        </view>
+      </view>
+      <view class="itemContentView" catchtap="itemContentViewEvent" >
+        <view class='lineView' style='border-bottom:1px solid #ccc'>
+          <text class="title">开启时间</text>
+         <text >{{course_data[0].course_days_num}}次</text>
+        </view>
+      </view>
+      <view class='list-inner'>
+      <view class="itemContentView" >
+        <view class='lineView'>
+          <text>开启时间</text>
+         <text>开启时长</text>
+        </view>
+      </view>
+      <view class="itemContentView" wx:for="{{course_parameter}}" wx:key="{{index}}" >
+        <view class='lineView'>
+          <text>{{ item.start_time }}</text>
+         <text>{{item.start_duration}}</text>
+        </view>
+      </view>
+      </view>
+    </view>
+</view>
+</view>

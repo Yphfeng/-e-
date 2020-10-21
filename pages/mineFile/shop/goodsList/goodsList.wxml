@@ -1,0 +1,34 @@
+<!--pages/mineFile/shop/goodsList/goodsList.wxml-->
+<scroll-view style="height: {{height}}px; width: 100%; display: flex; flex-direction: row; " scroll-y enable-back-to-top>
+  <!--头部pageView  -->
+  <swiper style='width: 100%; text-align: center;' autoplay indicator-dots circular wx:if="{{imageUrls.count != 0}}">
+    <block wx:for="{{imageUrls}}" wx:key="swiperSrc">
+      <swiper-item>
+        <image src="{{item.data}}" ></image>
+      </swiper-item>
+    </block>
+  </swiper>
+  <view class="container">
+    <!-- tab导航栏 -->
+    <!-- scroll-left属性可以控制滚动条位置 -->
+    <!-- scroll-with-animation滚动添加动画过渡 -->
+    <scroll-view scroll-x="true" class="nav" scroll-left="{{navScrollLeft}}" scroll-with-animation="{{true}}">
+      <block wx:for="{{navData}}" wx:for-index="idx" wx:for-item="navItem" wx:key="idx">
+        <view class="nav-item {{currentTab == idx ?'active':''}}" data-current="{{idx}}" id='{{navItem.label_id}}' bindtap="switchNav">{{navItem.label_name}}</view>
+      </block>
+    </scroll-view>
+  </view>
+  <!--内容View  -->
+  <view style='width: 100%; display: flex; flex-direction: row; flex-wrap: wrap;' wx:if="{{goodsItem.count != 0}}">
+
+    <view class="goodsContents" bindtap="goodsItemEvent" wx:for="{{goodsItem}}" wx:key="id" data-id='{{item.id}}'>
+      <image src="{{item.goodsImageSrc}}" />
+      <text class="mainTitle">{{item.mainTitle}}</text>
+      <view class="goodsDetailView">
+        <text class="moneyText">¥{{item.money}}</text>
+        <text class="subText">{{item.subTitle}}</text>
+      </view>
+    </view>
+
+  </view>
+</scroll-view>

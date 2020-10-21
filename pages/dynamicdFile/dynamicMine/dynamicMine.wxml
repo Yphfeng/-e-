@@ -1,0 +1,33 @@
+<!--pages/dynamicdFile/dynamicList/dynamicList.wxml-->
+<view class='container'>
+  <view class='list'>
+    <view class='list-item' wx:for='{{list}}' catchtap='todynamicDetail2' data-tradeNo='{{item.id}}' wx:key>
+      <view class='flex-between'>
+        <view class='flex flex-1'>
+           <view class='item-title text-overflow'>{{item.title}}</view>
+           <text wx:if='{{item.status=="已审核"}}' class="flex-1 item-status color-green">已通过</text>
+            <text wx:if='{{item.status=="审核失败"}}' class="flex-1 item-status color-red" catchtap='bindshowModel' data-msg='{{item.msg}}'>未通过，查看原因</text>
+           <text wx:if='{{item.status=="待审核"}}' class="flex-1 item-status color-888">审核中</text>
+        </view>
+         <image class='icon-delete' src='../../../images/icon-delete.png' catchtap='delete' data-id='{{item.id}}'></image>
+        <image wx:if="{{item.status=='待审核'||item.status=='审核失败'}}" class='icon-change' src='../../../images/icon-change@2x.png' catchtap='change' data-tradeNo='{{item.id}}' data-image='{{item.image}}'></image>
+      </view>
+      <view class='item-box'>
+        <image wx:if='{{!item.videoImage && item.image}}' class='item-image' src="{{item.image}}" mode="aspectFill" lazy-load></image>
+        <block wx:if='{{item.videoImage}}'>
+            <image class='item-image ddd' src="{{item.videoImage}}" mode="aspectFill" lazy-load></image>
+          <view class='item-mask'>
+          <image class='icon-play' src='../../../images/icon-play@2x.png'></image>
+        </view>
+        </block>
+        <view wx:if='{{!item.videoImage && !item.image}}' class='text_3'>{{item.content}}</view>
+        <view class='item-footer flex'>
+          <text>{{item.author}}</text>
+           <text class='item-time'>{{item.time}}</text>
+        </view>
+      </view>
+    </view>
+    <view  class='noMore' wx:if='{{noMore}}'>没有更多数据了~</view>
+    <view  class='noMore' wx:if='{{dataNone}}'>暂无更多数据</view>
+  </view>
+</view>

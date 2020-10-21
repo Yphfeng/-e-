@@ -1,0 +1,55 @@
+/* pages/merchants/check/check.wxss */
+.box{
+
+}
+.list-item{
+  box-sizing: border-box;
+  background: #fff;
+  margin-bottom: 20rpx;
+  font-size: 28rpx;
+  text-align: left;
+  padding: 0 20rpx;
+}
+.opt{
+  text-align: right;
+  display: flex;
+  flex-direction: row;
+  justify-content:space-between;
+  align-items:center;
+  padding:20rpx 0;
+}
+.ship{
+  font-size: 24rpx;
+  width: 100px;
+}
+.content{
+  padding: 0 20rpx;
+  background: #f6f1f1;
+
+}
+.name{
+  display: flex;
+  flex-direction: row;
+  justify-content:space-between;
+  align-items:center;
+  padding:20rpx 0;
+  border-bottom: 1px solid #f6f1f1;
+}
+.count{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  padding:20rpx 0;
+  border-bottom: 1px solid #f6f1f1;
+  font-size: 32rpx;
+
+}
+/* 暂无订单 */
+.nodata{
+  position: relative;
+  top: 200rpx;
+  text-align: center;
+  color: #666;
+  font-size: 35rpx;
+}

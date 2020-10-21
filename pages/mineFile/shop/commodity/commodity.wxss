@@ -1,0 +1,411 @@
+/* commodity.wxss */
+
+/*toolBar  样式*/
+
+.toolBar {
+  width: 100%;
+  height: 49px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;background: #fff;
+  flex-wrap: nowrap;
+  position:fixed;
+bottom:0;
+left:0;
+z-index:1000;
+
+}
+
+.toolBar .toolBarStyle1 {
+  flex: 0 0 30%;
+  height: 100%;
+  background-color: #bababa;
+  display: flex;
+  flex-direction: column;
+  align-content: flex-start;
+  justify-content: center;
+  align-items: center;
+}
+
+.toolBar .queryView {
+  box-sizing: border-box;
+  border-right: 1rpx solid black;
+}
+
+.toolBar .queryView image {
+  width: 40rpx;
+  height: 40rpx;
+  margin-top: 14rpx;
+  margin-bottom: 12rpx;
+}
+
+.toolBar .shoppingCar image {
+  width: 44rpx;
+  height: 35rpx;
+  margin-top: 10rpx;
+  margin-bottom: 4rpx;
+}
+
+.toolBarStyle1Text {
+  font-family: STHeitiSC-Light;
+  font-size: 22rpx;
+  color: #fff;
+  text-align: center;
+}
+
+.toolBar .toolBarStyle2 {
+  flex: 0 0 35%;
+  height: 100%;
+  display: flex;
+}
+
+.toolBar .addShopingCar {
+    justify-content:flex-end;
+    align-items: center;
+}
+
+.toolBar .buy {
+  justify-content:flex-start;
+    align-items: center;
+}
+
+.toolBar .toolBarStyle2 text {
+  font-family: STHeitiSC-Light;
+  font-size: 28rpx;
+  color: #fff;
+  text-align: center;
+  padding: 15rpx 20rpx;
+  width: 65%;
+  
+}
+.toolBar .addShopingCar text{
+  background-color: #ff9900;
+  border-radius: 30rpx 0 0 30rpx;
+}
+.toolBar .buy text{
+background-color: #ed3f14;
+  border-radius: 0 30rpx 30rpx 0;
+}
+
+/*scorllview*/
+
+/*titleView*/
+
+.containerScrollview .titleView {
+  padding: 10rpx 10rpx 10rpx 34rpx;
+  box-sizing: border-box;
+  background-color: white;
+  width: 100%;
+  margin-top: 0rpx;
+  display: flex;
+  flex-direction: column;
+}
+
+.containerScrollview .titleView .mainTitle {
+  font-family: STHeitiSC-Light;
+  height: 40rpx;
+  line-height: 50rpx;
+  font-size: 32rpx;
+  color: #000;
+  text-align: left;
+}
+
+.containerScrollview .titleView .subTitleView {
+  margin-top: 10rpx;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.containerScrollview .titleView .subTitleView .monyeTitle {
+  font-family: STHeitiSC-Light;
+  line-height: 50rpx;
+  font-size: 36rpx;
+  color: #ff3b25;
+  text-align: left;
+}
+
+.containerScrollview .titleView .subTitleView .pointsTitle {
+  font-family: STHeitiSC-Light;
+  line-height: 50rpx;
+  font-size: 28rpx;
+  color: #828282;
+  text-align: left;
+}
+.containerScrollview .swiperContainerView{
+  height: 500rpx;
+}
+.swiperWhole{
+  position: relative;
+}
+.swiperWhole .dot{
+  position: absolute;
+  bottom: 20rpx;
+  right: 20rpx;
+  background: #ccc;
+  color: #fff;
+  font-size: 22rpx;
+  z-index: 1000;
+  padding: 6rpx 14rpx;
+  border-radius: 20rpx;
+}
+/*rulesView*/
+
+.containerScrollview .rulesView {
+  width: 100%;
+  margin-top: 17rpx;
+  background-color: white;
+  display: flex;
+  flex-direction: column;
+  padding: 19rpx 29rpx 19rpx 34rpx;
+  box-sizing: border-box;
+}
+
+.containerScrollview .rulesView .rulesTitle {
+  border: 1px solid #ff3b25;
+  border-radius: 7rpx;
+  text-align: center;
+  color: #ff3b25;
+  font-family: STHeitiSC-Light;
+  font-size: 24rpx;
+  width: 72rpx;
+  padding: 5rpx 10rpx;
+}
+
+.containerScrollview .rulesView .rulesContent {
+  font-family: STHeitiSC-Light;
+  font-size: 24rpx;
+  color: #000;
+  line-height: 31rpx;
+  text-align: left;
+  margin-top: 10rpx;
+}
+.containerScrollview .rulesView .detailContent{
+  text-align: center;
+  margin-top: 20rpx;
+  line-height: 31rpx;
+}
+
+/*companyView*/
+
+.containerScrollview .companyView {
+  height: 130rpx;
+  margin-top: 17rpx;
+  padding: 20rpx 29rpx 16rpx 29rpx;
+  box-sizing: border-box;
+  background-color: white;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+.containerScrollview .companyView image {
+  height: 94rpx;
+  width: 94rpx;
+  background-color: yellow;
+}
+
+.containerScrollview .companyView view {
+  margin-left: 15rpx;
+  height: 74rpx;
+  display: flex;
+  box-sizing: border-box;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: flex-start;
+  align-content: space-between;
+}
+
+.containerScrollview .companyView view .companyName {
+  flex: 0 0 100%;
+  font-family: STHeitiSC-Light;
+  font-size: 28rpx;
+  color: #000;
+  text-align: left;
+}
+
+.containerScrollview .companyView view .companySubTitle {
+  margin-top: 18rpx;
+  padding-left: 38rpx;
+  padding-right: 38rpx;
+  background: #ff3b25;
+  border-radius: 100rpx;
+  line-height: 28rpx;
+  font-family: STHeitiSC-Medium;
+  font-size: 20rpx;
+  color: #fff;
+  text-align: left;
+}
+
+/*productsParametersView*/
+
+.containerScrollview .productsParametersView {
+  margin-top: 16rpx;
+  padding: 25rpx 0rpx 0rpx 29rpx;
+  box-sizing: border-box;
+  background-color: white;
+}
+
+.containerScrollview .productsParametersView .productsTitleView image {
+  width: 28rpx;
+  height: 28rpx;
+}
+
+.containerScrollview .productsParametersView .productsTitleView text {
+  margin-left: 13rpx;
+  font-family: STHeitiSC-Light;
+  font-size: 28rpx;
+  color: #747474;
+  text-align: left;
+}
+
+.containerScrollview .productsParametersView .productContentView {
+  border-bottom: 1rpx solid #b9b9b9;
+  box-sizing: border-box;
+  padding-top: 41rpx;
+  padding-bottom: 17rpx;
+  display: flex;
+  flex-direction: row;
+}
+
+.containerScrollview .productsParametersView .productContentView text {
+  font-family: STHeitiSC-Light;
+  font-size: 26rpx;
+  line-height: 32rpx;
+  color: #000;
+  text-align: left;
+}
+
+.containerScrollview .productsParametersView .productContentView .productContentTitle {
+  width: 113rpx;
+}
+
+.containerScrollview .productsParametersView .productContentView .productContentText {
+  margin-left: 30rpx;
+}
+
+/*productsImagesView*/
+
+.containerScrollview .productsImagesView {
+  width: 100%;
+  margin-top: 17rpx;
+  display: flex;
+  flex-direction: column;
+  padding: 0rpx 29rpx 0rpx 34rpx;
+  box-sizing: border-box;
+  align-content: flex-start;
+}
+
+.containerScrollview .productsImagesView image {
+  width: 100%;
+}
+
+.btn {
+  width: 80%;
+  padding: 20rpx 0;
+  border-radius: 10rpx;
+  text-align: center;
+  margin: 40rpx 10%;
+  background: #0c1939;
+  color: #fff;
+}
+
+/*mask*/
+
+.drawer_screen {
+  width: 100%;
+  height: 100%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 1000;
+  background: #000;
+  opacity: 0.3;
+  overflow: hidden;
+}
+
+/*content*/
+
+.drawer_attr_box {
+  width: 100%;
+  overflow: hidden;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  z-index: 1001;
+  background: #fff;
+  border-top-left-radius: 15rpx;
+  border-top-right-radius: 15rpx;
+}
+
+.drawer_content {
+  padding: 20rpx;
+  /* height: 600rpx; */
+  overflow-y: scroll;
+}
+
+
+.line {
+  border-bottom: 1px solid #f8f8f8;
+  position: relative;
+  padding:30rpx 0;
+}
+.line:first-child{
+  padding-top: 0;
+}
+.img-close{
+  width: 40rpx;
+  height: 40rpx;
+  float: right;
+  border: 1rpx solid #ccc;
+  border-radius: 100%;
+  position: absolute;
+  right: 10rpx;
+  top: 10rpx;
+  z-index: 99;
+}
+.cp-logo{
+  width: 200rpx;
+  max-height: 230rpx;
+  display: flex;
+  position: relative;
+}
+.cp-title{
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  align-items: flex-start;
+  font-size: 28rpx;
+  padding-left: 20rpx;
+  
+
+}
+.cp-title text{
+margin-top: 10rpx;
+}
+.cp-title text:first-child{
+  font-size: 32rpx;
+  font-weight: bold;
+}
+.num{
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+}
+.num text,.num input{
+  background: #eae7e7;
+  width: 70rpx;
+  height: 60rpx;
+  margin: 0 2rpx;
+  font-size: 24rpx;
+  display:flex;
+justify-content:center;
+align-items:center;
+min-height: auto;
+
+}
+.num-input{
+  font-weight: bold;
+}

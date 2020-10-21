@@ -1,0 +1,38 @@
+<!--recharge.wxml-->
+<view class="containerView" style="height: {{containerViewHeight}}px">
+
+    <text>充值金额</text>
+    <!--充值金额选择  -->
+    <view class="moneyView">
+        <view class="moneySubview" style="width: {{moneySubviewWidth}}px; background-color: {{money300}}" bindtap="moneyTap" data-money="money300">
+            <text style="color: {{money300Color}}">300元</text>
+        </view>
+        <view class="moneySubview" style="width: {{moneySubviewWidth}}px; background-color: {{money100}}" bindtap="moneyTap" data-money="money100">
+            <text style="color: {{money100Color}}">100元</text>
+        </view>
+        <view class="moneySubview" style="width: {{moneySubviewWidth}}px; background-color: {{money50}}" bindtap="moneyTap" data-money="money50">
+            <text style="color: {{money50Color}}">50元</text>
+        </view>
+        <view class="moneySubview" style="width: {{moneySubviewWidth}}px; background-color: {{money20}}" bindtap="moneyTap" data-money="money20">
+            <text style="color: {{money20Color}}">20元</text>
+        </view>
+        <view class="moneySubview" style="width: {{moneySubviewWidth}}px; background-color: {{money10}}" bindtap="moneyTap" data-money="money10">
+            <text style="color: {{money10Color}}">10元</text>
+        </view>
+        <view class="moneySubview" style="width: {{moneySubviewWidth}}px; background-color: {{money5}}" bindtap="moneyTap" data-money="money5">
+            <text style="color: {{money5Color}}">5元</text>
+        </view>
+    </view>
+
+    <!--充值方式选择  -->
+    <!-- <view class="payTypeView">
+        <view>
+             <image src="../../../images/weixingzhifu@3x.png"></image> 
+            <text>微信支付</text>
+        </view>
+        <radio checked color='red' />
+    </view> -->
+
+    <!--去充值  -->
+    <button bindtap="goRechargeAction">充值</button>
+</view>

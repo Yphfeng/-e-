@@ -1,0 +1,102 @@
+<!--mineMessage.wxml-->
+<!--引入wxml文件  -->
+
+<view class="containerView mineContainerView">
+  <!--用户个人资料(姓名／性别／身高／体重)-->
+  <!--用户电话号码-->
+  <view class="mainView">
+    <view class="subView">
+      <text>姓名:</text>
+      <input placeholder="请输入姓名" bindinput="inputAction" data-input="userName" value="{{userName}}" />
+    </view>
+
+    <view class="subView">
+      <text>手机:</text>
+      <!-- <input placeholder="请输入手机号码" bindinput="inputAction" data-input="userPhone" type="number" value="{{userPhone}}" /> -->
+      <text>{{userPhone}}</text>
+    </view>
+
+    <view class="subView">
+      <text>性别:</text>
+      <picker bindchange="bindPickerChange" value="{{index}}" range="{{sexs}}">
+        <view class="picker"> {{sexs[index]}} </view>
+      </picker>
+    </view>
+
+    <view class="subView">
+      <text>生日:</text>
+      <picker mode="date" value="{{date}}" bindchange="bindDateChange">
+        <view class="picker">{{date}}</view>
+      </picker>
+    </view>
+
+    <view class="subView">
+      <text>身高:</text>
+      <input placeholder="请输入身高" bindinput="inputAction" data-input="userHeight" type="number" value="{{userHeight}}" />
+      <text>cm</text>
+    </view>
+
+    <view class="subView">
+      <text>体重:</text>
+      <input placeholder="请输入体重" bindinput="inputAction" data-input="userWeight" type="number" value="{{userWeight}}" />
+      <text>kg</text>
+    </view>
+  </view>
+
+  <view class="mainView2" bindtap='bottomButton' data-bottomButton="interest">
+    <text style='width: 100rpx;'>兴趣</text>
+    <view class='subView2'>
+      <text style='white-space:nowrap;overflow:hidden;text-overflow:ellipsis; width: 500rpx; text-align: right;'>{{interestSubtext}}</text>
+      <image src='/images/fanhui_black@3x.png' style='width: 40rpx; height: 50rpx; ' />
+    </view>
+  </view>
+
+  <view class="mainView2" bindtap='bottomButton' data-bottomButton="medical">
+    <text style='width: 100rpx'>病史</text>
+    <view class='subView2'>
+      <text style='white-space:nowrap;overflow:hidden;text-overflow:ellipsis;  width: 500rpx; text-align: right;'>{{medicalSubtext}}</text>
+      <image src='/images/fanhui_black@3x.png' style='width: 40rpx; height: 50rpx;' />
+    </view>
+  </view>
+
+  <form bindsubmit="formSubmit" report-submit>
+    <view class="bottomButtonView">
+<!--       <button bindtap="bottomButton" class="exit" data-bottomButton="exit">退出登录</button> -->
+      <button bindtap="bottomButton" class="save" data-bottomButton="save" formType="submit">保存修改</button>
+      <button bindtap="bottomButton" class="change" data-bottomButton="change">切换身份</button>
+    </view>
+  </form>
+</view>
+<!--弹窗-->
+<view class="modal-mask" catchtouchmove="preventTouchMove" wx:if="{{showModal}}"></view>
+<view class="modal-dialog" wx:if="{{showModal}}">
+  <view class="modal-title">
+    <view class='modal-title_text'>
+      绑定手机号
+    </view>
+  </view>
+
+  <view class='point'>
+    <view class='dolt_text' wx:if="{{isdoltshow}}">
+
+    </view>
+    <view class='point_text'>
+      {{notic}}
+    </view>
+  </view>
+  <view class="modal-content">
+    <view class="modal-input">
+      <image class='iphone_icon' src='../../../images/iphone.png'></image>
+      <input id='iphone' placeholder-class="input-holder" type="number" bindinput="inputChange" class="input" placeholder="请输入手机号码" value="{{phone}}"></input>
+    </view>
+    <view class="modal-input">
+      <image class='msg_icon' src='../../../images/msg.png'></image>
+      <input id='code' placeholder-class="input-holder" type="number" maxlength="10" bindinput="inputCodeChange" class="code" placeholder="请输入验证码" value="{{code}}"></input>
+      <button class="send"  bindtap="send" disabled="{{isgetcode}}">{{sendText}}</button>
+    </view>
+  </view>
+  <view id="modal-footer">
+    <view class="btn-cancel" bindtap="onCancel" data-status="cancel">取消</view>
+    <view class="btn-confirm" bindtap="onConfirm" data-status="confirm" disabled="{{isSend}}">确定</view>
+  </view>
+</view>

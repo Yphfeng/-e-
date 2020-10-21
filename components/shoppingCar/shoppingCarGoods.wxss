@@ -1,0 +1,63 @@
+.goods {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  padding: 20rpx;
+  box-sizing: border-box;
+  border-bottom: 1rpx solid lightgray;
+  background-color: white;
+}
+
+.goods image {
+  width: 180rpx;
+  height: 180rpx;
+  margin-left: 10rpx;
+  margin-right: 10rpx;
+}
+
+.goods .shoppingCarContentView {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  flex: auto;
+  height: 160rpx;
+}
+
+.goods .shoppingCarContentView .topView {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.goods .shoppingCarContentView .topView .titleText {
+  flex: auto;
+  width: 200rpx;
+}
+
+.goods .shoppingCarContentView .topView text {
+  font-size: 28rpx;
+  font-style: STHeitiSC-Light;
+}
+
+.goods .shoppingCarContentView>text {
+  font-size: 28rpx;
+  font-style: STHeitiSC-Light;
+}
+
+.goods .shoppingCarContentView .bottomView {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  height: 60rpx;
+}
+
+.goods .shoppingCarContentView .bottomView .numView {
+  margin-left: 10rpx;
+}
+
+.goods .shoppingCarContentView .bottomView .numView .numText {
+  margin-left: 20rpx;
+  margin-right: 20rpx;
+  font-size: 50rpx;
+}

@@ -1,0 +1,95 @@
+<view wx:if="{{isShow}}" animation="{{animationData}}">
+
+  <view class='motionAndLaserTopView' style='positon: absolute; top: 0; left: 0; right: 100rpx;  width: {{topViewWidth}}px; height: {{topViewHeight}}px;  display: flex; flex-direction: row; justify-content: flex-start; align-items: center; text-align: center; border-bottom: 1rpx solid black; border-right: 1rpx solid black; line-height: 40px;'>
+
+    <view style='flex-grow: 1; border-right: 1rpx solid black; color: {{daysColor}};' data-subkind='days' bindtap='topViewEvent' wx:if="{{contentViewName != 'laser'}}">日</view>
+    <view style='flex-grow: 1; border-right: 1rpx solid black;color: {{weeksColor}}' data-subkind='weeks' bindtap='topViewEvent'>周</view>
+    <view style='flex-grow: 1; border-right: 1rpx solid black;color: {{mounthsColor}}' data-subkind='mounths' bindtap='topViewEvent' wx:if="{{contentViewName != 'heartRate'}}">月</view>
+    <view style=' flex-grow: 1; color: {{yearsColor}}' data-subkind='years' bindtap='topViewEvent' wx:if="{{contentViewName != 'heartRate'}}">年</view>
+    <view style='flex-grow: 1; color: {{customColor}}' data-subkind='heartRateCustom' bindtap='topViewEvent' wx:if="{{contentViewName == 'heartRate'}}">自定义</view>
+
+    <view style='flex-grow: 1; color: #f35b4a; border-left: 1rpx solid black;' data-subkind='course' bindtap='topViewEvent' wx:if="{{contentViewName == 'laser'}}">{{treatmentTitle}}</view>
+  </view>
+
+
+  <view class='updateDataVeiw' style='position: absolute; top: 0; right: 0; width: {{rightViewWidth}}px; height: {{topViewHeight}}px; line-height: {{topViewHeight}}px; text-align: center; font-size: 25px' bindtap='updateDataEvent' data-type='showOrHidden'>
+    <text>⬆️</text>
+  </view>
+
+
+  <view class='rightView' style='width: {{rightViewWidth}}px; height: {{rightViewHeight}}px; position: absolute; top 0; bottom: 0; right: 0;  display: flex; flex-direction: column; justify-content: space-around;text-align:center; border-left: 1rpx solid black;  border-top: 1rpx solid black;'>
+    <view style='flex-grow: 1; display: flex; flex-direction: row; align-items: center; justify-content: center; margin: 0rpx 30rpx; color: {{movementColor}}' data-kind='movement' bindtap='rightViewEvent'>
+      <text>运动</text>
+    </view>
+    <view style='flex-grow: 1; border-top: 1rpx solid black; display: flex; flex-direction: row; align-items: center; justify-content: center; margin: 0rpx 30rpx; color: {{laserColor}}' data-kind='laser' bindtap='rightViewEvent'>
+      <text>激光</text>
+    </view>
+    <view style='flex-grow: 1; border-top: 1rpx solid black; display: flex; flex-direction: row; align-items: center; justify-content: center; margin: 0rpx 30rpx; color: {{heartRateColor}}' data-kind='heartRate' bindtap='rightViewEvent'>
+      <text>心率</text>
+    </view>
+  </view>
+
+  <view class='noticeView' style=' position: absolute; top: {{topViewHeight}}px; left: 0px; right: {{rightViewWidth}}px;  display: flex; flex-direction: column; font-size: 15px; color: gray; line-height: {{noticeHeight}}px;' wx:if="{{(isShowHeartRateCustomView == false &&  isShowCourseListView == false && isShowUpdateDataView == false)}}">
+
+    <view class='movementView' style='display: flex; flex-direction: row; justify-content: center; align-items: center; margin: 0px 30px; ' wx:if="{{contentViewName == 'movement'}}">
+      <text>行走:  {{totalSteps}} 步</text>
+      <text style='margin: 0px 20px;'>路程：{{totalDistance}} 公里</text>
+      <text>消耗：{{totalCalorie}} 卡</text>
+    </view>
+
+    <view class='laserView' style='display: flex; flex-direction: row; justify-content: center; align-items: center;' wx:elif="{{contentViewName == 'laser'}}">
+      <!-- <text style='color: #f35b4a; width: 70px;  text-align: center'>《</text> -->
+      <view style='flex-direction: row; justify-content: space-between; align-items: center; '>
+        <text style='margin-right: 20px'>开启 {{laserTotalNum}} 次</text>
+        <text>时长 {{laserTotalDuration}} 分钟</text>
+      </view>
+      <!-- <text style='color: #f35b4a; width: 70px;  text-align: center'>》</text> -->
+    </view>
+    <view class='heartRateView' style='display: flex; flex-direction: row; justify-content: center; align-items: center; margin: 0px 30px;' wx:else>
+      <text style='margin-right: 20px;'>最高：{{hrMax ? hrMax : 0}}次/分钟</text>
+      <text>最低：{{hrMin ? hrMin : 0}}次/分钟</text>
+    </view>
+  </view>
+
+  <view class='laserCourseListView' style='position: absolute; top: {{topViewHeight + 2}}px; left: 0px; right: {{rightViewWidth + 2}}px; bottom: 0;' wx:if="{{isShowCourseListView}}">
+    <treatmentComponent height="{{contentWidth}}" width="{{contentHeight}}" treatments="{{treatments}}" bind:tapTreatment="tapTreatmentEvent" />
+  </view>
+
+  <view class='heartRateCustomView' style='position: absolute; top: {{topViewHeight + 2}}px; left: 0px; right: {{rightViewWidth + 2}}px; bottom: 0; display: flex; flex-direction: row; justify-cotent: flex-start; align-items: center;' wx:if="{{isShowHeartRateCustomView}}">
+
+    <view style='width: {{contentHeight * 5 / 7}}px;  height: 100%;'>
+      <timePointComponent wx:if="{{timeSelected}}" height="{{contentWidth}}" width="{{contentHeight * 5 / 7}}" bind:tapTimePoint="timePointEvent" />
+      <calendar bind:daySelectedEvent="tapDayItem" width="{{contentHeight * 5 / 7}}" wx:else/>
+    </view>
+    <view style='width: {{contentHeight * 2 / 7}}px; height: 100%; display: flex; flex-direction: column; padding: 20rpx; box-sizing: border-box; font-size: 28rpx; line-height: 40px;'>
+      <view style='margin-top: 10px; display: flex; flex-direction: row;  justify-content: space-between; align-items: center; width: 100% height: 40px;' bindtap='heartRateCustomEvent' data-type='beginDate'>
+        <text style="border: 1rpx solid {{beginDateSelected ? '#f35b4a': 'lightgray'}}; border-radius: 5px; padding: 0px 10px; width: 80px; height: 40px;">{{beginDate}}</text>
+      </view>
+      <view style='margin-top: 10px; display: flex; flex-direction: row;  justify-content: space-between; align-items: center; width: 100%;' bindtap='heartRateCustomEvent' data-type='endDate'>
+        <text style="border: 1rpx solid {{endDateSelected ? '#f35b4a': 'lightgray'}}; border-radius: 5px; padding: 0px 10px; width: 80px; height: 40px;">{{endDate}}</text>
+      </view>
+      <view style='margin-top: 10px; display: flex; flex-direction: row;  justify-content: space-between; align-items: center; width: 100%; height: 40px;' bindtap='heartRateCustomEvent' data-type='time'>
+        <text style="border: 1rpx solid {{timeSelected ? '#f35b4a':'lightgray'}}; border-radius: 5px; padding: 0px 10px; width: 50px; height: 40px;">{{timePoint}}</text>
+      </view>
+      <view style='text-align: center; color: white; background-color: #f35b4a; margin-top: 10px; border-radius: 5px;' bindtap='heartRateCustomEvent' data-type='sure'>确定</view>
+      <view style='text-align: center; color: white; background-color: lightgray; margin-top: 10px; border-radius: 5px;' bindtap='heartRateCustomEvent' data-type='cance'>取消</view>
+
+    </view>
+
+  </view>
+
+  <view class='updateDateView' style='position: absolute; top: {{topViewHeight + 2}}px; left: 0px; right: {{rightViewWidth + 2}}px; bottom: 0; display: flex; flex-direction: column;  text-align: center; font-size: 28rpx; line-height: 40px; '
+    wx:if="{{isShowUpdateDataView}}">
+    <text style='font-size: 36rpx; color: green; line-height: 40px; margin: 20px 0px;'>{{updateStatus}}</text>
+    <view class='updateDataContentView' style='display: flex; flex-direction: row;justify-content: space-around; align-items: center; text-align: center; font-size: 28rpx; line-height: 40px;'>
+      <!-- <text style="border: 1rpx solid {{updateDataType == 'movement' ? '#f35b4a' : 'lightgray'}}; border-radius: 10rpx; width: 100px; color: {{updateDataType == 'movement' ? '#f35b4a' : 'black'}}" bindtap='updateDataEvent' data-type='movement'>运动</text>
+      <text style="border: 1rpx solid {{updateDataType == 'laser' ? '#f35b4a' : 'lightgray'}}; border-radius: 10rpx; width: 100px; color: {{updateDataType == 'laser' ? '#f35b4a' : 'black'}}" bindtap='updateDataEvent' data-type='laser'>激光</text>
+      <text style="border: 1rpx solid {{updateDataType == 'heartRate' ? '#f35b4a' : 'lightgray'}}; border-radius: 10rpx; width: 100px; color: {{updateDataType == 'heartRate' ? '#f35b4a' : 'black'}}" bindtap='updateDataEvent' data-type='heartRate'>心率</text> -->
+      <text style="border: 1rpx solid {{updateDataType == 'allData' ? '#f35b4a' : 'lightgray'}}; border-radius: 10rpx; width: 100px; color: {{updateDataType == 'allData' ? '#f35b4a' : 'black'}}" bindtap='updateDataEvent' data-type='allData'>上传</text>
+    </view>
+  </view>
+</view>
+
+<view class='data_contentView' style='position: absolute; top: 0; left: {{(isShowHeartRateCustomView || isShowCourseListView || isShowUpdateDataView) ? -contentWidth : 0}}px;'>
+  <canvas canvas-id="contentCanvas" disable-scroll="true" bindtouchstart="touchHandler" bindtouchmove="moveHandler" bindtouchend="touchEndHandler" style='width:{{contentWidth}}px; height: {{contentHeight}}px;'></canvas>
+</view>

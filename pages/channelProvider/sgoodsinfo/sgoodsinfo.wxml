@@ -1,0 +1,23 @@
+<!--pages/channelProvider/sgoodsinfo/sgoodsinfo.wxml-->
+<image src="/images/3.jpg" style='position: absolute;left:0;top:0;width:100%;height:100%;z-index:-1'></image>
+<view class='mian'>
+  <view class='head'>
+    <view class='datanum'>发货总数<text>{{datasum}}台</text></view>
+    <view class='btn' bindtap='gosend'>扫码发货</view>
+  </view>
+  
+  <view class='list'>
+    <view class='listinfo' wx:for="{{datalist}}" wx:key="{{index}}" wx:item="{{item}}">
+      <view class='infol'>
+        <view>名称:<text>{{item.name}}</text></view>
+        <view>手机号:<text>{{item.mobile_no}}</text></view>
+      </view>
+      <view class='infor'>
+        <view>{{item.device_code!=null?item.device_code:"-"}}</view>
+        <view>{{item.device_sn}}</view>
+      </view>
+    </view>
+  </view>
+  <!-- 分页 -->
+  <pagebtn  pageinfo="{{ {pagesum:datasum,pageindex:pageindex} }}" bind:changepage="changepage"></pagebtn>
+</view>

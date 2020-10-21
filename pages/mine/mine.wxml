@@ -1,0 +1,106 @@
+<!--mine.wxml-->
+<view class="containerView">
+  <view class="meContainer">
+    <view class="userAvtar">
+      <image src="{{userImage}}" id="meContariner_userImage" class="avtar"  catchtap="editMessageAction"></image>
+      <view class="userName">
+        <button class="textCSS signBTN" open-type="getUserInfo" bindgetuserinfo="getuserinfo">{{userName}}</button>
+      </view>
+      <!--<text class="textCSS">ID: {{userId}}</text>-->
+    </view>
+    <form bindsubmit="formSubmit" report-submit>
+      <button class='signBTN' style='line-height: 244rpx; width: 200rpx; color: white; font-family: STHeitiSC-Light; font-size: 30rpx; text-align: center; text-decoration: underline; background-color: #f35b4a; border-color:#f35b4a;' catchtap='signAction' formType="submit">{{signTitle}}</button>
+    </form>
+  </view>
+
+  <view class="moneyContainer">
+    <view class="item" data-money="qianbao" catchtap="moneyContainerAction">
+      <view class="itemImage">
+        <image src="../../images/qianbao@3x.png" style="width: 49px; height: 44px"></image>
+      </view>
+      <text class="textCSS2 itemText">钱包</text>
+    </view>
+    <view class="item" data-money="jifen" catchtap="moneyContainerAction">
+      <view class="itemImage">
+        <image src="../../images/jifen@3x.png" style="width: 50px; height: 50px"></image>
+      </view>
+      <text class="textCSS2 itemText">积分</text>
+    </view>
+    <view class="item" data-money="shenqing" data-type="{{isAmbassador}}" catchtap="moneyContainerAction" wx:if="{{isShowApplicationView}}">
+      <view class="itemImage">
+        <image src="../../images/shenqing@3x.png" style="width: 35px; height: 30px"></image>
+      </view>
+      <text class="textCSS2 itemText">{{isAmbassador}}</text>
+    </view>
+  </view>
+  <view class="applicationContainer">
+    <view class="application_title">
+      <text class="textCSS3">常用应用</text>
+    </view>
+
+    <view class="applicationItem" data-application="shangcheng" catchtap="applicationContainerAction" wx:if="{{isBusiness}}">
+      <view class="itemImage">
+        <image src="../../images/sahngcheng@3x.png" style="width: 50rpx; height: 46rpx"></image>
+      </view>
+      <text class="textCSS3">商城</text>
+    </view>
+
+    <view class="applicationItem" data-application="qrCode" catchtap="applicationContainerAction">
+      <view class="itemImage">
+        <image src="../../images/myQRCode.png" style="width: 45rpx; height: 45rpx"></image>
+      </view>
+      <text class="textCSS3">我的二维码</text>
+    </view>
+    <!-- <view class="applicationItem" data-application="xiaoxi" catchtap="applicationContainerAction">
+      <view class="itemImage">
+        <image src="../../images/xiaoxi@3x.png" style="width: 51rpx; height: 43rpx"></image>
+      </view>
+      <text class="textCSS3">留言板</text>
+    </view> -->
+
+    <view class="applicationItem" data-application="BSM" catchtap="applicationContainerAction">
+      <view class="itemImage">
+        <image src="../../images/blood.png" style="width: 45rpx; height: 45rpx"></image>
+      </view>
+      <text class="textCSS3">血糖记录</text>
+    </view>
+
+    <view class="applicationItem" data-application="kefu" catchtap="applicationContainerAction">
+      <button class='connectButton' open-type='contact'>
+        <view class="itemImage">
+          <image src="../../images/kefu.png" style="width: 50rpx; height: 50rpx"></image>
+        </view>
+        <text class='textCSS3'>客服</text>
+      </button>
+    </view>
+
+    <view class="applicationItem" data-application="woshihuoban" catchtap="applicationContainerAction" wx:if='{{isPanter}}'>
+      <view class="itemImage">
+        <image src="../../images/woShiShangJia.png" style="width: 45rpx; height: 45rpx"></image>
+      </view>
+      <text class="textCSS3">我是伙伴</text>
+    </view>
+<!--     <view class="applicationItem" data-application="{{(navAction ==1)? 'channnel' : 'merchants'}}" catchtap="applicationContainerAction" wx:if='{{isUser}}'>
+      <view class="itemImage">
+        <image src="../../images/woShiShangJia.png" style="width: 45rpx; height: 45rpx"></image>
+      </view>
+      <text class="textCSS3">切换身份</text>
+    </view> -->
+  </view>
+</view>
+<view class="tabBar">
+    <view class="item">
+      <view class="navItem" bindtap="goto" data-index="{{0}}" data-url="pages/home/home">
+        <image src="{{dataNavBar[0].iconPath}}" style="width:60rpx;height:60rpx"></image>
+        <text>{{dataNavBar[0].text}}</text>
+      </view>
+  <view class="navItem" bindtap="goto" data-index="{{1}}" data-url="pages/dynamicdFile/dynamicdMain">
+        <image src="{{dataNavBar[1].iconPath}}" style="width:60rpx;height:60rpx"></image>
+        <text>{{dataNavBar[1].text}}</text>
+      </view>
+      <view class="navItem">
+        <image src="{{dataNavBar[2].selectedIconPath}}" style="width:60rpx;height:60rpx"></image>
+        <text>{{dataNavBar[2].text}}</text>
+      </view>
+    </view>
+</view>

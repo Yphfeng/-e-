@@ -1,0 +1,29 @@
+/* pages/boolSugaChooseType/boolSugaChooseType.wxss */
+
+.buttonView {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.mainView {
+  margin-top: 10rpx;
+  display: flex;
+  align-self: stretch;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.itemView {
+  height: 200rpx;
+  width: 200rpx;
+  background-color: #f35b4a;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  color: white;
+  border-radius: 20rpx;
+}

@@ -1,0 +1,96 @@
+  <button style="width:{{_width}}px;height:{{__height}}px;position:absolute;left:0;top:0;z-index:9999;background:rgba(22,45,78,0);display:{{display}}" open-type="getUserInfo" bindgetuserinfo="getUserInfo">
+  </button>
+<view class='topView'>
+  <view class='item1' catchtap="itemContentViewEvent" data-name="shebeiliebiao">
+    <view class='item-left' wx:if="{{isExistsDeviceInCache}}">
+      <text>{{deviceName}}</text>
+      <text>{{deviceCode}}</text>
+      <text>{{deviceIdentificationCode}}</text>
+    </view>
+    <view wx:else>
+      <text style='line-height: 100rpx;'>未有连接记录，点击进行选择治疗仪。</text>
+    </view>
+    <image src='../../images/nextPage_white.png' style="width: 40rpx; height: 40rpx; " />
+  </view>
+  <view class='item2' wx:if="{{isExistsDeviceInCache}}">
+    <text style='text-align: center;'>电量: {{deviceEQ}}%</text>
+    <button class='connectBTN' wx:if="{{isShowDisconnectButton}}" catchtap="connectBTNEvent" data-name="disconnect"> 断开治疗仪 </button>
+    <button class='connectBTN' wx:else catchtap="showDialogBtn" data-name="connect" >连接治疗仪</button>
+    <!--弹窗-->
+    <view class="modal-mask" bindtap="hideModal" catchtouchmove="preventTouchMove" wx:if="{{showModal}}"></view>
+    <view class="modal-dialog" wx:if="{{showModal}}" style='width:{{dialogWidth}}px'>
+      <view class="modal-title">添加疗程</view>
+      <view class="modal-content" style='height:{{_height}}px;overflow-y:scroll'>
+        <view class="modal-input">
+          <text wx:for="{{liaocheng}}" wx:key="{{index}}" style='border: 1rpx solid {{item.selectedColor}};color:{{item.selectedColor}}; font-size:24rpx; border-radius: 10rpx;' bindtap='drawerEvent' data-type='{{index}}'>{{item.course_name}}</text>
+        </view>
+      </view>
+      <view class="modal-footer">
+        <view class="btn-cancel" bindtap="onCancel" data-status="cancel">取消</view>
+        <view class="btn-confirm" bindtap="onConfirm" data-status="confirm" data-name="connect">确定</view>
+      </view>
+    </view>
+  </view>
+</view>
+
+<view class='sectionView'>
+  <view class="itemContentView" catchtap="itemContentViewEvent" data-name="shuju">
+    <view class='lineView'>
+      <text>数据</text>
+      <image src='../../images/fanhui_black@3x.png' style="width: 40rpx; height: 40rpx; " />
+    </view>
+  </view>
+
+  <view class="itemContentView" catchtap="itemContentViewEvent" data-name="liaocheng">
+    <view class='lineView'>
+      <text>疗程</text>
+      <image src='../../images/fanhui_black@3x.png' style="width: 40rpx; height: 40rpx; " />
+    </view>
+  </view>
+
+  <view class="itemContentView" catchtap="itemContentViewEvent" data-name="eBi">
+    <view class='noLineView'>
+      <text>E币</text>
+      <image src='../../images/fanhui_black@3x.png' style="width: 40rpx; height: 40rpx; " />
+    </view>
+  </view>
+</view>
+
+<view class='sectionView'>
+  <view class="itemContentView" catchtap="itemContentViewEvent" data-name="lanyayingyong">
+    <view class='noLineView'>
+      <text>蓝牙应用</text>
+      <image src='../../images/fanhui_black@3x.png' style="width: 40rpx; height: 40rpx; " />
+    </view>
+  </view>
+</view>
+
+<view class='sectionView'>
+  <view class="itemContentView" catchtap="itemContentViewEvent" data-name="gujianbanben">
+    <view class='noLineView'>
+      <text>版本</text>
+      <view style='display: flex; flex-direction: row; justify-content: flex-end; align-items: center;'>
+        <text>{{firmwareVersion}}</text>
+        <image src='../../images/fanhui_black@3x.png' style="width: 40rpx; height: 40rpx; " />
+      </view>
+    </view>
+  </view>
+</view>
+<view class="tabBar">
+       <view class="item">
+      <view class="navItem">
+        <image src="{{dataNavBar[0].selectedIconPath}}" style="width:60rpx;height:60rpx"></image>
+        <text>{{dataNavBar[0].text}}</text>
+      </view>
+  <view class="navItem" bindtap="goto" data-index="1" data-url="pages/dynamicdFile/dynamicdMain">
+        <image src="{{dataNavBar[1].iconPath}}" style="width:60rpx;height:60rpx"></image>
+        <text>{{dataNavBar[1].text}}</text>
+      </view>
+      <view class="navItem" bindtap="goto" data-index="2" data-url="pages/mine/mine">
+        <image src="{{dataNavBar[2].iconPath}}" style="width:60rpx;height:60rpx"></image>
+        <text>{{dataNavBar[2].text}}</text>
+      </view>
+    </view>
+</view>
+
+<!-- <view><button open-type="getUserInfo" bindgetuserinfo="getUserInfo">测试登录</button></view> -->

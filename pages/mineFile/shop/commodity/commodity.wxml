@@ -1,0 +1,153 @@
+<!--commodity.wxml-->
+<scroll-view class="containerScrollview" style="height: {{scrollviewHeight}}px; background-color: #efefef;" scroll-y enable-back-to-top>
+
+  <!--Banner-->
+  <view class='swiperWhole'>
+    <view class='dot'>{{index + 1}}/{{imageUrls.length}}</view>
+
+    <swiper class="swiperContainerView" autoplay circular current="{{index}}" bindchange="swiperIndex">
+
+      <block wx:for="{{imageUrls}}" wx:key="swiperSrc">
+        <swiper-item>
+          <image src="{{item}}" class="swiperItemImage"></image>
+        </swiper-item>
+      </block>
+    </swiper>
+  </view>
+
+  <view class="titleView">
+    <text class='mainTitle'>{{title}}</text>
+    <view class='subTitleView'>
+      <text class="monyeTitle">¥{{money}}</text>
+      <text class='pointsTitle' wx:if="{{usePoint}}">可使用积分：{{pointsNum}}</text>
+    </view>
+  </view>
+
+  <view class="rulesView">
+    <text class="rulesTitle">描述</text>
+    <text class="rulesContent">{{rulesContent}}</text>
+  </view>
+  <view class='rulesView'>
+    <text class="rulesTitle">详情</text>
+    <view class="detailContent" wx:for="{{detailContent}}" wx:key="index">
+      <image src='{{item}}' mode='widthFix'style="width:100%"></image>
+    </view>
+  </view>
+
+  <!--渠道商信息-->
+  <!-- <view class="companyView">
+    <image src="{{companyImagesrc}}"></image>
+    <view>
+      <text class="companyName">{{companyName}}</text>
+      <text class="companySubTitle">{{companySubTitle}}</text>
+    </view>
+  </view> -->
+
+  <!--疗程参数列表-->
+  <!-- <view class="productsParametersView" wx:if="{{isTreament}}">
+    <view class="productsTitleView">
+      <image src="../../images/productInfo@3x.png"></image>
+      <text>属性</text>
+    </view>
+    <view class="productContentView">
+      <text class="productContentTitle">疗程类别</text>
+      <text class="productContentText">{{categoryName}}->{{typeName}}</text>
+    </view>
+    <view class="productContentView">
+      <text class="productContentTitle">使用时长</text>
+      <text class="productContentText">{{useDuration}}</text>
+    </view>
+    <view class="productContentView">
+      <text class="productContentTitle">每天次数</text>
+      <text class="productContentText">{{daysOpenNum}}次</text>
+    </view>
+    <view class="productContentView">
+      <text class="productContentTitle">疗程模式</text>
+      <text class="productContentText">{{treamentModel}}</text>
+    </view>
+  </view> -->
+  <!--手环参数列表-->
+  <!-- <view class="productsParametersView" wx:else>
+    <view class="productsTitleView">
+      <image src="../../images/productInfo@3x.png"></image>
+      <text>产品参数</text>
+    </view>
+    <view class="productContentView">
+      <text class="productContentTitle">兼容平台</text>
+      <text class="productContentText">{{productPlatform}}</text>
+    </view>
+    <view class="productContentView">
+      <text class="productContentTitle">功 能</text>
+      <text class="productContentText">{{productFunction}}</text>
+    </view>
+    <view class="productContentView">
+      <text class="productContentTitle">品 牌</text>
+      <text class="productContentText">{{productBrand}}</text>
+    </view>
+    <view class="productContentView">
+      <text class="productContentTitle">型 号</text>
+      <text class="productContentText">{{productModel}}</text>
+    </view>
+  </view> -->
+  <!--产品图片-->
+  <view class="productsImagesView">
+    <block wx:for="{{prodctImageUrls}}" wx:key="{{urlIndex}}">
+      <image src="{{item.data}}" mode="scaleToFill"></image>
+    </block>
+  </view>
+  <view style="height: 49px"></view>
+</scroll-view>
+
+<!--toolBar-->
+<view class="toolBar">
+  <view class="shoppingCar toolBarStyle1 " catchtap="goChats" data-type="shoppingCar" >
+    <image src="../../../../images/shoppingCar@3x.png "></image>
+    <text class="toolBarStyle1Text" >购物车</text>
+  </view>
+  <!-- <view class="addShopingCar toolBarStyle2" bindtap="toolBarAction" data-statu="addCarts">
+    <text>加入购物车</text>
+  </view>
+  <view class="buy toolBarStyle2" bindtap="toolBarAction" data-statu="buy">
+    <text>立即购买</text>
+  </view> -->
+  <view class="addShopingCar toolBarStyle2" bindtap="util" data-statu="addCarts" data-type="addCarts" data-currentStatu="open" >
+    <text>加入购物车</text>
+  </view>
+  <view class="buy toolBarStyle2" bindtap="util" data-statu="buy" data-type="buy" data-currentStatu="open">
+    <text>立即购买</text>
+  </view>
+</view>
+
+
+<view class="drawer_screen" bindtap="util" data-currentStatu="close" wx:if="{{showModalStatus}}"></view>
+<!--content-->
+<!--使用animation属性指定需要执行的动画-->
+<view animation="{{animationData}}" class="drawer_attr_box" wx:if="{{showModalStatus}}">
+  <!--drawer content-->
+  <view class="drawer_content">
+    <view class="line" style=' font: 32rpx "microsoft yahei"; display: flex;'>
+      <image src='{{goods_img}}' mode="widthFix" class='cp-logo'></image>
+      <view class='cp-title'>
+        <text>{{goods_name}}</text>
+        <text>价格: {{goods_price}}元</text>
+        <text>库存: {{goods_num}}</text>
+      </view>
+      <image src='/images/close.png' class='img-close' bindtap='util' data-currentStatu="close" mode="aspectFit"></image>
+    </view>
+    <view class="line" style='  display: flex; flex-direction: column; justify-content:flex-start; align-items:flex-start; text-align: center;' wx:if="{{isShowBuyNumView}}">
+      <text style='font-size:24rpx;margin-bottom:20rpx;'>规格：</text>
+      <view style='display: flex'>
+        <text wx:for="{{specs}}" wx:key="{{index}}" style='border: 1rpx solid {{item.selectedColor}};color:{{item.selectedColor}}; padding: 10rpx 20rpx; margin-right: 30rpx; font-size:24rpx; border-radius: 10rpx;' bindtap='drawerEvent' data-type='{{index}}'>{{item.spec_name}}</text>
+      </view>
+    </view>
+    <view class="line" style='  display: flex; flex-direction: row; justify-content:space-between; align-items: center; text-align: center;'>
+      <text style='font-size:24rpx'>购买数量：</text>
+      <view class='num'>
+        <text bindtap="drawerChangeCountEvent" data-num="minusCount">-</text>
+        <input type='number' value="{{buyNum}}"></input>
+        <text bindtap="drawerChangeCountEvent" data-num="addCount">+</text>
+      </view>
+    </view>
+  </view>
+  <button class="qbButton" style='margin:40rpx 40rpx 80rpx;' bindtap='toolBarAction' data-currentStatu="close" data-type="{{type}}">确定</button>
+</view>

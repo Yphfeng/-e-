@@ -1,0 +1,14 @@
+<!--register.wxml-->
+<view class="containerView1">
+  <input placeholder="请输入手机号码" type="number" class="inputStyle" bindinput="inputUsernameblur" />
+  <text style="color: red; font-size: 15px; text-align: left; width: 100%; ">{{title}}</text>
+  <view class="checkNumberView">
+    <input placeholder="请输入验证码" type="number" class="inputCheckNumber inputStyle" bindinput="inputCheckNumberAction"/>
+    <button class="getCheckNumber" bindtap="getCheckNumber" disabled="{{isDisbledCheckBTN}}">{{chectBTNTitle}}</button>
+  </view>
+  <button class="registerButton" bindtap="registerAction" disabled="{{isDisbledRegisterBTN}}">下一步</button>
+  <navigator style='color: blue; text-decoration: underline; margin-left: 80rpx; margin-top: 30rpx;' url='../login/login'><text>前往登录页面</text></navigator>
+</view>
+
+
+

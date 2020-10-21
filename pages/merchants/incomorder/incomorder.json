@@ -1,0 +1,5 @@
+{
+  "usingComponents": {
+    "pagebtn": "/components/pagebtn/pagebtn"
+  }
+}

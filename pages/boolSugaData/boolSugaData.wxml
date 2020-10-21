@@ -1,0 +1,34 @@
+<!--pages/boolSugaData/boolSugaData.wxml-->
+<view class='topChooseView' wx:if="{{isShow}}">
+  <view class='dateChooseView'>
+    <text class='buttonView' catchtap='btnTapEvent' data-tag='1'>前7天</text>
+    <text style='font-size: 29rpx; width: 200rpx;text-align: center;'>{{currentDate}}</text>
+    <text class='buttonView' catchtap='btnTapEvent' data-tag='2'>后7天</text>
+  </view>
+  <view class='buttonView' catchtap='btnTapEvent' data-tag='3'>
+    <text>{{bloodTypeName}}</text>
+  </view>
+</view>
+
+<view class="dataView" style="background-color: #f35b4a; color: white;" wx:if="{{isShow}}">
+  <text class='text8 view1'>时间段</text>
+  <text class='text8 view1'>{{timePeriod_1_name}}</text>
+  <text class='text8 view1'>{{timePeriod_2_name}}</text>
+  <text class='text8 view1'>{{timePeriod_3_name}}</text>
+</view>
+<view class="dataView" wx:for="{{tableData}}" wx:key="dataKey" wx:if="{{isShow}}">
+  <text class='text8 view1'>{{item.date}}</text>
+  <view class='text8 view1' catchtap='itemAddEvent' data-item='{{item.date}}_0'>{{item.timePeriod_1}}</view>
+  <view class='text8 view1' catchtap='itemAddEvent' data-item='{{item.date}}_1'>{{item.timePeriod_2}}</view>
+  <view class='text8 view1' catchtap='itemAddEvent' data-item='{{item.date}}_2'>{{item.timePeriod_3}}</view>
+</view>
+
+  <view class="imageOuterView" wx:if="{{isShow}}">
+  <view class="biaotiImageView">
+      <text class="biaotiTitle">血糖指数数据分析</text>
+      <text class="biaotiTitle">( mmol/L )</text>
+    </view>
+  <view class='imageContentView'>
+    <canvas canvas-id="lineCanvas" style='height: 220px;' bindtouchstart='touchHandler' />
+  </view>
+</view>  

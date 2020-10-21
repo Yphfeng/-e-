@@ -1,0 +1,54 @@
+/* pages/dynamicdFile/dynamicDetail2/dynamicDetail2.wxss */
+video{
+  width: 100%;
+}
+.container{
+  padding: 30rpx;
+  font-size: 16px;
+  padding-bottom: 30px;
+}
+.title{
+  width: 600rpx;
+  line-height: 60rpx;
+  font-size: 20px;
+}
+.margin-left15{
+  margin-left: 15rpx;
+}
+.author{
+  margin-top:10rpx;
+  margin-bottom: 30rpx;
+}
+.icon-share{
+  width: 60rpx;
+  height: 60rpx;
+}
+.btn-share{
+  position: absolute;
+  right: 0;
+  top:0;
+   width: 60rpx;
+  height: 60rpx;
+  opacity: 0;
+}
+.detail{
+  color: #888;
+}
+.detailImage{
+  width: 100%;
+  opacity: 0;
+}
+.contentbox{
+  margin-bottom: 15rpx;
+  overflow: hidden;
+}
+.imgbox{
+   margin-top:7.5rpx;
+  margin-bottom: 7.5rpx;
+}
+.backgroundddd{
+  background: #ddd;
+}
+.opacity1{
+  opacity: 1;
+}

@@ -1,0 +1,10 @@
+<!--pages/mineFile/integral/earning/earning.wxml-->
+<view class='main'>
+  <view class='head'>
+    <view class='title'>可提现收益余额</view>
+    <view class='money'>￥{{remoney}}</view>
+  </view>
+  <view class='btn'>
+    <view bindtap='gowithDraw'>立刻提现</view>
+  </view>
+</view>

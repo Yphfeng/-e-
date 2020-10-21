@@ -1,0 +1,63 @@
+<!--order.wxml-->
+<import src="../../../../components/orderGoods/orderGoods.wxml" />
+<import src="../../../../components/address/address.wxml" />
+<import src="../../../../components/paymentType/paymentType.wxml" />
+<!--地址  -->
+<navigator url='../userAddress/userAddressList'>
+  <view class="addressView common2" wx:if="{{isNeedPost}}">
+    <view class="locationImageView">
+      <image src="../../../../images/dingwei@3x.png"></image>
+    </view>
+    <view class="addressContentView">
+      <view class="common2">
+        <text class="nameText">{{addressName}}</text>
+        <text class="phoneNumberText">{{addressMobile}}</text>
+      </view>
+      <text class="addressText">{{userAddress}}</text>
+    </view>
+    <image src="../../../../images/nextPage_white.png" class="nextImage"></image>
+  </view>
+</navigator>
+
+<scroll-view class="containerScrollview" style="height: {{containerViewHeight}}px;" scroll-y>
+  <!--商品列表  -->
+  <view class="productView">
+    <block wx:for="{{orderGoods}}" wx:key="orderGoodsIndex">
+      <template is="orderGoods" data="{{...item.data}}" />
+    </block>
+  </view>
+  <!-- <view style="margin-top: 20rpx; background-color: white; display: flex; flex-direction: row; justify-content: flex-start; align-items: center; padding: 20rpx 20rpx 20rpx 30rpx;" wx:if="{{orderIntegral > 0}}">
+    <text style="font: 28rpx 'STHeitiSC-Light';'">可使用{{orderIntegral}}积分进行兑换</text>
+  </view> -->
+  <!--支付类型  -->
+  <checkbox-group class="payStyleView" bindchange="checkboxChange">
+    <label class="checkbox viewText" style='margin-top: 20rpx;'>
+      <view><text>余额：{{userBalance}}</text></view>
+      <text>积分：{{userIntegral}}</text>
+    </label>
+     <label class="checkbox" style='margin-top: 20rpx;'>
+      <view>
+        <text>使用余额：</text>
+        <!-- <text>{{userBalance}}</text> -->
+      </view>
+      <checkbox value="balance" checked="{{balanceChecked}}" />
+    </label> 
+    <label class="checkbox" wx:if="{{orderIntegral > 0}}">
+      <view>
+        <text>使用积分<text style='font-size:24rpx'>(可使用{{orderIntegral}}积分进行兑换)</text> ：</text>
+         
+      </view>
+      <checkbox value="integral" checked="{{integralChecked}}" />
+    </label>
+    <label class="checkbox">
+      <view class='total'>
+        <text>商品总价：</text>
+         <text>{{totalPrice}}元</text> 
+      </view>
+    </label>
+  </checkbox-group>
+</scroll-view>
+<view class='order'>
+    <view>合计金额：<text class='redColor'>{{totalPrice}}</text>元</view>
+    <button class="orderText" bindtap="paymentAction">支付</button>
+</view>

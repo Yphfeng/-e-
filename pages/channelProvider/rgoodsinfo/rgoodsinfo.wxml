@@ -1,0 +1,23 @@
+<!--pages/channelProvider/rgoodsinfo/rgoodsinfo.wxml-->
+<image src="/images/3.jpg" style='position: absolute;left:0;top:0;width:100%;height:100%;z-index:-1'></image>
+<view class='info'>
+  <view class='head'>
+    <view class='num'>
+      <text>退货数量:</text>
+      <text>{{datasum}}</text>
+    </view>
+    <view class='button' bindtap='gorgoods'>扫码退货</view> 
+  </view>
+  <view class='list' wx:if="{{datalist}}">
+    <view class='listinfo' wx:for="{{datalist}}" wx:key="{{index}}"  wx:for-index="index" wx:for-item="item" >
+      <view class='name'>
+        <view>名称:<text class='shopname'>{{item.store_name}}</text></view>
+        <view><image class='person' src='/images/mine_normal.png'></image>{{item.mobile}}</view>
+      </view>
+      <view class='goodsnum'>
+        <text>{{item.device_code}}</text>
+        <text>{{item.device_sn}}</text>
+      </view>
+    </view>
+  </view>
+</view>

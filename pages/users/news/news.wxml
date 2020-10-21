@@ -1,0 +1,14 @@
+<!--pages/news/news.wxml-->
+<image src="/images/3.jpg" style='position: absolute;left:0;top:0;width:100%;height:100%;z-index:-1'></image>
+<view class='container'>
+  <view class="weui-cell__bd" style='width: 100%;padding-top:50rpx'>
+    <view class='phone-content'>
+      <input placeholder="请输入手机号" type='number' class='keyWord weui-input' bindinput="bindPhoneInput" />
+    </view>
+    <view class='phone-content'>
+      <input placeholder="请输入密码" password="true" class='keyWord weui-input' bindinput="bindPasswordInput" />
+      <text style='font-size:24rpx;color:#666'>密码为手机号后六位</text>
+    </view>
+  </view>
+  <button class="weui-btn sub-button" type="default" bindtap='nextStep' style='width:100%'>登录</button>
+</view>

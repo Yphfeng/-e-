@@ -1,0 +1,59 @@
+<!--pages/mineFile/shop/shopCart/shopCart.wxml-->
+<import src="../../../../components/tabBar/tabBar.wxml"/>
+<template is="tabBar" data="{{tabBar:bindData.tabBar}}"/>
+<scroll-view style="height: {{scrollviewHeight}}px; width: 100%; display: flex; flex-direction: column; flex-wrap: wrap;" scroll-y enable-back-to-top>
+
+  <view wx:if="{{carts.length > 0}}">
+    <view class="cart-box">
+      <!-- wx:for 渲染购物车列表 -->
+      <view class="goods" wx:for="{{carts}}" wx:key="shoppingCarList">
+        <!-- wx:if 是否选择显示不同图标 -->
+        <icon wx:if="{{item.selected}}" type="success" color="#f35b4a" bindtap="selectList" data-index="{{item.index}}" />
+        <icon wx:else type="circle" bindtap="selectList" data-index="{{item.index}}" />
+        <!-- 点击商品图片可跳转到商品详情 -->
+        <image class="cart-thumb" src="{{item.image}}"></image>
+        <view class="shoppingCarContentView">
+          <view>
+            <view class="topView">
+              <text class="titleText">{{item.title}}</text>
+              <text style='flex: none; width: 80px; text-align: right;'>￥{{item.price}}</text>
+            </view>
+            <view style='font-size: 28rpx; display: flex; flex-direction: row; justify-content: space-between; align-items: center; color: gray; line-height: 25px;'>
+              <text>{{item.specName}}</text>
+              <text wx:if="{{isIntegral}}">可用积分</text>
+            </view>
+          </view>
+
+          <view class="bottomView" style='font-size: 55rpx; color: black;'>
+            <!-- 增加减少数量按钮 -->
+            <view class="numView">
+              <text bindtap="minusCount" data-index="{{item.index}}" style=' margin-right: 15rpx;'>-</text>
+              <text class="numText">{{item.num}}</text>
+              <text bindtap="addCount" data-index="{{item.index}}" style='margin-left: 15rpx;'>+</text>
+            </view>
+            <!-- 删除按钮 -->
+            <text bindtap="deleteList" data-index="{{item.index}}" style='line-height: 60rpx; color: lightgray'> × </text>
+          </view>
+        </view>
+      </view>
+    </view>
+  </view>
+  <view class="noGoods" style='display: flex; flex-direction: row; justify-content: center; align-items: center;' wx:else>
+    <text>没有商品</text>
+  </view>
+</scroll-view>
+
+<!-- 底部操作栏 -->
+<view style='display: flex; flex-direction: row; justify-content: space-between; align-items: center; height: 49px; font-size: 28rpx; border-top: 1rpx solid lightgray'>
+  <!-- wx:if 是否全选显示不同图标 -->
+  <view style='display: flex; flex-direction: row; align-items: center; margin-left: 10px;'>
+    <icon wx:if="{{selectAllStatus}}" type="success" color="#f35b4a" bindtap="selectAll" />
+    <icon wx:else type="circle" bindtap="selectAll" />
+    <text style='margin-left: 10px;'>全选</text>
+  </view>
+  <!-- 总价 -->
+  <view style='display: flex; flex-direction: row; justify-content: flex-end; align-items: center;'>
+    <text>￥{{totalPrice}}</text>
+    <view bindtap="submitedOrder" style="margin-left: 10px; color: white;  line-height: 49px; width: 100px; background-color: #f35b4a;  text-align: center;">去结算</view>
+  </view>
+</view>

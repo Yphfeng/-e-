@@ -1,0 +1,21 @@
+/* pages/news/news.wxss */
+.keyWord.error{
+  border-color: red;
+}
+.container{
+  padding: 0 50rpx;
+}
+.phone-content{
+  padding-bottom: 50rpx;
+}
+.keyWord{
+  border:2rpx solid #fff;
+  padding: 0 20rpx;
+}
+.input-placeholder{
+  color:#fff;
+}
+.sub-button{
+  line-height: 60rpx;
+  font-size: 30rpx;
+}

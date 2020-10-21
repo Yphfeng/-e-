@@ -1,0 +1,8 @@
+<template name="segmentedControl">
+    <view class="backgroundView">
+        <text class="view0" catchtap="segmentedControlEvent" data-index="0" style="background-color:  {{backgroundColor0}}; color: {{color0}}">日</text>
+        <text class="view1" catchtap="segmentedControlEvent" data-index="1" style="background-color:  {{backgroundColor1}}; color: {{color1}}">周</text>
+        <text class="view2" catchtap="segmentedControlEvent" data-index="2" style="background-color:  {{backgroundColor2}}; color: {{color2}}">月</text>
+        <text class="view3" catchtap="segmentedControlEvent" data-index="3" style="background-color:  {{backgroundColor3}}; color: {{color3}}">年</text>
+    </view>
+</template>

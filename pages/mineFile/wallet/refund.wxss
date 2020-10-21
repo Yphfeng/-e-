@@ -1,0 +1,57 @@
+/* pages/wallet/refund.wxss */
+
+page {
+  background-color: #e8e8e8;
+}
+
+.refundView {
+  margin-top: 20px;
+  padding: 10px;
+  background-color: white;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+}
+
+.refundTitle {
+  font-size: 32rpx;
+  color: gray;
+}
+
+.inputView {
+  border-bottom: 1px solid lightgray;
+  height: 50px;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: center;
+}
+
+.signRMB {
+  color: black;
+  line-height: 50px;
+  text-align: left;
+}
+
+.input {
+  flex: 1;
+}
+
+.excessText {
+  margin-top: 10rpx;
+  color: red;
+  line-height: 30px;
+  font-size: 28rpx;
+}
+
+.userMoney {
+  margin-top: 10rpx;
+  color: lightgray;
+  line-height: 30px;
+  font-size: 28rpx;
+}
+
+.refund {
+  width: 100%;
+  margin-top: 20rpx;
+}

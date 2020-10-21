@@ -1,0 +1,34 @@
+
+
+.backgroundView {
+    border-radius: 16rpx;
+    border: 7rpx solid #FF7046;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    background-color: #f5f5f5;
+}
+
+.backgroundView .view0 {
+    border-right: 2rpx solid #FF7046;
+    border-top-left-radius: 8rpx;
+    border-bottom-left-radius: 8rpx;
+}
+.backgroundView .view1 {
+    border-right: 2rpx solid #FF7046;
+}
+.backgroundView .view2 {
+    border-right: 2rpx solid #FF7046;
+}
+.backgroundView .view3 {
+    border-top-right-radius: 8rpx;
+    border-bottom-right-radius: 8rpx;
+}
+
+.backgroundView text {
+    flex: auto;
+    color: #FF7046;
+    font-size: 28rpx;
+    text-align: center;
+    line-height: 60rpx;
+}

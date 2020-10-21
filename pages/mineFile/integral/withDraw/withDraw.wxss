@@ -1,0 +1,103 @@
+/* pages/mineFile/integral/withDraw/withDraw.wxss */
+.main{
+  background: #f0f0f0;
+  position: fixed;
+  width: 100%;
+  height: 100%;
+}
+.main1{
+  padding: 35rpx 31rpx;
+  background: white;
+}
+.s_title{
+  font-size: 25rpx;
+}
+.s_money{
+  margin-top: 30rpx;
+  font-size: 40rpx;
+  padding-bottom: 38rpx;
+  border-bottom: 2rpx solid #d2d2d2;
+}
+.sr_title{
+  font-size: 24rpx;
+  margin-top: 32rpx;
+}
+.scan_money{
+  border: 2rpx solid #d2d2d2;
+  font-size: 38rpx;
+  height: 86rpx;
+  line-height: 86rpx;
+  margin-top: 27rpx;
+  border-radius: 7rpx;
+  padding-left: 20rpx;
+}
+.scan_money:focus{
+  border: 2rpx solid #2cc5ff;
+}
+.woring{
+  margin-top: 25rpx;
+  font-size: 24rpx; 
+  color: red;
+}
+.notice{
+  margin-top: 25rpx;
+  font-size: 24rpx; 
+}
+.btn{
+  text-align: center;
+  color: white;
+  background: #2cc5ff;
+  height: 88rpx;
+  line-height: 88rpx;
+  font-size: 32rpx;
+  margin-top: 62rpx;
+  border-radius: 7rpx;
+}
+.main1 .unbtn{
+  background: #F7F7F7;
+  border: 2rpx solid #ccc;
+  color: #666;
+}
+
+.head{
+  background: white;
+  padding-top: 55rpx;
+  padding-bottom: 65rpx;
+  text-align: center;
+  margin-bottom: 20rpx;
+}
+.mt_title{
+  font-size: 30rpx;
+}
+.mt_money{
+  margin-top: 40rpx;
+  font-size: 60rpx;
+  font-weight: bold;
+}
+.time{
+  color: #979ca2;
+  margin-top: 51rpx;
+  font-size: 24rpx;
+}
+.foot{
+  padding-top: 60rpx;
+  padding-bottom: 54rpx;
+  background: white;
+  text-align: center;
+}
+.icon_text{
+  display: inline-block;
+  margin: 0 auto;
+  width: 205rpx;
+  height: 117rpx;
+  border: 9rpx dashed #000;
+  font-size: 47rpx;
+  font-weight: bold;
+  line-height: 117rpx;
+  text-align: center;
+  border-radius: 10rpx;
+}
+.f_notic{
+  font-size: 24rpx;
+  margin-top: 42rpx;
+}

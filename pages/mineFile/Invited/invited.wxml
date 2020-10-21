@@ -1,0 +1,2 @@
+<image src="{{codeImageUrl}}" class="codeImage" wx:if="{{isShowImage}}" bindlongpress='downloadQRCodeEvent'>
+</image>

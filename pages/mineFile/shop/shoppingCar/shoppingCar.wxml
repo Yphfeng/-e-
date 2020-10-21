@@ -1,0 +1,29 @@
+<!--shoppingCar.wxml-->
+<import src="../../../../components/shoppingCar/shoppingCarGoods.wxml" />
+
+<scroll-view class="containerScrollview" style="height: {{scrollviewHeight}}px; background-color: #efefef;" scroll-y enable-back-to-top>
+  <view class="noGoods" wx:if="{{isHaveGoods}}">
+    <text>没有商品</text>
+  </view>
+  <view wx:else>
+    <view class="cart-box">
+      <!-- wx:for 渲染购物车列表 -->
+      <view wx:for="{{carts}}" wx:key="shoppingCarList">
+        <template is="shoppingCarGoods" data="{{...item.data}}" />
+      </view>
+    </view>
+  </view>
+</scroll-view>
+
+<!-- 底部操作栏 -->
+<view class="toolBarView">
+  <!-- wx:if 是否全选显示不同图标 -->
+  <view class="selectAllStatusView">
+    <icon wx:if="{{selectAllStatus}}" type="success" color="red" bindtap="selectAll" />
+    <icon wx:else type="circle" bindtap="selectAll" />
+    <text>全选</text>
+  </view>
+  <!-- 总价 -->
+  <text>￥{{totalPrice}}</text>
+  <view class="submittedView" bindtap="clearingAction" style="background-color: {{submitBackgroundColor}}; color: {{submitColor}}">去结算</view>
+</view>

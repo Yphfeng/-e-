@@ -1,0 +1,61 @@
+/* recharge.wxss */
+
+.containerView>text {
+    margin-left: 40rpx;
+    margin-top: 50rpx;
+    margin-bottom: 30rpx;
+    font-size: 35rpx;
+}
+
+.containerView .moneyView {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+}
+
+.containerView .moneyView .moneySubview {
+    height: 100rpx;
+    margin-left: 40rpx;
+    margin-top: 20rpx;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.containerView  .payTypeView {
+    
+    margin-top: 50rpx;
+     margin-left: 40rpx; 
+    margin-right: 40rpx;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.containerView .payTypeView view {
+    
+    display:  flex;
+    justify-content:  center;
+    align-items:  center;
+}
+
+.containerView .payTypeView view image {
+
+    height: 40rpx;
+    width: 40rpx;
+}
+
+.containerView .payTypeView view text {
+    margin-left: 15rpx;
+    font-size: 35rpx;
+}
+
+.containerView>button {
+
+    position: absolute;
+    left: 20rpx;
+    bottom: 20rpx;
+    right: 20rpx;
+    color: white;
+    background-color: #f35b4a;
+}

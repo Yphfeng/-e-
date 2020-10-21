@@ -1,0 +1,6 @@
+<!--pages/mineFile/integral/hisGain/hisGain.wxml-->
+<view class='main'>
+  <view class='datalist' wx:for="{{datalist}}" wx:key="{{index}}">
+    <text>{{item.time}}</text><text>￥{{item.divid_into}}</text>
+  </view>
+</view>

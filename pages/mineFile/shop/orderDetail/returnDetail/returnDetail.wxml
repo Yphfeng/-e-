@@ -1,0 +1,101 @@
+<!--order.wxml-->
+<import src="../../../../components/orderGoods/orderGoods.wxml" />
+<import src="../../../../components/address/address.wxml" />
+<import src="../../../../components/paymentType/paymentType.wxml" />
+<!--地址  -->
+<view class="addressView common2" wx:if="{{goodsList.goods_type == '1'}}">
+    <view class="locationImageView">
+        <image src="../../../../../images/dingwei@3x.png"></image>
+    </view>
+    <view class="addressContentView" wx:if="{{address}}">
+        <view class="common2">
+            <text class="nameText">收货人：{{address.name ? address.name : ''}}</text>
+            <text class="phoneNumberText">{{address.mobile ? address.mobile : ''}}</text>
+        </view>
+        <text class="addressText">收货地址：{{address.mail_address ? address.mail_address : ''}}</text>
+    </view>
+</view>
+<scroll-view class="containerScrollview" style="height: {{containerViewHeight}}px;" scroll-y>
+    <!--商品列表  -->
+    <view class="productView">
+        <block wx:for="{{goodData}}" wx:key="orderGoodsIndex" class='orders'>
+            <view class='orderIdView' style='line-height: 40px; display: flex; flex-direction: row; justify-content: space-between; align-items: center; font-size: 28rpx;padding:0 20rpx;'>
+                <text>订单号: {{item.order_sn}}</text>
+                <!-- <text style='width: 30px; text-align: center;' catchtap='statusButtonEvent' data-event='delegateOrder_{{item.order_id}}'>X</text> -->
+            </view>
+            <view class='orderItems' style=' display: flex; flex-direction: column; justify-content: flex-start; box-sizing: border-box;' catchtap='statusButtonEvent' data-event='orderDetails_{{item.order_id}}'>
+                <view class='orderItem' wx:for="{{item.goods_list}}" wx:key="id">
+                    <view style='display: flex; direction: row; justify-content: flex-start; align-items: space-around; box-sizing: border-box;'>
+                        <image src='{{item.goods_img_url}}' style='width: 60px; height: 70px; margin-right: 10px; ' />
+                        <view class='cp-content'>
+                            <text style='word-break: break-all'>{{item.goods_name}}</text>
+                            <view class="num">
+                                <text style='color: #666;'>¥ {{item.goods_price}}</text>
+                                <text style='color: #666;'>x {{item.goods_num}}</text>
+                            </view>
+                        </view>
+                    </view>
+                    <view wx:if="{{item.goods_type !== '0'}}">
+                    <view class='orderStatusView' style='display: flex; flex-direction: row; justify-content: flex-end; align-items: center;  padding: 0 20rpx 10rpx' wx:if="{{goodData[0].order_status == '1' && goodData[0].return_status == '0'}}">
+                        <button class="orderText" bindtap="returnGoods" data-id="{{goodsList.id}}" data-index="1">退货</button>
+                        <button class="orderText" bindtap="returnGoods" data-id="{{goodsList.id}}" data-index="2">换货</button>
+                    </view>
+                    </view>
+                </view>
+            </view>
+        </block>
+    </view>
+    <!-- <view style="margin-top: 20rpx; background-color: white; display: flex; flex-direction: row; justify-content: flex-start; align-items: center; padding: 20rpx 20rpx 20rpx 30rpx;" wx:if="{{orderIntegral > 0}}">
+    <text style="font: 28rpx 'STHeitiSC-Light';'">可使用{{orderIntegral}}积分进行兑换</text>
+  </view> -->
+    <!--支付类型  -->
+    <checkbox-group class="payStyleView" bindchange="checkboxChange">
+        <label class="checkbox viewText" style='margin-top: 20rpx;'>
+            <view>
+                <text>商品总价：</text>
+            </view>
+            <text>¥ {{goodData[0].total_amount}}</text>
+        </label>
+        <label class="checkbox viewText" style='margin-top: 20rpx;'>
+            <view>
+                <text>已使用积分：</text>
+            </view>
+            <text>{{goodData[0].use_point}}</text>
+        </label>
+        <label class="checkbox" style='margin-top: 20rpx;'>
+            <view>
+                <text>运费(快递)：</text>
+            </view>
+            <text>0</text>
+        </label>
+        <label class="checkbox">
+            <view>
+                <text>订单总价</text>
+            </view>
+            <text>¥ {{goodData[0].total_amount}}</text>
+        </label>
+        <label class="checkbox">
+            <view>
+                <text>实付款：</text>
+            </view>
+            <text>¥ {{goodData[0].pay_money}}</text>
+        </label>
+    </checkbox-group>
+</scroll-view>
+<!-- 待付款 -->
+<view class='order' wx:if="{{goodData[0].pay_status == 0 && goodData[0].order_status == 0 && goodData[0].delivery_status == 0}}">
+<!--     <button class="orderText" catchtap='statusButtonEvent' data-event='canceOrder'>取消</button> -->
+    <button class="orderText" catchtap='statusButtonEvent' data-event='payment'>去付款</button>
+    <!--   <button class="orderText" bindtap="paymentAction">退款</button>
+    <button class="orderText" bindtap="paymentAction">再次购买</button>
+     <button class="orderText" bindtap="paymentAction">查看物流</button> -->
+</view>
+<!-- 待发货 -->
+<view class='order' wx:elif="{{goodData[0].pay_status == 1 && goodData[0].order_status == 0 && goodData[0].delivery_status == 0}}">
+    <button class="orderText" catchtap='statusButtonEvent' data-event='returnOrder'>退款</button>
+</view>
+<!-- 待收货 -->
+<view class='order' wx:elif="{{goodData[0].pay_status == 1 && goodData[0].order_status == 0 && goodData[0].delivery_status == 1}}">
+    <button style='border: 1rpx solid lightgray; border-radius: 7px; width: 90px;background:#fff;line-height:70rpx; text-align:center; margin-right: 10px; font-size: 28rpx' catchtap='statusButtonEvent' data-event='returnOrder'>退款</button>
+</view>
+<!-- 已完成 -->

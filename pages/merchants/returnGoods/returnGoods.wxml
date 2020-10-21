@@ -1,0 +1,30 @@
+<!--pages/merchants/returnGoods/returnGoods.wxml-->
+<image src="/images/3.jpg" style='position: absolute;left:0;top:0;width:100%;height:100%;z-index:-1'></image>
+  <!-- <view class='container' style='height: {{_height}}px'>
+    <button class="weui-btn sub-button" type="default" bindtap='returnGoods'  style='width:50%'>扫码退货</button>
+  </view> -->
+
+  <!--pages/channelProvider/rgoods/rgoods.wxml-->
+<image src="/images/3.jpg" style='position: absolute;left:0;top:0;width:100%;height:100%;z-index:-1'></image>
+<view class='rgoods'>
+  <view class='head'>
+    <view class='scanning' bindtap='scancode'>扫描设备</view>
+  </view>
+  <view class='shopmsg'>
+    <view class='msgtitle'>设备信息</view>
+    <view class='info'>
+      <view><text>设备型号</text> <text>{{sinfo.device_code}}</text> </view>
+      <view><text>编号</text> <text>{{sinfo.device_sn}}</text> </view>
+      <view><text>商户名称</text> <text>{{sinfo.name}}</text> </view>
+      <view><text>手机号</text> <text>{{sinfo.mobile_no}}</text> </view>
+      <view><text>租赁时间</text> <text>{{sinfo.sale_time}}</text> </view>
+      <view><text>当前时间</text> <text>{{sinfo.nowdata}}</text> </view>
+      <view><text>设备状态</text> <text>{{sinfo.sale_status}}</text> </view>
+    </view>
+    <view class='foot_btn'>
+     <view class='enterrtn' bindtap='returnGoods'>确认退货</view>
+    </view>
+  </view>
+</view>
+
+

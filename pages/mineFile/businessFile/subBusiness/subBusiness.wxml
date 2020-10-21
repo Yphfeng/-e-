@@ -1,0 +1,44 @@
+<view style='width: 100%; height: 60px; display: flex; flex-direction: row; justify-content: center; align-items: center; font-size: 28rpx; text-align: center; border-bottom: 2px solid gray;'>
+  <text>我的渠道</text>
+</view>
+
+<view class='mineUserFirstView' style='display: flex; flex-direction: row; justify-content: flex-start; align-items: center; line-height: 40px; font-size: 20rpx; text-align: center; border-bottom: 1rpx solid lightgray;'>
+  <text style='width: {{width / 7 * 2}}px; border-right: 1rpx solid lightgray;'>渠道商</text>
+  <text style='width: {{width / 7 * 2}}px; border-right: 1rpx solid lightgray;'>手机号</text>
+  <text style='width: {{width / 7}}px; border-right: 1rpx solid lightgray;'>等级</text>
+
+  <view style='width: {{width / 7}}px; border-right: 1rpx solid lightgray; display: flex; flex-direction: row; justify-content: center; align-items: center;' bindtap='sortEvent' data-type='user'>
+    <text>用户数</text>
+    <view style='display: flex; flex-direction: column; justify-content: center; align-items: center; height: 40px;'>
+      <image src="{{isSortUser == true ? '../../../../images/business_up_selected@3x.png' : '../../../../images/business_up_normal@3x.png'}}" style='width: 10px; height: 10px' />
+      <image src="{{isSortUser == true ? '../../../../images/business_down_normal@3x.png' : '../../../../images/business_down_selected@3x.png'}}" style='width: 10px; height: 10px' />
+    </view>
+  </view>
+
+  <view style='width: {{width / 7}}px; border-right: 1rpx solid lightgray; display: flex; flex-direction: row; justify-content: center; align-items: center;' bindtap='sortEvent' data-type='device'>
+    <text>设备数</text>
+    <view style='display: flex; flex-direction: column; justify-content: center; align-items: center; height: 40px;'>
+      <image src="{{isSortDevice == true ? '../../../../images/business_up_selected@3x.png' : '../../../../images/business_up_normal@3x.png'}}" style='width: 10px; height: 10px' />
+      <image src="{{isSortDevice == true ? '../../../../images/business_down_normal@3x.png' : '../../../../images/business_down_selected@3x.png'}}" style='width: 10px; height: 10px' />
+    </view>
+  </view>
+</view>
+
+<scroll-view style='width: 100%; height: {{scrollHeight}}px;' scroll-y>
+  <view class='mineUserFirstView' style='display: flex; flex-direction: row; justify-content: flex-start; align-items: center; line-height: 40px; font-size: 20rpx; text-align: center; border-bottom: 1rpx solid lightgray;' wx:for="{{businessList}}" wx:key='id'>
+    <text style='width: {{width / 7 * 2}}px; border-right: 1rpx solid lightgray;'>{{item.enterprises_name}}</text>
+    <view style='width: {{width / 7 * 2}}px; border-right: 1rpx solid lightgray;' bindtap='callPhoneEvent' data-phone-num='{{item.phoneNum}}'>
+      <text>{{item.mobile}}</text>
+    </view>
+    <text style='width: {{width / 7}}px; border-right: 1rpx solid lightgray;'>{{item.level}}</text>
+    <text style='width: {{width / 7}}px; border-right: 1rpx solid lightgray;'>{{item.invite_user_num}}</text>
+    <text style='width: {{width / 7}}px; border-right: 1rpx solid lightgray;'>{{item.device_num}}</text>
+  </view>
+</scroll-view>
+
+ <!-- <view style='position: absolute; left: 0px; right: 0px; bottom: 0px; display: flex; flex-direction: row; justify-content: space-around; text-align: center; font-size: 28rpx; line-height: 49px; border-top: 1rpx solid lightgray;'>
+  <text style='flex-grow: 1;'>第一页</text>
+  <text style='flex-grow: 1;'>上一页</text>
+  <text style='flex-grow: 1;'>下一页</text>
+  <text style='flex-grow: 1;'>最后一页</text>
+</view>  -->

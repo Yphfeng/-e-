@@ -1,0 +1,8 @@
+<!--message.wxml-->
+
+<import src="../../components/messageList/messageList.wxml" />
+<view class="containerView">
+    <block wx:for="{{messageList}}" wx:key="listItem">
+        <template is="messageList" data="{{...item.data}}"/>
+    </block>
+</view>

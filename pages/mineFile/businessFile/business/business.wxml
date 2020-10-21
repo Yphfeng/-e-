@@ -1,0 +1,138 @@
+
+
+<view class='mine'>
+  <view class="mine-title">
+    <text>我的用户</text>
+    <text  bindtap='bindTap' data-type='user'>更多></text>
+  </view>
+  <view class='mineUserFirstView'>
+    <view class="mine-item" style='width: {{width / 3}}px; border-right: 1rpx solid lightgray;'>
+      <text>我的所有用户</text>
+      <text class="num">{{user.invite_total_num}}</text>
+    </view>
+    <view class="mine-item" style='width: {{width / 3}}px; border-right: 1rpx solid lightgray;'>
+      <text>设备绑定用户</text>
+      <text class="num">{{user.bind_device_num}}</text>
+    </view>
+    <view class="mine-item" style='width: {{width / 3}}px; border-right: 1rpx solid lightgray;'>
+      <text>商城消费用户</text>
+      <text class="num">{{user.shop_balance_num}}</text>
+    </view>
+  </view>
+
+  <view class='mineUserFirstView'>
+    <view class="mine-item" style='width: {{width / 3}}px; border-right: 1rpx solid lightgray;'>
+      <text>直属用户</text>
+      <text class="num">{{user.directly_user_num}}</text>
+    </view>
+    <view class="mine-item" style='width: {{width / 3}}px; border-right: 1rpx solid lightgray;'>
+      <text>今日新增</text>
+      <text class="num">{{user.invite_today_num}}</text>
+    </view>
+    <view class="mine-item" style='width: {{width / 3}}px; border-right: 1rpx solid lightgray;'>
+      <text>本月新增</text>
+      <text class="num">{{user.invite_month_num}}</text>
+    </view>
+  </view>
+</view>
+
+
+<view class='mine'>
+  <view class="mine-title">
+    <text>我的设备</text>
+    <text bindtap='bindTap' data-type='device'>更多></text>
+  </view>
+  <view class='mineUserFirstView'>
+    <view class="mine-item" style='width: {{width / 3}}px; border-right: 1rpx solid lightgray;'>
+      <text>设备总数</text>
+      <text class="num">{{device.total_device_num}}</text>
+    </view>
+    <view class="mine-item" style='width: {{width / 3}}px; border-right: 1rpx solid lightgray;'>
+      <text>已绑定设备</text>
+      <text class="num">{{device.bind_device_num}}</text>
+    </view>
+    <view class="mine-item" style='width: {{width / 3}}px; border-right: 1rpx solid lightgray;'>
+      <text>库存设备</text>
+      <text class="num">{{device.effective_device_num}}</text>
+    </view>
+  </view>
+</view>
+
+
+<view class='mine'>
+  <view class="mine-title">
+    <text>我的伙伴</text>
+    <text bindtap='bindTap' data-type='business'>更多></text>
+  </view>
+  <view class='mineUserFirstView'>
+    <view class="mine-item" style='width: {{width / 3}}px; border-right: 1rpx solid lightgray;'>
+      <text>伙伴总数</text>
+      <text class="num">{{wholesaler_user.total_num}}</text>
+    </view>
+    <view class="mine-item" style='width: {{width / 3}}px; border-right: 1rpx solid lightgray;'>
+      <text>本月新增</text>
+      <text class="num">{{wholesaler_user.month_num}}</text>
+    </view>
+    <!-- <text style='width: {{width / 3}}px; border-right: 1rpx solid lightgray;'>渠道层级</text> -->
+    <view class="mine-item" style='width: {{width / 3}}px; border-right: 1rpx solid lightgray;'>
+      <text>今日新增</text>
+      <text class="num">{{wholesaler_user.today_num}}</text>
+    </view>
+  </view>
+  <!-- <view class='mineUserFirstView' style='display: flex; flex-direction: row; justify-content: flex-start; align-items: center; line-height: 30px; border-top: 1rpx solid lightgray'>
+    <text style='width: {{width / 3}}px; border-right: 1rpx solid lightgray;'>本日新增</text>
+    <text style='width: {{width / 3}}px; border-right: 1rpx solid lightgray;'>本周新增</text>
+    <text style='width: {{width / 3}}px; border-right: 1rpx solid lightgray;'>本月新增</text>
+  </view>
+  <view class='mineUserFirstView' style='display: flex; flex-direction: row; justify-content: flex-start; align-items: center; line-height: 30px; border-bottom: 2px solid gray; border-top: 1rpx solid lightgray;'>
+    <text style='width: {{width / 3}}px; border-right: 1rpx solid lightgray;'>{{business_today}}</text>
+    <text style='width: {{width / 3}}px; border-right: 1rpx solid lightgray;'>{{business_week}}</text>
+    <text style='width: {{width / 3}}px; border-right: 1rpx solid lightgray;'>{{business_month}}</text>
+  </view> -->
+</view>
+
+
+<view class='mine'>
+  <view class="mine-title">
+    <text>我的收益</text>
+    <text bindtap='bindTap' data-type='income'>更多></text>
+  </view>
+  <view class='mineUserFirstView'>
+    <view class="mine-item" style='width: {{width / 4}}px; border-right: 1rpx solid lightgray;'>
+      <text>总收益</text>
+      <text class="num">{{profit.total_profit}}</text>
+    </view>
+    <view class="mine-item" style='width: {{width / 4}}px; border-right: 1rpx solid lightgray;'>
+      <text>用户收益</text>
+      <text class="num">{{profit.user_profit ? profit.user_profit : 0}}</text>
+    </view>
+    <view class="mine-item" style='width: {{width / 4}}px; border-right: 1rpx solid lightgray;'>
+      <text>伙伴收益</text>
+      <text class="num">{{profit.wholesaler_profit ? profit.wholesaler_profit : 0}}</text>
+    </view>
+    <view class="mine-item" style='width: {{width / 4}}px; border-right: 1rpx solid lightgray;'>
+      <text>区域收益</text>
+      <text class="num">{{profit.manage_profit}}</text>
+    </view>
+  </view>
+  <view class='mineUserFirstView'>
+    <view class="mine-item" style='width: {{width / 4}}px; border-right: 1rpx solid lightgray;'>
+      <text>本日收益</text>
+      <text class="num">{{profit.today_profit}}</text>
+    </view>
+    <view class="mine-item" style='width: {{width / 4}}px; border-right: 1rpx solid lightgray;'>
+      <text>本月收益</text>
+      <text class="num">{{profit.month_profit}}</text>
+    </view>
+    <view class="mine-item" style='width: {{width / 4}}px; border-right: 1rpx solid lightgray;'>
+      <text>账户金额</text>
+      <text class="num">{{profit.account_profit}}</text>
+    </view>
+    <view class="mine-item" style='width: {{width / 4}}px; border-right: 1rpx solid lightgray;'>
+      <text>可提现金额</text>
+      <text class="num">{{profit.withdraw_profit}}</text>
+    </view>
+  </view>
+</view>
+
+

@@ -1,0 +1,76 @@
+/* tall.wxss */
+
+.containerView1 {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-content: flex-start;
+}
+
+.scrollView {
+  width: 100%;
+}
+
+.inputBox {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: center;
+  border-top: 1rpx solid gray;
+}
+
+.inputBox>button {
+  width: 30%;
+  border-radius: 20rpx;
+  margin: 5rpx 20rpx 5rpx 10rpx;
+}
+
+.inputBox>input {
+  flex: auto;
+  height: 70rpx;
+  margin: 0rpx 10rpx 0rpx 20rpx;
+  background-color: #efefef;
+  border-radius: 10rpx;
+  border: 1rpx solid gray;
+}
+
+.dialog-cell-self {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-end;
+  align-items: flex-start;
+  height: 100rpx;
+  margin-left: 15rpx;
+  margin-right: 15rpx;
+  text-align: left;
+}
+
+.dialog-cell {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: flex-start;
+  height: 100rpx;
+  margin-left: 15rpx;
+  margin-right: 15rpx;
+}
+
+.dialog-content {
+  background-color: #efefef;
+  border: 1rpx solid gray;
+  padding: 15rpx;
+  border-radius: 10rpx;
+  word-wrap: break-word;
+  max-width: 60%;
+  line-height: 50rpx;
+  font-size: 25rpx;
+}
+
+.dialog-avatar {
+  width: 60rpx;
+  height: 60rpx;
+  border-radius: 30rpx;
+  margin-left: 15rpx;
+  margin-right: 15rpx;
+}

@@ -1,0 +1,38 @@
+<!--pages/home/commonFunctional.wxml-->
+<view class='sectionView' style='border-top: 2rpx solid lightgray; border-bottom: 2rpx solid lightgray;'>
+  <view class="itemContentView">
+    <view class='lineView' style='border-bottom: 2rpx solid lightgray;'>
+      <text>激光手动开启</text>
+      <button class='qbButton commonButton'  bindtap='buttonEvent' data-state='openManuallLaser' wx:if="{{isManuallyLaser}}">开启</button>
+      <button class='qbButton commonButton' bindtap='buttonEvent' data-state='closeManuallLaser' wx:else>关闭</button>
+    </view>
+  </view>
+
+  <view class="itemContentView">
+    <view class='lineView' style='border-bottom: 2rpx solid lightgray;'>
+      <text>单次监测心率</text>
+      <view style='display: flex; flex-direction: row; justify-content: center; align-items: center'>
+        <text>{{hr_realtimeValue}}次/分钟</text>
+        <button class='qbButton commonButton' bindtap='buttonEvent' data-state='openManuallyHeartRate' wx:if="{{isManuallyHR}}">开启</button>
+        <button class='qbButton commonButton' bindtap='buttonEvent' data-state='closeManuallyHeartRate' wx:else>关闭</button>
+      </view>
+    </view>
+  </view>
+
+  <view class="itemContentView">
+    <view class='lineView' style='border-bottom: 2rpx solid lightgray;'>
+      <text>自动监测心率</text>
+      <button class='qbButton commonButton' bindtap='buttonEvent' data-state='openAutoHeartRate' wx:if="{{isAutoHR}}">开启</button>
+      <button class='qbButton commonButton' bindtap='buttonEvent' data-state='closeAutoHeartRate' wx:else>关闭</button>
+    </view>
+  </view>
+
+  <navigator url='../devicePoint/devicePoint'>
+    <view class="itemContentView" wx:if="{{isShowPoint}}">
+      <view class='noLineView'>
+        <text>指针校准</text>
+        <image src='../../images/fanhui_black@3x.png' style="width: 40rpx; height: 40rpx; " />
+      </view>
+    </view>
+  </navigator>
+</view>

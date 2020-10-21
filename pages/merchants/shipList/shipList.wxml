@@ -1,0 +1,23 @@
+<!--pages/merchants/check/check.wxml-->
+<image src="/images/3.jpg" style='position: absolute;left:0;top:0;width:100%;height:100%;z-index:-1'></image>
+<view class='box'>
+  <scroll-view scroll-top="{{scrollTop}}" bindscroll="scroll" bindscrolltoupper="refresh" scroll-y='true' style="height:{{height}}px">
+    <view wx:for="{{listData}}" data-id="{{index}}" wx:key="{{index}}" style="width:100%; border-bottom:1px solid #ccc" class='list-item'>
+      <view class='name'>
+        <view><text class='text_label'>订单id：</text>{{item.id}}</view>
+        <view><text class='text_label'>微信名：</text>{{item.wx_name}}</view>
+      </view>
+      <view class='count'>
+        <text class='text_label'>租赁数量</text><text>{{item.device_num}}</text>
+      </view>
+      <view class='opt'>
+        <view>{{item.add_time}}</view>
+        <view><button class='we-ui check ship' type="primary" data-uid="{{item.id}}" bindtap='send'>发货</button></view>
+      </view>
+    </view>
+    <view class='nodata' wx:if="{{!listData}}">
+    暂无订单
+    </view>
+  </scroll-view>
+  
+</view>

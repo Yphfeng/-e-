@@ -1,0 +1,17 @@
+<!--pages/mineFile/shop/userAddress/userAddressList.wxml-->
+<radio-group class="radio-group" bindchange="radioChange">
+  <view class='deviceItem itemView' wx:for="{{address}}">
+  <view class='leftView'>
+    <text>{{item.name}}</text>
+    <text>{{item.mobile}}</text>
+    <text>{{item.mail_address}}</text>
+  </view>
+  <view class='rightView'>
+    <radio value="{{item.id}}" checked="{{item.checked}}" />
+  </view>
+</view>
+</radio-group>
+
+<view class='addView itemView' bindtap='addAddressEvent'>
+  <image src='../../../../images/deviceList_add.png' style='width: 150rpx; height: 150rpx' />
+</view>

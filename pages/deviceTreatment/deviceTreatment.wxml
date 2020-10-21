@@ -1,0 +1,46 @@
+<!--myTreatment.wxml-->
+<import src="../../components/treatment/treatment.wxml" />
+<!--topToolBar  -->
+<view class='topView' style='width: 100%; height: 44px; display: flex; flex-direction: row; justify-content: space-around; align-items: center; '>
+  <view style="color: {{item.isSelected ? '#f35b4a' : black}}; line-height: 44px; flex-grow: 1; font-size: 28rpx; text-align: center; border-bottom: 1rpx solid lightgray" wx:for="{{topToolBarItems}}" wx:key="key" bindtap='topViewTapEvnet' data-key='{{item.key}}'>
+    <text>{{item.title}}</text>
+  </view>
+</view>
+
+<view class="scrollViewContent" style="height: {{scrollViewHeight}}px" scroll-y>
+  <!--治疗仪疗程列表  -->
+  <view wx:if="{{pageStatus == 0}}">
+    <view wx:if="{{isConnectDevice != true}}" style="width: 100%; height: 200rpx; display: flex; flex-direction: row; align-items: center; justify-content: center;">
+      <text>请先连接治疗仪！</text>
+    </view>
+    <view wx:elif="{{courses.length == 0}}" style="width: 100%; height: 200rpx; display: flex; flex-direction: row; align-items: center; justify-content: center;">
+      <text>您当前没有疗程，可以在商城中购买！</text>
+    </view>
+    <view wx:else>
+      <block wx:for="{{courses}}" wx:key="course">
+        <template is="myTreatment" data="{{...item.data}}" />
+      </block>
+    </view>
+  </view>
+  <!--已购买的疗程列表  -->
+  <view wx:if="{{pageStatus == 1}}">
+    <view wx:if="{{coursesOfBuy.length == 0}}" style="width: 100%; height: 200rpx; display: flex; flex-direction: row; align-items: center; justify-content: center;">
+      <text>您当前没有疗程，可以在商城中购买！</text>
+    </view>
+    <view wx:else>
+      <block wx:for="{{coursesOfBuy}}" wx:key="course">
+        <template is="myTreatment" data="{{...item.data}}" />
+      </block>
+    </view>
+  </view>
+  <view wx:if="{{pageStatus == 2}}">
+    <view class='sectionView'>
+      <view class="itemContentView"  wx:for="{{ courseInfoList }}" wx:key="{{index}}" >
+        <view class='lineView'>
+          <text>{{item.course_name}}</text>
+          <view><button class='btn-info' catchtap="itemContentViewEvent" data-id="{{item.id}}">查看说明</button></view>
+        </view>
+      </view>
+    </view>
+  </view>
+</view>

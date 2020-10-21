@@ -1,0 +1,62 @@
+.spage{
+  position: fixed;
+  box-sizing: border-box;
+  padding: 10rpx;
+  width: 100%;
+  bottom: 0;
+  display: flex;
+  justify-content: space-around;
+  text-align: center;
+}
+.spage>view{
+  height: 42rpx;
+  line-height: 42rpx;
+  background: white;
+  font-size: 28rpx;
+  color: #3487DD;
+  border-radius: 6rpx;
+  padding: 10rpx 37rpx;
+  border: 1rpx solid #ccc;
+}
+.spage .pagesel{
+  position: relative;
+  padding: 10rpx 70rpx;
+   width: 63rpx;
+}
+.pagesel>text{
+  position: absolute;
+  width: 130rpx;
+  height: 42rpx;
+  bottom: 52rpx;
+  left: 9rpx;
+  display: inline-block;
+  padding-left: 10rpx;
+}
+.pagesel image{
+  position: absolute;
+  bottom:15rpx;
+  right:14rpx;
+  transform: rotateZ(-90deg);
+  width: 30rpx;
+  height: 30rpx;
+}
+.pagesel>view{
+  position: absolute;
+  bottom: 61rpx;
+  left: 0rpx;
+  background: white;
+  /* height: 310rpx; */
+  max-height: 310rpx;
+  overflow: auto;
+  border-radius: 4rpx;
+}
+.pagesel>view view{
+  height: 42rpx;
+  padding: 10rpx 0rpx;
+  margin-bottom: 2rpx;
+  border-bottom: 1rpx solid #ccc;
+}
+.pagesel view{
+  
+  width: 100%;
+}

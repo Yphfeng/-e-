@@ -1,0 +1,33 @@
+/* userMessageLike.wxss */
+
+.containerView .firstView {
+    display: flex;
+    flex-direction: column;
+    margin: 20rpx;
+    box-sizing: border-box;
+}
+
+.containerView .firstView .textView {
+    margin-top: 20rpx;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+.containerView .firstView .textView text {
+    text-align: center;
+    border-style: solid;
+    border-width: 1rpx;
+    line-height: 60rpx;
+    width: 150rpx;
+    border-radius: 8rpx;
+    margin: 10rpx;
+}
+
+.containerView button {
+    margin-top: 50rpx;
+    margin-left: 20rpx;
+    margin-right: 20rpx;
+}

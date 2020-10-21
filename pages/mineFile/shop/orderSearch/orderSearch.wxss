@@ -1,0 +1,40 @@
+/* pages/mineFile/shop/componentOrder/shopOrder.wxss */
+
+.orders{
+  background: #fff;
+  display: flex;
+  flex-direction: column; 
+  justify-content: flex-start; 
+  width: 100%;  
+  margin-bottom: 20rpx; 
+  box-sizing: border-box;
+}
+.status{
+  display: flex; 
+  flex-direction: row; 
+  justify-content: center; 
+  align-items: center; 
+  font-size: 28rpx; 
+  line-height: 47rpx;
+}
+.status text{
+  margin-left: 20rpx;
+}
+.orderItem{
+  background: #f3f0f0;
+  margin-bottom: 10rpx;
+  padding: 10rpx 20rpx;
+}
+.orders:last-child{
+  margin-bottom: 0;
+}
+.cp-content{
+  display: flex; 
+  flex-direction: column; 
+  justify-content: flex-start; 
+  align-items: space-between; 
+  font-size: 28rpx;
+}
+.statusButton{
+  padding: 20rpx;
+}

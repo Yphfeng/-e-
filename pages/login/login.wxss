@@ -1,0 +1,43 @@
+/* login.wxss */
+
+page {
+  background-color: #efefef;
+}
+
+.containerView1 {
+  width: 100%;
+  background-color: #efefef;
+  display: flex;
+  flex-direction: column;
+  box-sizing: border-box;
+  padding: 100rpx 20rpx;
+}
+
+.containerView1>input {
+  height: 100rpx;
+  background-color: #fff;
+  margin-top: 40rpx;
+  padding: 0 20rpx;
+  border-bottom: 1rpx solid #f35b4a;
+}
+
+.containerView1>button {
+  margin-top: 80rpx;
+  width: 80%;
+}
+
+.containerView1 view {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-around;
+}
+
+.containerView1>view text {
+  margin-top: 30rpx;
+  font-family: STHeitiSC-Light;
+  font-size: 28rpx;
+  color: #f35b4a;
+  text-decoration: underline;
+}

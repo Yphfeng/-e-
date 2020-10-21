@@ -1,0 +1,245 @@
+/* order.wxss */
+
+page {
+  background-color: #efefef;
+}
+
+/*公共样式*/
+
+.common {
+  box-sizing: border-box;
+  padding: 30rpx;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  margin-top: 20rpx;
+}
+
+.common2 {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+.nextImage {
+  width: 44rpx;
+  height: 44rpx;
+}
+
+/*第一个视图 地址*/
+.addressView {
+  height: 200rpx;
+  box-sizing: border-box;
+  border-bottom: 7rpx dashed white;
+  background-color: #f35b4a;
+  padding: 30rpx;
+}
+
+.addressView .locationImageView {
+  display: flex;
+  flex-direction: row;
+  align-items: flex-end;
+}
+
+.addressView .locationImageView image {
+  width: 42rpx;
+  height: 55rpx;
+}
+
+/*产品视图  */
+
+.productView {
+  margin-top: 20rpx;
+  display: flex;
+  flex-direction: column;
+  background-color: white;
+  padding: 0 20rpx;
+}
+
+/*支付方试视图  */
+
+.payStyleView {
+  display: flex;
+  flex-direction: column;
+  box-sizing: border-box;
+  flex-wrap: wrap;
+  padding: 0 20rpx;
+  background: #fff;
+  margin-top: 20rpx;
+}
+
+.payStyleView .checkbox {
+  background-color: white;
+  padding-left: 20rpx;
+  padding-right: 20rpx;
+  height: 100rpx;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 1px solid #e9e9e9;
+}
+.payStyleView .checkbox:last-child{
+  border-bottom: none;
+}
+
+.payStyleView .checkbox text {
+  font-family: STHeitiSC-Light;
+  font-size: 28rpx;
+  color: #000;
+  line-height: 44rpx;
+  text-align: left;
+}
+
+/*是否需要发票*/
+
+.invoiceView {
+  display: flex;
+  flex-direction: column;
+  margin-top: 20rpx;
+  background-color: white;
+}
+
+.invoiceView .invoiceTitleView {
+  padding: 30rpx;
+  box-sizing: border-box;
+  display: flex;
+  justify-content: space-between;
+}
+
+.invoiceView text {
+  font-family: STHeitiSC-Light;
+  font-size: 30rpx;
+  line-height: 45rpx;
+}
+
+.invoiceView .invoiceTitleView view {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+.invoiceView .invoiceContent {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: flex-start;
+  padding-left: 30rpx;
+  padding-right: 30rpx;
+  padding-bottom: 30rpx;
+  box-sizing: border-box;
+}
+
+.invoiceView .invoiceContent input {
+  margin-left: 15rpx;
+  flex: auto;
+  border-bottom: 1rpx solid lightgray;
+  margin-top: 5rpx;
+}
+
+.paymentMessageView {
+
+  display: flex;
+  display: -webkit-flex;
+  align-items: flex-end;
+  flex-direction: column;
+  margin-top: 30px;
+}
+
+.paymentMessageView .priceView {
+  margin-right: 20rpx;
+  line-height: 40rpx;
+  font-family: STHeitiSC-Light;
+  font-size: 28rpx;
+  text-align: right;
+  box-sizing: border-box;
+  padding-right: 30rpx;
+}
+
+
+
+.addressContentView {
+  flex: auto;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  margin-left: 20rpx;
+}
+.addressContentView view {
+  width: 100%;
+  justify-content: space-between;
+}
+.addressContentView text {
+  font-family: STHeitiSC-Light;
+  font-size: 28rpx;
+  color: #fff;
+  line-height: 47rpx;
+  text-align: left;
+}
+.order{
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-end;
+  align-items: center;
+  background: #fff;
+  height: 100rpx;
+  padding: 0 20rpx;
+  box-sizing: border-box;
+}
+.redColor{
+  color: #ff3b25;
+}
+.orderText{
+  font-size: 28rpx;
+  margin-right:0;
+  border-radius:0;
+  margin-left:20rpx;
+  color: #666;
+line-height:55rpx;
+border-radius:30rpx;
+width:80px;
+border: 1rpx solid #ccc;
+
+}
+.orderText::after{
+  border: none;
+}
+.total{
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+}
+.viewText{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+}
+.cp-content{
+  flex:1;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: flex-start;
+  font-size: 28rpx;
+}
+.num{
+  flex:1;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-end;
+}
+.orderItem{
+  margin-bottom: 10rpx;
+  background: #f7f2f2;
+  display: flex;
+  flex-direction: column;
+  padding: 10rpx;
+}

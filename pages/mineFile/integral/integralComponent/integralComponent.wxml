@@ -1,0 +1,5 @@
+<!--pages/mineFile/integral/integralComponent/integralComponent.wxml-->
+<view class='listView'>
+    <text></text>
+
+</view>

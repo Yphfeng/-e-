@@ -1,0 +1,30 @@
+<!--模板，用于向聊天窗口添加消息用的-->
+<template name="message-cell">
+  <view class="dialog-cell-self" id="{{scrollId}}" wx:if="{{isSelf}}">
+    <text class="dialog-content">{{message}}</text>
+    <image class="dialog-avatar" src="{{src}}"></image>
+  </view>
+
+  <view class="dialog-cell" id="{{scrollId}}" wx:else>
+    <image class="dialog-avatar" src="{{src}}"></image>
+    <text class="dialog-content">{{message}}</text>
+  </view>
+</template>
+
+<!--主视图-->
+<view class="containerView1" style="height: {{containerViewHeight}}px">
+    <view style="height: {{scrollViewHeight}}px">
+        <scroll-view class="scrollView" style="height: {{scrollViewHeight}}px" 
+        scroll-y bindscrolltoupper="upper" bindscrolltolower="lower" bindscroll="scroll" 
+        scroll-into-view="{{toView}}" scroll-top="{{scrollTop}}">
+        
+            <block wx:for="{{templates}}" wx:key="unique">
+                <template is="message-cell" data="{{...item.data}}"></template>
+            </block>
+        </scroll-view>
+    </view>
+    <view class="inputBox">
+        <input type="text" bindinput="inputAction" value="{{inputValue}}" />
+        <button class="qbButton" bindtap="sendMessageAction">发送</button>
+    </view>
+</view>

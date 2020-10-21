@@ -1,0 +1,26 @@
+<!--pages/dynamicdFile/dynamicdMain.wxml-->
+<map id='dynamicMap' controls='{{controls}}' markers='{{markers}}' latitude='{{latitude}}' longitude='{{longitude}}'  show-location  style='width: {{width}}px; height: {{height}}px'   bindcontroltap='controlTapEvent' bindmarkertap='makerTapEvent' bindcallouttap='makerTapEvent' wx:if="{{isshow}}" scale="{{scale}}"></map>
+<!-- bindregionchange='regionchangeEvent' bindupdated='updatedEvent' -->
+<cover-view class='fabuModel' wx:if="{{!hidemodel}}">
+  <cover-view class='fabuBox'>
+     <cover-view class="lineHeight120" bindtap='todynamicEditVideo' >发布视频</cover-view>
+     <cover-view class="lineHeight120" bindtap='todynamicEdit'>发布图文</cover-view>
+     <cover-view class="lineHeight86" bindtap='hideModel'>取消</cover-view>
+  </cover-view>
+</cover-view>
+<view class="tabBar">
+         <view class="item">
+      <view class="navItem" bindtap="goto" data-index="{{0}}" data-url="pages/home/home">
+        <image src="{{dataNavBar[0].iconPath}}" style="width:60rpx;height:60rpx"></image>
+        <text>{{dataNavBar[0].text}}</text>
+      </view>
+  <view class="navItem">
+        <image src="{{dataNavBar[1].selectedIconPath}}" style="width:60rpx;height:60rpx"></image>
+        <text>{{dataNavBar[1].text}}</text>
+      </view>
+      <view class="navItem" bindtap="goto" data-index="{{2}}" data-url="pages/mine/mine">
+        <image src="{{dataNavBar[2].iconPath}}" style="width:60rpx;height:60rpx"></image>
+        <text>{{dataNavBar[2].text}}</text>
+      </view>
+    </view>
+</view>
