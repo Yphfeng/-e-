@@ -6,6 +6,11 @@
 @import "components/shoppingCar/shoppingCarGoods.wxss";
 @import "components/tabBar/tabBar.wxss";
 
+
+
+
+
+
 /*主内容样式*/
 .containerView {
   width: 100%;
